@@ -21,6 +21,7 @@ from cyberlab.api.routes_instances import router as instances_router
 from cyberlab.api.routes_submissions import router as submissions_router
 from cyberlab.api.routes_competencies import router as competencies_router
 from cyberlab.api.routes_instructor import router as instructor_router
+from cyberlab.api.routes_generator import router as generator_router
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
@@ -99,6 +100,7 @@ app.include_router(instances_router)
 app.include_router(submissions_router)
 app.include_router(competencies_router)
 app.include_router(instructor_router)
+app.include_router(generator_router)
 
 
 # Reverse Proxy Endpoints for Student Marimo & Web App Sessions

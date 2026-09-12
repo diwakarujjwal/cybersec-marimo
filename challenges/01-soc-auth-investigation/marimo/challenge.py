@@ -81,18 +81,12 @@ def __(mo):
     )
     check_flag = mo.ui.checkbox(label="5. Extract containment flag", value=False)
 
-    hints = mo.accordion(
-        {
-            "💡 Hint 1: Locating the Attacker": mo.md(
-                "Use the **Analyst Python Scratchpad** or the slider in **Attack Timeline & Pivot** to isolate IP addresses generating an abnormal volume of failed logon attempts. Look for anomalous public IP addresses."
-            ),
-            "💡 Hint 2: Confirming Compromise": mo.md(
-                "In **Attack Timeline & Pivot**, select the suspicious IP identified from the anomaly table. Observe when authentication failures cease and a successful interactive logon (`4624`) occurs."
-            ),
-            "💡 Hint 3: Analyzing Execution": mo.md(
-                "In **Attack Timeline & Pivot** (LOLBin Forensics), review commands executed by the compromised account. Built-in tools like `certutil.exe` frequently contain staging parameters or flags."
-            ),
-        }
+    hint_status = mo.callout(
+        mo.md(
+            "🔒 **Investigation Hints Locked**\n\n"
+            "Hints are locked behind the CyberLab CTFd portal to ensure competitive integrity. Unlock hints in the left portal panel (deducts points from final solve)."
+        ),
+        kind="info",
     )
 
     sidebar_content = mo.vstack(
@@ -114,7 +108,7 @@ def __(mo):
                 "- **T1110.001**: Password Guessing (Brute Force)\n- **T1078.002**: Domain Accounts\n- **T1105**: Ingress Tool Transfer (`certutil`)"
             ),
             mo.md("---"),
-            hints,
+            hint_status,
         ]
     )
 
@@ -125,7 +119,7 @@ def __(mo):
         check_ip,
         check_proc,
         check_user,
-        hints,
+        hint_status,
         sidebar_content,
     )
 

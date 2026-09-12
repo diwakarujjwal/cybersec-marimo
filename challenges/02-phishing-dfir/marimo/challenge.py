@@ -108,18 +108,12 @@ def __(mo):
         label="5. Correlate C2 callback domain in DNS telemetry", value=False
     )
 
-    hints = mo.accordion(
-        {
-            "💡 Hint 1: Email Authentication": mo.md(
-                "Inspect the **Mail Headers & Auth** tab. Notice `dmarc=fail` and `spf=softfail`. The sender domain `quickbooks-invoicing-update.com` is typosquatting Intuit QuickBooks."
-            ),
-            "💡 Hint 2: Macro Analysis": mo.md(
-                "Look at the **Attachment Carving** tab. The Word document contains an `AutoOpen()` macro executing `powershell -enc <base64>`."
-            ),
-            "💡 Hint 3: Decoding & Correlating": mo.md(
-                "In the **Deobfuscator & Scratchpad** tab, decode the Base64 payload using the Python scratchpad or the decoder widget (PowerShell `-enc` uses UTF-16LE!). Then inspect the **DNS Telemetry & C2** tab."
-            ),
-        }
+    hint_status = mo.callout(
+        mo.md(
+            "🔒 **Investigation Hints Locked**\n\n"
+            "Hints are locked behind the CyberLab CTFd portal to ensure competitive integrity. Unlock hints in the left portal panel (deducts points from final solve)."
+        ),
+        kind="info",
     )
 
     sidebar_content = mo.vstack(
@@ -144,7 +138,7 @@ def __(mo):
                 "- **T1071.001**: Web Protocols (HTTP C2)"
             ),
             mo.md("---"),
-            hints,
+            hint_status,
         ]
     )
 
@@ -155,7 +149,7 @@ def __(mo):
         check_domain,
         check_headers,
         check_macro,
-        hints,
+        hint_status,
         sidebar_content,
     )
 

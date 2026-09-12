@@ -30,8 +30,8 @@ class Settings(BaseModel):
     # Container & Sandbox Security Configurations
     DOCKER_HOST: str = os.getenv("DOCKER_HOST", "unix:///var/run/docker.sock")
     DOCKER_DRIVER: str = os.getenv(
-        "DOCKER_DRIVER", "auto"
-    )  # "docker", "mock", "process", "auto"
+        "DOCKER_DRIVER", "process"
+    )  # "process" (native Python sandbox), "docker", "mock", "auto"
     CONTAINER_CPU_LIMIT: str = os.getenv("CONTAINER_CPU_LIMIT", "0.5")
     CONTAINER_MEMORY_LIMIT: str = os.getenv("CONTAINER_MEMORY_LIMIT", "512m")
     CONTAINER_PIDS_LIMIT: int = int(os.getenv("CONTAINER_PIDS_LIMIT", "100"))
@@ -40,6 +40,11 @@ class Settings(BaseModel):
     CONTAINER_GID: int = 1000
     CONTAINER_DROP_CAPABILITIES: list[str] = ["ALL"]
     CONTAINER_SECURITY_OPT: list[str] = ["no-new-privileges:true"]
+
+    # LLM & Procedural CTF Generation
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    LLM_MODEL: str = os.getenv("LLM_MODEL", "gemini-2.5-flash")
 
     # Lifecycle & Quotas
     DEFAULT_INSTANCE_TTL_MINUTES: int = int(
