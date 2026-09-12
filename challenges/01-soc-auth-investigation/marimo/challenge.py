@@ -675,46 +675,44 @@ def console_root(
         display: none !important;
     }
 
-    /* 5. Fullscreen / Maximized Console Layout BY DEFAULT */
+    /* 5. Full-Width Edge-to-Edge Console Layout */
     html, body {
         width: 100% !important;
-        height: 100% !important;
+        min-height: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         background: #020617 !important;
-        overflow: hidden !important;
     }
 
-    #App, main, #app-chrome-body, [data-testid="column-container"] {
+    #App,
+    main,
+    #app-chrome-body,
+    [data-testid="column-container"],
+    .marimo-container {
         width: 100% !important;
         max-width: 100% !important;
-        height: 100% !important;
+        min-width: 100% !important;
         padding: 0 !important;
         margin: 0 !important;
         background: #020617 !important;
     }
 
     .marimo-cell:has(.cyberlab-topbar) {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
         width: 100% !important;
-        height: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
         padding: 10px 16px !important;
         box-sizing: border-box !important;
-        overflow-y: auto !important;
         background: #020617 !important;
         border: none !important;
         box-shadow: none !important;
+        display: block !important;
     }
 
     .marimo-cell:has(.cyberlab-topbar) > div,
     .marimo-cell:has(.cyberlab-topbar) [data-testid="cell-output-container"],
-    .marimo-cell:has(.cyberlab-topbar) [data-testid="marimo-cell-output"] {
+    .marimo-cell:has(.cyberlab-topbar) [data-testid="marimo-cell-output"],
+    .marimo-cell:has(.cyberlab-topbar) .output-area {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 !important;

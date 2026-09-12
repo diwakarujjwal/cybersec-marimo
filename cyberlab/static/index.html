@@ -1106,11 +1106,13 @@
         }
 
         // Set iframe source if needed
+        const loader = document.getElementById("fs-iframe-loader");
         if (
           !iframe.src ||
           iframe.src === "about:blank" ||
           !iframe.src.includes(activeSession.id)
         ) {
+          if (loader) loader.classList.remove("hidden");
           iframe.src = proxyUrl;
         }
 
@@ -1260,13 +1262,22 @@
       </div>
 
       <!-- Fullscreen Console Iframe -->
-      <div class="flex-1 w-full h-full relative overflow-hidden bg-slate-950">
+      <div class="flex-1 min-h-0 w-full relative overflow-hidden bg-slate-950">
+        <div
+          id="fs-iframe-loader"
+          class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-slate-400 text-sm gap-3 z-10 hidden"
+        >
+          <div class="animate-spin text-2xl">⏳</div>
+          <div class="font-medium text-slate-300">Loading Interactive Incident Console...</div>
+          <div class="text-xs text-slate-500">Connecting to isolated runtime kernel</div>
+        </div>
         <iframe
           id="fullscreen-iframe"
           src="about:blank"
-          class="w-full h-full border-0"
+          class="absolute inset-0 w-full h-full border-0"
           allow="fullscreen; clipboard-read; clipboard-write"
           allowfullscreen
+          onload="document.getElementById('fs-iframe-loader')?.classList.add('hidden')"
         ></iframe>
       </div>
     </div>
