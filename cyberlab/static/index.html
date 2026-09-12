@@ -637,6 +637,13 @@
       }
 
       function renderChallengeStage(chal) {
+        const isSessionRunning = activeSession && activeSession.challenge_id === chal.id;
+        const proxyUrl = isSessionRunning
+          ? (activeSession.proxy_path.includes("?")
+              ? activeSession.proxy_path + "&show-chrome=false"
+              : activeSession.proxy_path + "?show-chrome=false")
+          : "#";
+
         const stage = document.getElementById("challenge-stage");
         stage.innerHTML = `
                 <!-- Challenge Header -->
@@ -651,9 +658,14 @@
                         <h2 class="text-xl font-bold text-white mt-1">${chal.title}</h2>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button onclick="startChallengeEnvironment('${chal.id}')" id="btn-start-env" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
-                            <span>⚡ Launch Environment</span>
-                        </button>
+                        ${isSessionRunning 
+                          ? `<button onclick="launchFullscreenConsole()" id="btn-start-env" class="px-4 py-2 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/40 text-sm font-medium transition shadow-lg flex items-center gap-2">
+                               <span>✓ Environment Active (Open Console)</span>
+                             </button>`
+                          : `<button onclick="startChallengeEnvironment('${chal.id}')" id="btn-start-env" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                               <span>⚡ Launch Environment</span>
+                             </button>`
+                        }
                     </div>
                 </div>
 
@@ -672,8 +684,8 @@
                     </div>
                 </div>
 
-                <!-- Active Sandbox Session Container (Hidden until launched) -->
-                <div id="sandbox-session-panel" class="hidden space-y-4 pt-2 border-t border-slate-800">
+                <!-- Active Sandbox Session Container -->
+                <div id="sandbox-session-panel" class="${isSessionRunning ? '' : 'hidden'} space-y-4 pt-2 border-t border-slate-800">
                     <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-sky-950/40 p-5 rounded-xl border border-sky-500/30 shadow-lg shadow-sky-950/20">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div class="space-y-1">
@@ -693,7 +705,7 @@
                                 <button onclick="launchFullscreenConsole()" class="px-5 py-2.5 rounded-lg bg-cyber-accent hover:bg-sky-400 text-slate-950 font-bold text-sm transition flex items-center gap-2 shadow-lg shadow-sky-500/25">
                                     <span>⤢ Launch Fullscreen Console</span>
                                 </button>
-                                <a id="session-newtab-btn" href="#" target="_blank" class="text-xs px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Open in separate tab">
+                                <a id="session-newtab-btn" href="${proxyUrl}" target="_blank" class="text-xs px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Open in separate tab">
                                     <span>↗ New Tab</span>
                                 </a>
                                 <button onclick="resetCurrentSession()" class="text-xs px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition">
@@ -705,9 +717,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Hidden Sandbox Iframe placeholder for session keep-alive and programmatic access -->
-                    <iframe id="sandbox-iframe" src="about:blank" title="Investigation Workspace" class="hidden" style="display:none; width:0; height:0; border:0;"></iframe>
                 </div>
 
                 <!-- Flag Submission & Hints Footer -->
@@ -746,8 +755,10 @@
 
       async function startChallengeEnvironment(challengeId) {
         const btn = document.getElementById("btn-start-env");
-        btn.innerHTML = `<span class="animate-spin">⏳</span> Launching Sandbox...`;
-        btn.disabled = true;
+        if (btn) {
+          btn.innerHTML = `<span class="animate-spin">⏳</span> Launching Sandbox...`;
+          btn.disabled = true;
+        }
 
         try {
           const res = await fetch(`/api/challenges/${challengeId}/start`, {
@@ -757,14 +768,11 @@
           activeSession = session;
 
           const sessionPanel = document.getElementById("sandbox-session-panel");
-          sessionPanel.classList.remove("hidden");
+          if (sessionPanel) sessionPanel.classList.remove("hidden");
 
           const proxyUrl = session.proxy_path.includes("?")
             ? session.proxy_path + "&show-chrome=false"
             : session.proxy_path + "?show-chrome=false";
-
-          const iframe = document.getElementById("sandbox-iframe");
-          if (iframe) iframe.src = proxyUrl;
 
           const newtabBtn = document.getElementById("session-newtab-btn");
           if (newtabBtn) newtabBtn.href = proxyUrl;
@@ -772,13 +780,22 @@
           // Start countdown
           startCountdown(session.time_remaining_seconds);
 
-          btn.innerHTML = `<span>✓ Environment Active</span>`;
-          btn.className =
-            "px-4 py-2 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/40 text-sm font-medium";
+          if (btn) {
+            btn.innerHTML = `<span>✓ Environment Active (Open Console)</span>`;
+            btn.className =
+              "px-4 py-2 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/40 text-sm font-medium transition shadow-lg flex items-center gap-2";
+            btn.disabled = false;
+            btn.onclick = () => launchFullscreenConsole();
+          }
+
+          // Launch fullscreen console directly
+          launchFullscreenConsole();
         } catch (err) {
           alert("Failed to initialize challenge environment: " + err.message);
-          btn.innerHTML = `<span>⚡ Launch Environment</span>`;
-          btn.disabled = false;
+          if (btn) {
+            btn.innerHTML = `<span>⚡ Launch Environment</span>`;
+            btn.disabled = false;
+          }
         }
       }
 
@@ -820,7 +837,7 @@
         const resetProxyUrl = session.proxy_path.includes("?")
           ? session.proxy_path + "&show-chrome=false"
           : session.proxy_path + "?show-chrome=false";
-        const iframe = document.getElementById("sandbox-iframe");
+        const iframe = document.getElementById("fullscreen-iframe");
         if (iframe) iframe.src = resetProxyUrl;
         const newtabBtn = document.getElementById("session-newtab-btn");
         if (newtabBtn) newtabBtn.href = resetProxyUrl;
@@ -832,10 +849,11 @@
         await fetch(`/api/instances/${activeSession.id}/stop`, {
           method: "POST",
         });
-        document
-          .getElementById("sandbox-session-panel")
-          .classList.add("hidden");
-        document.getElementById("sandbox-iframe").src = "about:blank";
+        exitFullscreenConsole();
+        const sessionPanel = document.getElementById("sandbox-session-panel");
+        if (sessionPanel) sessionPanel.classList.add("hidden");
+        const iframe = document.getElementById("fullscreen-iframe");
+        if (iframe) iframe.src = "about:blank";
         if (sessionTimerInterval) clearInterval(sessionTimerInterval);
         activeSession = null;
         selectChallenge(activeChallengeId);
@@ -1112,8 +1130,6 @@
           document.exitFullscreen().catch(() => {});
         }
         if (ws) ws.classList.add("hidden");
-        const iframe = document.getElementById("fullscreen-iframe");
-        if (iframe) iframe.src = "about:blank";
       }
 
       document.addEventListener("fullscreenchange", () => {
@@ -1121,8 +1137,6 @@
           const ws = document.getElementById("fullscreen-workspace");
           if (ws && !ws.classList.contains("hidden")) {
             ws.classList.add("hidden");
-            const iframe = document.getElementById("fullscreen-iframe");
-            if (iframe) iframe.src = "about:blank";
           }
         }
       });
