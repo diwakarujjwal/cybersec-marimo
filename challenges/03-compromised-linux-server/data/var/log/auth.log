@@ -1,0 +1,7 @@
+Sep 10 04:12:01 web-prod-04 CRON[2910]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 10 04:15:22 web-prod-04 sshd[3102]: Accepted publickey for deploy from 192.168.1.50 port 52310 ssh2: RSA SHA256:m0x/891
+Sep 10 04:15:22 web-prod-04 sshd[3102]: pam_unix(sshd:session): session opened for user deploy by (uid=1001)
+Sep 10 04:18:05 web-prod-04 sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/find . -exec /bin/sh \;
+Sep 10 04:18:05 web-prod-04 sudo: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+Sep 10 04:22:40 web-prod-04 useradd[3411]: new user: name=systemd-sync, UID=998, GID=998, home=/var/run/sync, shell=/bin/false
+Sep 10 04:25:01 web-prod-04 CRON[3502]: (root) CMD (/opt/cert-tools/.sync.sh >/dev/null 2>&1)

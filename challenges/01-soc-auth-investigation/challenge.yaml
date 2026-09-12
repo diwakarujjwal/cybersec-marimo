@@ -1,0 +1,28 @@
+id: "01-soc-auth-investigation"
+title: "INCIDENT 0101 — Operation NightShift"
+category: "SOC Investigation"
+difficulty: "Beginner"
+points: 100
+duration_minutes: 45
+competency_id: "soc_investigation"
+competency_weight: 1.0
+container:
+  type: "marimo"
+  image: "cyberlab/challenge-01:latest"
+  cpu_limit: "0.5"
+  memory_limit: "512M"
+  pids_limit: 100
+  read_only_root: true
+  network: "internal"
+flag: "FLAG{brute_force_pivot_admin_2026}"
+hints:
+  - id: 1
+    content: "Group authentication events by source_ip and status=='FAILURE' to find anomalous spikes."
+    penalty: 15
+  - id: 2
+    content: "Once you have identified the attacker IP, look for the first 'SUCCESS' logon event from that same IP."
+    penalty: 25
+objectives:
+  - "Identify the external attacker IP address conducting brute force attacks."
+  - "Discover the targeted account compromised during off-hours."
+  - "Inspect the post-authentication administrative commands to uncover the incident flag."

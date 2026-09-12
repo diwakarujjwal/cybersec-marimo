@@ -1,0 +1,1202 @@
+timestamp,host,user,parent_image,image,command_line
+2026-09-10T10:00:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:00:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:00:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:01:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:01:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:01:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:01:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:01:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:01:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:01:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:02:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:02:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:02:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:02:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:02:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:02:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:04:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:04:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:04:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:04:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:04:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:05:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:05:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:05:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:05:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:06:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:06:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:07:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:07:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:07:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:07:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:07:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:07:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:07:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:08:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:08:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:08:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:08:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:08:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:08:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:09:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:09:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:09:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:10:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:10:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:10:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:11:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:11:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:11:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:12:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:12:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:12:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:13:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:13:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:13:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:13:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:14:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:14:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:15:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:15:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:15:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:15:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:16:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:16:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:16:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:16:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:16:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:17:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:17:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:17:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:18:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:18:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:18:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:18:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:18:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:18:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:18:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:18:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:19:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:20:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:20:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:20:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:20:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:20:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:20:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:21:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:21:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:21:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:22:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:22:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:22:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:22:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:22:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:22:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:23:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:23:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:24:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:24:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:24:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:25:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:25:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:25:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:25:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:26:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:26:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:26:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:27:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:27:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:27:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:28:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:28:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:28:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:28:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:28:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:29:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:30:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:30:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:30:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:31:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:31:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:31:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:31:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:32:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:33:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:33:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:33:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:33:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:33:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:34:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:34:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:34:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:34:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:34:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:35:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:36:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:36:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:36:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:36:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:36:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:36:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:37:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:37:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:37:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:37:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:37:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:37:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:37:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:38:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:38:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:38:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:39:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:39:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:39:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:39:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:39:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:40:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:40:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:40:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:40:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:41:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:41:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:41:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:41:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:42:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:42:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:42:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:42:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:42:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:43:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:44:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:44:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:45:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:45:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:45:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:45:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:45:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:46:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:47:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:47:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:47:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:47:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:48:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:48:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:48:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:48:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:48:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:48:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:49:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:49:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:49:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:50:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:50:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:50:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:50:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:50:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:51:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:51:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:52:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:52:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:52:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:52:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:53:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:54:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:55:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:56:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:56:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:56:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:56:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:57:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:57:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:57:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:57:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:57:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:58:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:58:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:58:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:58:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:58:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:58:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:58:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:58:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:58:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:58:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:59:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:59:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:59:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:59:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:59:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T10:59:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T10:59:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T10:59:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T10:59:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:00:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:00:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:00:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:00:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:01:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:01:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:01:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:01:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:01:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:01:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:02:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:02:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:03:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:03:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:03:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:03:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:03:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:03:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:04:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:04:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:04:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:04:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:04:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:05:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:05:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:05:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:05:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:06:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:06:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:06:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:06:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:06:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:06:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:07:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:07:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:07:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:07:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:07:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:08:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:08:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:08:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:09:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:09:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:09:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:10:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:10:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:10:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:10:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:10:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:10:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:11:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:11:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:11:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:12:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:12:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:13:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:13:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:13:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:13:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:13:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:13:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:14:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:14:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:14:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:14:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:14:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:15:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:15:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:15:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:15:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:16:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:16:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:16:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:16:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:17:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:17:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:18:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:19:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:19:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:19:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:19:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:19:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:20:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:20:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:20:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:20:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:20:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:20:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:20:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:21:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:21:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:21:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:22:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:23:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:23:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:23:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:23:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:23:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:24:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:24:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:25:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:25:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:25:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:26:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:26:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:27:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:28:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:28:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:29:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:30:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:30:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:30:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:31:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:31:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:32:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:32:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:32:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:32:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:33:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:33:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:33:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:34:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:34:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:34:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:34:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:34:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:34:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:34:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:34:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:35:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:35:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:36:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:36:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:36:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:37:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:37:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:37:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:37:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:37:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:37:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:38:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:38:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:38:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:38:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:39:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:39:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:39:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:39:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:39:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:39:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:39:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:40:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:40:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:40:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:40:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:40:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:40:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:40:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:40:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:40:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:41:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:41:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:41:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:41:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:42:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,C:\Users\jsmith\AppData\Local\Temp\svchost.exe,svchost.exe -tunnel -domain ns-tunnel.attacker-dns.org
+2026-09-10T11:42:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:42:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:42:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:43:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:43:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:43:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:44:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:44:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:44:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:44:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:44:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:45:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:45:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:45:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:45:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:45:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:45:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:46:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:46:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:46:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:47:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:47:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:47:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:48:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:48:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:48:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:48:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:49:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:49:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:49:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:49:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:50:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:50:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:50:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:50:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:50:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:51:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:51:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:51:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:51:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:51:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:52:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:52:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:52:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:52:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:52:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:53:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:53:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:53:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:53:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:54:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:55:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:55:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:55:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:56:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:56:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T11:56:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:56:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:57:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:57:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:57:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T11:58:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T11:58:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T11:58:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:00:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:00:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:00:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:01:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:01:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:02:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:02:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:02:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:02:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:02:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:03:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:03:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:03:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:04:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:04:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:04:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:05:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:05:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:05:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:05:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:05:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:06:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:06:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:06:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:06:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:06:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:06:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:07:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:07:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:07:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:07:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:07:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:08:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:08:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:08:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:08:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:09:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:09:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:10:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:10:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:10:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:11:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:11:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:11:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:11:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:11:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:12:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:12:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:12:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:12:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:12:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:13:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:13:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:13:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:13:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:13:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:13:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:14:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:14:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:14:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:14:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:15:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:15:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:15:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:15:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:16:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:16:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:16:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:16:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:17:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:17:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:17:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:17:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:17:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:17:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:17:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:18:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:18:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:18:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:18:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:19:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:19:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:19:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:19:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:20:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:20:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:20:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:20:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:20:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:20:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:21:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:21:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:21:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:21:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:21:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:21:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:22:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:23:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:23:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:23:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:23:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:23:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:24:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:24:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:24:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:24:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:24:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:25:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:25:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:25:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:25:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:25:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:25:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:26:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:26:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:26:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:26:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:27:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:27:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:27:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:28:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:28:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:29:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:29:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:29:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:29:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:30:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:30:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:31:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:31:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:31:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:31:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:31:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:31:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:31:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:32:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:32:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:32:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:32:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:32:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:33:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:33:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:33:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:33:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:33:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:34:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:34:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:34:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:34:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:34:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:34:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:34:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:35:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:35:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:35:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:35:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:35:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:35:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:35:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:35:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:35:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:35:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:36:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:36:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:36:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:37:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:37:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:38:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:38:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:38:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:39:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:39:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:39:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:39:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:39:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:39:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:39:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:39:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:39:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:40:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:40:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:40:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:40:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:41:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:41:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:41:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:41:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:42:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:43:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:43:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:43:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:43:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:43:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:43:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:43:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:43:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:43:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:44:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:45:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:45:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:45:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:45:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:46:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:46:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:46:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:46:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:47:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:47:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:47:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:47:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:48:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:48:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:48:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:49:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:49:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:49:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:49:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:49:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:50:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:50:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:50:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:51:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:51:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:51:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:51:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:51:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:51:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:51:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:51:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:51:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:51:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:51:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:52:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:52:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:52:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:52:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:53:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:53:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:53:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:54:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:54:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:54:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:54:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:54:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:54:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:55:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:55:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:55:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:55:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:55:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:55:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:55:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:56:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:56:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:57:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:57:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:57:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T12:57:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:58:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:58:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:58:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T12:59:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T12:59:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T12:59:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:00:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:00:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:00:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:00:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:00:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:01:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:01:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:01:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:01:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:01:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:01:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:01:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:02:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:03:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:03:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:04:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:04:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:04:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:04:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:04:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:04:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:04:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:05:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:05:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:05:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:05:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:05:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:05:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:06:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:06:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:06:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:07:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:07:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:07:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:08:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:08:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:08:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:09:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:09:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:09:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:09:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:10:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:10:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:10:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:10:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:11:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:12:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:12:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:12:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:13:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:13:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:13:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:13:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:14:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:14:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:14:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:14:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:14:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:15:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:15:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:15:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:15:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:15:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:15:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:15:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:15:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:15:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:15:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:15:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:16:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:16:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:16:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:16:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:17:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:17:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:18:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:18:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:18:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:18:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:18:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:18:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:18:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:19:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:19:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:19:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:19:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:19:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:20:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:20:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:20:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:20:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:20:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:20:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:21:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:21:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:21:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:21:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:21:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:21:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:22:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:22:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:22:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:23:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:23:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:23:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:23:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:23:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:23:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:24:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:24:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:25:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:25:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:25:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:25:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:25:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:26:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:27:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:28:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:28:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:28:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:28:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:28:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:28:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:29:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:29:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:29:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:30:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:30:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:30:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:30:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:30:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:31:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:31:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:31:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:31:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:32:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:32:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:32:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:32:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:32:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:32:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:33:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:33:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:33:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:34:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:34:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:34:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:34:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:34:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:34:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:34:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:34:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:34:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:35:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:35:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:36:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:37:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:37:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:38:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:38:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:38:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:38:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:38:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:39:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:39:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:39:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:39:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:40:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:40:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:41:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:41:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:41:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:41:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:42:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:42:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:42:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:43:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:43:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:43:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:43:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:44:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:44:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:44:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:45:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:45:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:45:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:45:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:45:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:46:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:46:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:46:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:46:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:46:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:47:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:47:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:48:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:48:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:48:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:48:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:48:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:49:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:49:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:49:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:49:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:49:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:49:53Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:50:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:50:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:50:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:51:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:51:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:51:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:51:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:51:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:51:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:52:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:52:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:52:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:52:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:52:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:52:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:52:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:53:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:53:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:53:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T13:53:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:53:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:53:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:53:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:53:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:53:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:54:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:54:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:54:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:54:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:54:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:54:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:55:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:56:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:56:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:57:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:59:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:59:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T13:59:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T13:59:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T13:59:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:00:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:00:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:01:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:01:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:02:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:02:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:02:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:03:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:03:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:03:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:03:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:04:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:04:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:04:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:04:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:04:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:04:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:05:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:06:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:06:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:06:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:06:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:07:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:07:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:07:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:07:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:08:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:08:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:08:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:08:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:08:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:09:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:09:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:09:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:09:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:10:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:10:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:10:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:11:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:11:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:11:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:11:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:11:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:11:54Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:12:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:12:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:12:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:12:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:13:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:14:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:14:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:14:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:15:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:15:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:15:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:15:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:15:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:16:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:16:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:16:22Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:16:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:16:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:16:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:16:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:17:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:17:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:17:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:18:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:18:43Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:18:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:18:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:18:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:19:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:20:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:20:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:20:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:20:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:20:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:21:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:21:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:21:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:22:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:22:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:22:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:22:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:23:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:23:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:23:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:23:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:23:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:24:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:24:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:24:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:25:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:25:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:25:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:25:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:25:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:26:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:26:33Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:26:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:26:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:27:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:27:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:27:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:27:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:28:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:28:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:28:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:28:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:28:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:29:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:29:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:29:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:29:49Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:30:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:30:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:30:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:30:27Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:30:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:31:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:31:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:31:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:31:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:32:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:32:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:32:23Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:32:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:33:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:33:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:33:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:33:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:33:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:33:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:34:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:35:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:35:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:35:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:36:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:36:36Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:36:48Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:36:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:36:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:37:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:37:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:37:57Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:38:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:38:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:38:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:38:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:38:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:39:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:40:00Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:40:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:40:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:40:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:40:38Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:40:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:41:29Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:41:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:42:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:42:20Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:42:46Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:42:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:42:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:43:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:43:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:44:01Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:44:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:44:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:44:15Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:44:37Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:44:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:45:03Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:45:06Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:46:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:46:59Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:47:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:47:34Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:47:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:47:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:47:45Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:47:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:48:02Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:48:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:48:35Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:48:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:49:13Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:49:14Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:49:17Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:49:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:49:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:49:40Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:49:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:50:16Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:50:28Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:50:32Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:50:39Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:50:55Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:51:04Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:51:10Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:51:11Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:51:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:52:51Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:53:05Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:53:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:53:26Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:54:24Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:54:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:54:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:54:56Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:55:18Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:56:21Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:56:41Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:56:42Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:56:58Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:57:08Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:57:19Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:57:25Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:57:30Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:57:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:57:52Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:58:07Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:58:12Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE,winword.exe /n C:\docs\memo.docx
+2026-09-10T14:58:47Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:58:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\explorer.exe,C:\Program Files\Google\Chrome\Application\chrome.exe,chrome.exe --type=renderer
+2026-09-10T14:58:50Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted
+2026-09-10T14:59:09Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:59:31Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k netsvcs -p -s Schedule
+2026-09-10T14:59:44Z,WKSTN-FIN-09,CORP\jsmith,C:\Windows\System32\services.exe,C:\Windows\System32\svchost.exe,svchost.exe -k LocalServiceNetworkRestricted

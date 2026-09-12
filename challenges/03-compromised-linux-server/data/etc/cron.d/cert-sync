@@ -1,0 +1,4 @@
+# Automated certificate synchronization job
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+*/15 * * * * root /opt/cert-tools/.sync.sh >/dev/null 2>&1

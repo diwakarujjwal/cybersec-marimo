@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Testing & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sandboxes & Local Runtime State
+data/.sandboxes/
+.marimo/
+.local/
+
+# Scripts / temporary build helpers
+scripts/
+
+# OS
+.DS_Store
+Thumbs.db

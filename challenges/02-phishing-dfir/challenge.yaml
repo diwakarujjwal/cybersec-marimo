@@ -1,0 +1,28 @@
+id: "02-phishing-dfir"
+title: "INCIDENT 0202 — Executive Spearphish & Invoice Fraud"
+category: "DFIR / Phishing"
+difficulty: "Beginner"
+points: 100
+duration_minutes: 45
+competency_id: "network_analysis"
+competency_weight: 1.0
+container:
+  type: "marimo"
+  image: "cyberlab/challenge-02:latest"
+  cpu_limit: "0.5"
+  memory_limit: "512M"
+  pids_limit: 100
+  read_only_root: true
+  network: "internal"
+flag: "FLAG{dmarc_fail_invoice_c2_domain_detected}"
+hints:
+  - id: 1
+    content: "Inspect the 'Authentication-Results' header in the raw .eml file to check the DMARC verification outcome."
+    penalty: 15
+  - id: 2
+    content: "Decode the base64 payload extracted from the attachment macro stream or match the sha256 in the DNS threat intel log."
+    penalty: 25
+objectives:
+  - "Inspect the RFC 822 email headers for spoofing indicators."
+  - "Extract and calculate the SHA256 cryptographic hash of the attachment."
+  - "Correlate email indicators with internal DNS query telemetry to locate the flag."

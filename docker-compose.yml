@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  cyberlab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cyberlab-platform
+    ports:
+      - "8888:8888"
+    environment:
+      - ENVIRONMENT=production
+      - HOST=0.0.0.0
+      - PORT=8888
+      - SECRET_KEY=cyberlab-production-master-secret-key-change-me
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DOCKER_DRIVER=auto
+      - ENABLE_EMBEDDED_CTFD_MOCK=true
+      - DEFAULT_INSTANCE_TTL_MINUTES=45
+      - MAX_INSTANCE_TTL_MINUTES=120
+      - IDLE_TIMEOUT_MINUTES=15
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+      - ./challenges:/app/challenges:ro
+    restart: unless-stopped
+    networks:
+      - cyberlab-mgmt
+
+networks:
+  cyberlab-mgmt:
+    name: cyberlab-mgmt
+    driver: bridge

@@ -1,0 +1,28 @@
+id: "05-threat-hunting-lotl"
+title: "INCIDENT 0505 — Operation CloudSnoop: Threat Hunting"
+category: "Threat Hunting"
+difficulty: "Advanced"
+points: 200
+duration_minutes: 60
+competency_id: "threat_hunting"
+competency_weight: 1.5
+container:
+  type: "marimo"
+  image: "cyberlab/challenge-05:latest"
+  cpu_limit: "0.5"
+  memory_limit: "512M"
+  pids_limit: 100
+  read_only_root: true
+  network: "internal"
+flag: "FLAG{dns_tunneling_data_exfil_uncovered}"
+hints:
+  - id: 1
+    content: "Search for processes named 'svchost.exe' running from outside 'C:\\Windows\\System32\\'."
+    penalty: 25
+  - id: 2
+    content: "Analyze DNS queries with abnormally long subdomain prefixes or calculate Shannon entropy to identify DNS tunneling to *.ns-tunnel.attacker-dns.org."
+    penalty: 40
+objectives:
+  - "Hunt for masqueraded Living-off-the-Land (LotL) execution in Sysmon telemetry."
+  - "Calculate subdomain length and entropy on DNS logs to uncover DNS data exfiltration."
+  - "Correlate endpoint execution with network telemetry to discover the final attack chain flag."

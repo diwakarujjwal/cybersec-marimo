@@ -1,0 +1,28 @@
+id: "03-compromised-linux-server"
+title: "INCIDENT 0303 — Compromised Linux Server Forensics"
+category: "Incident Response"
+difficulty: "Intermediate"
+points: 150
+duration_minutes: 60
+competency_id: "incident_response"
+competency_weight: 1.2
+container:
+  type: "marimo"
+  image: "cyberlab/challenge-03:latest"
+  cpu_limit: "0.5"
+  memory_limit: "512M"
+  pids_limit: 100
+  read_only_root: true
+  network: "internal"
+flag: "FLAG{crontab_reverse_shell_persisted_victim}"
+hints:
+  - id: 1
+    content: "Inspect the files under 'data/etc/cron.d/' or 'data/etc/crontab' to discover scheduled backdoor tasks."
+    penalty: 20
+  - id: 2
+    content: "Follow the script referenced by the suspicious cron job to discover the attacker's obfuscated reverse shell."
+    penalty: 30
+objectives:
+  - "Investigate bash history and auth logs to determine how the attacker gained root access."
+  - "Identify cron job and system persistence configurations."
+  - "Locate the hidden reverse shell script and extract the challenge flag."

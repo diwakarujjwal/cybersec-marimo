@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "2026-09-10T08:24:10Z",
+    "client_ip": "10.0.2.45",
+    "query": "login.microsoftonline.com",
+    "qtype": "A",
+    "response": "20.190.159.0"
+  },
+  {
+    "timestamp": "2026-09-10T08:25:30Z",
+    "client_ip": "10.0.2.19",
+    "query": "c2-exfil-node.darknet-routing.org",
+    "qtype": "A",
+    "response": "198.51.100.99",
+    "notes": "Associated SHA256: 763c250f247362c56b9729bc95aaf5419f07976472729dc703b5082c0830c4f6, Payload: FLAG{dmarc_fail_invoice_c2_domain_detected}"
+  },
+  {
+    "timestamp": "2026-09-10T08:26:01Z",
+    "client_ip": "10.0.2.19",
+    "query": "time.windows.com",
+    "qtype": "A",
+    "response": "51.145.123.29"
+  },
+  {
+    "timestamp": "2026-09-10T08:27:44Z",
+    "client_ip": "10.0.2.88",
+    "query": "github.com",
+    "qtype": "A",
+    "response": "140.82.121.4"
+  }
+]

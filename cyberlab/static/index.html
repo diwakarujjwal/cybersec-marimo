@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberLab — Production Hands-on Cybersecurity Training</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cyber: {
+                50: "#f0fdf4",
+                500: "#10b981",
+                600: "#059669",
+                800: "#064e3b",
+                900: "#022c22",
+                dark: "#0a0f1d",
+                card: "#131b2e",
+                border: "#1f2d4a",
+                accent: "#38bdf8",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0a0f1d;
+        color: #e2e8f0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      .glass-panel {
+        background: rgba(19, 27, 46, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid #1f2d4a;
+      }
+      .tab-btn.active {
+        border-color: #38bdf8;
+        color: #38bdf8;
+        background: rgba(56, 189, 248, 0.1);
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header class="glass-panel border-b border-cyber-border sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-10 h-10 rounded-lg bg-cyber-accent/20 border border-cyber-accent flex items-center justify-center font-bold text-cyber-accent text-xl"
+          >
+            ⚡
+          </div>
+          <div>
+            <h1
+              class="text-lg font-bold tracking-tight text-white flex items-center gap-2"
+            >
+              CyberLab
+              <span
+                class="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
+                >LMS + CTFd + Marimo</span
+              >
+            </h1>
+            <p class="text-xs text-slate-400">
+              Enterprise Cybersecurity Training Sandbox
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex space-x-1">
+          <button
+            onclick="switchTab('curriculum')"
+            id="tab-curriculum"
+            class="tab-btn active px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white transition"
+          >
+            Curriculum
+          </button>
+          <button
+            onclick="switchTab('competencies')"
+            id="tab-competencies"
+            class="tab-btn px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white transition"
+          >
+            Competencies
+          </button>
+          <button
+            onclick="switchTab('scoreboard')"
+            id="tab-scoreboard"
+            class="tab-btn px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white transition"
+          >
+            Scoreboard
+          </button>
+          <button
+            onclick="switchTab('instructor')"
+            id="tab-instructor"
+            class="tab-btn px-3 py-1.5 rounded-md text-sm font-medium text-purple-300 hover:text-purple-100 transition flex items-center gap-1"
+          >
+            <span>Instructor Ops</span>
+            <span
+              class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"
+            ></span>
+          </button>
+        </nav>
+
+        <!-- User Info & Role Switcher -->
+        <div class="flex items-center space-x-3">
+          <div class="text-right hidden sm:block">
+            <div
+              id="user-display-name"
+              class="text-xs font-semibold text-white"
+            >
+              Alice (Student)
+            </div>
+            <div id="user-score-display" class="text-[11px] text-cyber-accent">
+              Points: 0 pts
+            </div>
+          </div>
+          <button
+            onclick="toggleUserRole()"
+            id="role-toggle-btn"
+            class="text-xs px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700"
+          >
+            Switch to Instructor
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+      <!-- TAB 1: CURRICULUM & CHALLENGES -->
+      <div id="view-curriculum" class="space-y-6">
+        <!-- Course Header -->
+        <div
+          class="glass-panel p-6 rounded-xl border border-cyber-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+        >
+          <div>
+            <div class="flex items-center gap-2">
+              <span
+                class="px-2.5 py-0.5 rounded text-xs font-semibold bg-sky-500/20 text-sky-400 border border-sky-500/30"
+                >Course CYBER-101</span
+              >
+              <h2 class="text-xl font-bold text-white">
+                Cybersecurity Operations & Threat Defense
+              </h2>
+            </div>
+            <p class="text-sm text-slate-400 mt-1">
+              Realistic scenario-based investigations with browser-native Marimo
+              execution & Docker sandboxing.
+            </p>
+          </div>
+          <div
+            class="w-full md:w-64 bg-slate-800/80 p-3 rounded-lg border border-slate-700/60"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-300 font-medium mb-1"
+            >
+              <span>Course Completion</span>
+              <span id="overall-progress-text">0%</span>
+            </div>
+            <div class="w-full bg-slate-900 rounded-full h-2.5 overflow-hidden">
+              <div
+                id="overall-progress-bar"
+                class="bg-gradient-to-r from-emerald-500 to-cyber-accent h-2.5 rounded-full transition-all duration-500"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Challenge Layout: Modules List on Left, Active Challenge on Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Modules Sidebar (4 Cols) -->
+          <div class="lg:col-span-4 space-y-4">
+            <h3
+              class="text-sm font-semibold text-slate-400 uppercase tracking-wider"
+            >
+              Curriculum Modules
+            </h3>
+            <div id="modules-list" class="space-y-3">
+              <div class="text-sm text-slate-500 animate-pulse">
+                Loading curriculum...
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Challenge Stage (8 Cols) -->
+          <div class="lg:col-span-8 space-y-6">
+            <div
+              id="challenge-stage"
+              class="glass-panel p-6 rounded-xl border border-cyber-border space-y-6"
+            >
+              <div class="text-center py-12 text-slate-400">
+                <div class="text-4xl mb-3">🎯</div>
+                <h4 class="text-lg font-medium text-white">
+                  Select a Challenge
+                </h4>
+                <p class="text-sm max-w-md mx-auto mt-1">
+                  Choose an investigation scenario from the modules on the left
+                  to begin your browser session.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: COMPETENCIES MATRIX -->
+      <div id="view-competencies" class="hidden space-y-6">
+        <div class="glass-panel p-6 rounded-xl border border-cyber-border">
+          <h2 class="text-xl font-bold text-white mb-1">
+            Independent Skill Competencies
+          </h2>
+          <p class="text-sm text-slate-400">
+            Tracked independently from CTF points. Evaluates applied mastery
+            across cybersecurity domains.
+          </p>
+        </div>
+
+        <div
+          id="competency-cards-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- TAB 3: SCOREBOARD -->
+      <div id="view-scoreboard" class="hidden space-y-6">
+        <div class="glass-panel p-6 rounded-xl border border-cyber-border">
+          <h2 class="text-xl font-bold text-white mb-1">
+            CTFd Global Scoreboard
+          </h2>
+          <p class="text-sm text-slate-400">
+            Live rankings and points awarded for verified incident flag
+            submissions.
+          </p>
+        </div>
+
+        <div
+          class="glass-panel rounded-xl overflow-hidden border border-cyber-border"
+        >
+          <table class="min-w-full divide-y divide-slate-800">
+            <thead class="bg-slate-900/60">
+              <tr>
+                <th
+                  class="px-6 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider"
+                >
+                  Rank
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider"
+                >
+                  Investigator
+                </th>
+                <th
+                  class="px-6 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider"
+                >
+                  Score
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="scoreboard-table-body"
+              class="divide-y divide-slate-800 text-sm"
+            >
+              <tr>
+                <td colspan="3" class="px-6 py-4 text-center text-slate-500">
+                  No submissions yet
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB 4: INSTRUCTOR OPERATIONS -->
+      <div id="view-instructor" class="hidden space-y-6">
+        <div
+          class="glass-panel p-6 rounded-xl border border-purple-500/30 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
+        >
+          <div>
+            <div class="flex items-center gap-2">
+              <span
+                class="px-2.5 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/40"
+                >Instructor Control Plane</span
+              >
+              <h2 class="text-xl font-bold text-white">
+                Platform Health & Instance Orchestration
+              </h2>
+            </div>
+            <p class="text-sm text-slate-400 mt-1">
+              Real-time supervision of active containers, resource quotas,
+              student success rates, and audit logs.
+            </p>
+          </div>
+          <div class="flex gap-2">
+            <button
+              onclick="fetchInstructorData()"
+              class="px-3 py-1.5 text-xs font-medium rounded bg-purple-600 hover:bg-purple-500 text-white transition"
+            >
+              Refresh Data
+            </button>
+            <button
+              onclick="syncChallenges()"
+              class="px-3 py-1.5 text-xs font-medium rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition"
+            >
+              Sync Packages
+            </button>
+          </div>
+        </div>
+
+        <!-- Overview Stat Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="glass-panel p-4 rounded-xl border border-cyber-border">
+            <div class="text-xs text-slate-400 font-medium">
+              Active Containers
+            </div>
+            <div
+              id="inst-active-count"
+              class="text-2xl font-bold text-white mt-1"
+            >
+              0
+            </div>
+            <div class="text-[11px] text-emerald-400 mt-1">
+              Sandboxed & Monitored
+            </div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-cyber-border">
+            <div class="text-xs text-slate-400 font-medium">
+              Total Submissions
+            </div>
+            <div
+              id="inst-total-subs"
+              class="text-2xl font-bold text-white mt-1"
+            >
+              0
+            </div>
+            <div class="text-[11px] text-slate-400 mt-1">CTFd Graded</div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-cyber-border">
+            <div class="text-xs text-slate-400 font-medium">
+              Correct Solve Rate
+            </div>
+            <div
+              id="inst-solve-rate"
+              class="text-2xl font-bold text-white mt-1"
+            >
+              0%
+            </div>
+            <div class="text-[11px] text-sky-400 mt-1">Class Proficiency</div>
+          </div>
+        </div>
+
+        <!-- Active Running Instances Table -->
+        <div
+          class="glass-panel rounded-xl overflow-hidden border border-cyber-border"
+        >
+          <div
+            class="p-4 border-b border-slate-800 flex justify-between items-center"
+          >
+            <h3 class="text-sm font-semibold text-white">
+              Live Challenge Sandboxes
+            </h3>
+            <span class="text-xs text-slate-400"
+              >Automatic TTL & Idle Expiration Active</span
+            >
+          </div>
+          <table class="min-w-full divide-y divide-slate-800 text-sm">
+            <thead class="bg-slate-900/60">
+              <tr>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Student
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Challenge
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Status
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Time Remaining
+                </th>
+                <th
+                  class="px-4 py-2.5 text-right text-xs font-semibold text-slate-400"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody id="instances-table-body" class="divide-y divide-slate-800">
+              <tr>
+                <td colspan="5" class="px-4 py-6 text-center text-slate-500">
+                  No active student containers.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Challenge Performance & Success Rates -->
+        <div
+          class="glass-panel rounded-xl overflow-hidden border border-cyber-border"
+        >
+          <div class="p-4 border-b border-slate-800">
+            <h3 class="text-sm font-semibold text-white">
+              Challenge Metrics & Common Failure Points
+            </h3>
+          </div>
+          <table class="min-w-full divide-y divide-slate-800 text-sm">
+            <thead class="bg-slate-900/60">
+              <tr>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Challenge Title
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Category
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Difficulty
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Attempts
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Solves
+                </th>
+                <th
+                  class="px-4 py-2.5 text-left text-xs font-semibold text-slate-400"
+                >
+                  Success Rate
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="challenge-stats-table-body"
+              class="divide-y divide-slate-800"
+            >
+              <!-- Loaded dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Security Audit Log Table -->
+        <div
+          class="glass-panel rounded-xl overflow-hidden border border-cyber-border"
+        >
+          <div class="p-4 border-b border-slate-800">
+            <h3 class="text-sm font-semibold text-white">
+              Security & Audit Event Stream
+            </h3>
+          </div>
+          <div class="max-h-64 overflow-y-auto font-mono text-xs">
+            <table class="min-w-full divide-y divide-slate-800">
+              <thead class="bg-slate-900/60 sticky top-0">
+                <tr>
+                  <th class="px-4 py-2 text-left text-slate-400">Timestamp</th>
+                  <th class="px-4 py-2 text-left text-slate-400">Event</th>
+                  <th class="px-4 py-2 text-left text-slate-400">Severity</th>
+                  <th class="px-4 py-2 text-left text-slate-400">Details</th>
+                </tr>
+              </thead>
+              <tbody
+                id="audit-logs-table-body"
+                class="divide-y divide-slate-800"
+              >
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Interactive Script -->
+    <script>
+      let currentUser = { id: null, username: "alice", role: "student" };
+      let activeChallengeId = null;
+      let activeSession = null;
+      let sessionTimerInterval = null;
+
+      // Initialize App
+      document.addEventListener("DOMContentLoaded", async () => {
+        await loginUser("alice", "student");
+        await loadCurriculum();
+      });
+
+      async function loginUser(username, role) {
+        try {
+          const res = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, role }),
+          });
+          const data = await res.json();
+          currentUser = data.user;
+          document.getElementById("user-display-name").textContent =
+            `${currentUser.username} (${currentUser.role})`;
+          document.getElementById("role-toggle-btn").textContent =
+            currentUser.role === "student"
+              ? "Switch to Instructor"
+              : "Switch to Student";
+          await updateScoresAndCompetencies();
+        } catch (err) {
+          console.error("Login failed:", err);
+        }
+      }
+
+      async function toggleUserRole() {
+        if (currentUser.role === "student") {
+          await loginUser("prof_moriarty", "instructor");
+          switchTab("instructor");
+        } else {
+          await loginUser("alice", "student");
+          switchTab("curriculum");
+        }
+      }
+
+      function switchTab(tabName) {
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        const targetBtn = document.getElementById(`tab-${tabName}`);
+        if (targetBtn) targetBtn.classList.add("active");
+
+        ["curriculum", "competencies", "scoreboard", "instructor"].forEach(
+          (t) => {
+            const el = document.getElementById(`view-${t}`);
+            if (el) el.classList.toggle("hidden", t !== tabName);
+          },
+        );
+
+        if (tabName === "competencies") loadCompetencies();
+        if (tabName === "scoreboard") loadScoreboard();
+        if (tabName === "instructor") fetchInstructorData();
+      }
+
+      async function loadCurriculum() {
+        try {
+          const res = await fetch("/api/curriculum");
+          const data = await res.json();
+
+          document.getElementById("overall-progress-text").textContent =
+            `${data.progress_pct}%`;
+          document.getElementById("overall-progress-bar").style.width =
+            `${data.progress_pct}%`;
+
+          const modulesList = document.getElementById("modules-list");
+          modulesList.innerHTML = "";
+
+          data.modules.forEach((mod) => {
+            const modEl = document.createElement("div");
+            modEl.className =
+              "glass-panel p-4 rounded-lg border border-slate-800";
+            modEl.innerHTML = `
+                        <h4 class="text-xs font-bold text-cyber-accent uppercase tracking-wider mb-1">${mod.title}</h4>
+                        <p class="text-xs text-slate-400 mb-3">${mod.description}</p>
+                        <div class="space-y-1.5">
+                            ${mod.lessons
+                              .map(
+                                (les) => `
+                                <button onclick="selectChallenge('${les.challenge_id}')" class="w-full text-left p-2.5 rounded bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between transition">
+                                    <div>
+                                        <div class="text-xs font-medium text-white">${les.title}</div>
+                                        <div class="text-[11px] text-slate-400">${les.difficulty} • ${les.points} pts</div>
+                                    </div>
+                                    <span class="text-xs px-2 py-0.5 rounded ${les.status === "completed" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-slate-800 text-slate-400"}">
+                                        ${les.status === "completed" ? "✓ Solved" : "Available"}
+                                    </span>
+                                </button>
+                            `,
+                              )
+                              .join("")}
+                        </div>
+                    `;
+            modulesList.appendChild(modEl);
+          });
+
+          // Auto select first challenge if none active
+          if (
+            !activeChallengeId &&
+            data.modules.length > 0 &&
+            data.modules[0].lessons.length > 0
+          ) {
+            selectChallenge(data.modules[0].lessons[0].challenge_id);
+          }
+        } catch (err) {
+          console.error("Failed loading curriculum:", err);
+        }
+      }
+
+      async function selectChallenge(challengeId) {
+        activeChallengeId = challengeId;
+        const stage = document.getElementById("challenge-stage");
+        stage.innerHTML = `<div class="text-center py-12 text-slate-400 animate-pulse">Loading challenge details...</div>`;
+
+        try {
+          const res = await fetch(`/api/challenges/${challengeId}`);
+          const chal = await res.json();
+
+          renderChallengeStage(chal);
+        } catch (err) {
+          stage.innerHTML = `<div class="text-red-400">Failed to load challenge details.</div>`;
+        }
+      }
+
+      function renderChallengeStage(chal) {
+        const stage = document.getElementById("challenge-stage");
+        stage.innerHTML = `
+                <!-- Challenge Header -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-cyber-accent/20 text-cyber-accent border border-cyber-accent/30">${chal.category}</span>
+                            <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-800 text-slate-300">${chal.difficulty}</span>
+                            <span class="text-xs text-slate-400">⏱️ ${chal.duration_minutes} mins</span>
+                            ${chal.is_solved ? '<span class="text-xs text-emerald-400 font-semibold ml-2">✓ Solved</span>' : ""}
+                        </div>
+                        <h2 class="text-xl font-bold text-white mt-1">${chal.title}</h2>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="startChallengeEnvironment('${chal.id}')" id="btn-start-env" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                            <span>⚡ Launch Environment</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scenario & Mission Description -->
+                <div class="space-y-4">
+                    <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-800 text-sm text-slate-300 leading-relaxed prose prose-invert max-w-none">
+                        ${chal.scenario_md.replace(/\\n/g, "<br>")}
+                    </div>
+
+                    <!-- Objectives Checklist -->
+                    <div class="p-4 rounded-lg bg-slate-900/40 border border-slate-800">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Investigation Objectives</h4>
+                        <ul class="space-y-1.5 text-xs text-slate-300">
+                            ${(chal.objectives || []).map((obj) => `<li class="flex items-start gap-2"><span class="text-cyber-accent font-bold">▹</span> ${obj}</li>`).join("")}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Active Sandbox Session Container (Hidden until launched) -->
+                <div id="sandbox-session-panel" class="hidden space-y-4 pt-2 border-t border-slate-800">
+                    <div class="flex items-center justify-between bg-slate-900 p-3 rounded-lg border border-slate-800">
+                        <div class="flex items-center gap-3">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            <span class="text-xs font-semibold text-white">Active Isolated Sandbox</span>
+                            <span id="session-countdown" class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-400">TTL: --:--</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a id="session-newtab-btn" href="#" target="_blank" class="text-xs px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+                                ↗ Open Fullscreen
+                            </a>
+                            <button onclick="resetCurrentSession()" class="text-xs px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition">
+                                ↺ Reset
+                            </button>
+                            <button onclick="stopCurrentSession()" class="text-xs px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-red-400 border border-slate-700 transition">
+                                ✖ Stop
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Interactive Workspace -->
+                    <div class="w-full h-[540px] rounded-lg overflow-hidden border border-cyber-border bg-slate-950 relative">
+                        <iframe id="sandbox-iframe" src="about:blank" title="Investigation Workspace"></iframe>
+                    </div>
+                </div>
+
+                <!-- Flag Submission & Hints Footer -->
+                <div class="pt-4 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Submission Box -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-semibold text-slate-300">Submit Incident Flag</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="flag-input" placeholder="FLAG{...}" class="flex-1 px-3 py-2 text-sm rounded bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-cyber-accent">
+                            <button onclick="submitFlag('${chal.id}')" class="px-4 py-2 rounded bg-cyber-accent text-slate-950 font-semibold text-sm hover:bg-sky-400 transition">
+                                Submit
+                            </button>
+                        </div>
+                        <div id="flag-feedback" class="text-xs hidden mt-1"></div>
+                    </div>
+
+                    <!-- Hints Panel -->
+                    <div class="space-y-2">
+                        <div class="text-xs font-semibold text-slate-300">Investigation Hints</div>
+                        <div class="space-y-1.5">
+                            ${(chal.hints || [])
+                              .map(
+                                (h) => `
+                                <div class="p-2 rounded bg-slate-900/60 border border-slate-800 text-xs flex justify-between items-center">
+                                    <span class="text-slate-300">${h.is_unlocked ? h.content : "🔒 " + h.content}</span>
+                                    ${!h.is_unlocked ? `<button onclick="unlockHint('${chal.id}', ${h.id})" class="text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 hover:bg-amber-500/30">Unlock (-${h.penalty} pts)</button>` : ""}
+                                </div>
+                            `,
+                              )
+                              .join("")}
+                        </div>
+                    </div>
+                </div>
+            `;
+      }
+
+      async function startChallengeEnvironment(challengeId) {
+        const btn = document.getElementById("btn-start-env");
+        btn.innerHTML = `<span class="animate-spin">⏳</span> Launching Sandbox...`;
+        btn.disabled = true;
+
+        try {
+          const res = await fetch(`/api/challenges/${challengeId}/start`, {
+            method: "POST",
+          });
+          const session = await res.json();
+          activeSession = session;
+
+          const sessionPanel = document.getElementById("sandbox-session-panel");
+          sessionPanel.classList.remove("hidden");
+
+          const iframe = document.getElementById("sandbox-iframe");
+          iframe.src = session.proxy_path;
+
+          const newtabBtn = document.getElementById("session-newtab-btn");
+          newtabBtn.href = session.proxy_path;
+
+          // Start countdown
+          startCountdown(session.time_remaining_seconds);
+
+          btn.innerHTML = `<span>✓ Environment Active</span>`;
+          btn.className =
+            "px-4 py-2 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/40 text-sm font-medium";
+        } catch (err) {
+          alert("Failed to initialize challenge environment: " + err.message);
+          btn.innerHTML = `<span>⚡ Launch Environment</span>`;
+          btn.disabled = false;
+        }
+      }
+
+      function startCountdown(secondsRemaining) {
+        if (sessionTimerInterval) clearInterval(sessionTimerInterval);
+        let rem = secondsRemaining;
+        const el = document.getElementById("session-countdown");
+
+        sessionTimerInterval = setInterval(() => {
+          if (rem <= 0) {
+            clearInterval(sessionTimerInterval);
+            el.textContent = "EXPIRED";
+            return;
+          }
+          rem--;
+          const mins = Math.floor(rem / 60);
+          const secs = rem % 60;
+          el.textContent = `TTL: ${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+        }, 1000);
+      }
+
+      async function resetCurrentSession() {
+        if (!activeSession) return;
+        if (
+          !confirm(
+            "Are you sure you want to reset this environment back to clean state?",
+          )
+        )
+          return;
+        const res = await fetch(`/api/instances/${activeSession.id}/reset`, {
+          method: "POST",
+        });
+        const session = await res.json();
+        activeSession = session;
+        document.getElementById("sandbox-iframe").src = session.proxy_path;
+        startCountdown(session.time_remaining_seconds);
+      }
+
+      async function stopCurrentSession() {
+        if (!activeSession) return;
+        await fetch(`/api/instances/${activeSession.id}/stop`, {
+          method: "POST",
+        });
+        document
+          .getElementById("sandbox-session-panel")
+          .classList.add("hidden");
+        document.getElementById("sandbox-iframe").src = "about:blank";
+        if (sessionTimerInterval) clearInterval(sessionTimerInterval);
+        activeSession = null;
+        selectChallenge(activeChallengeId);
+      }
+
+      async function submitFlag(challengeId) {
+        const flagInput = document.getElementById("flag-input");
+        const flag = flagInput.value.trim();
+        const feedback = document.getElementById("flag-feedback");
+
+        if (!flag) return;
+
+        try {
+          const res = await fetch(`/api/challenges/${challengeId}/submit`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ flag }),
+          });
+          const result = await res.json();
+
+          feedback.classList.remove("hidden");
+          if (result.is_correct) {
+            feedback.className =
+              "text-xs p-2 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+            feedback.innerHTML = `🎉 <strong>${result.message}</strong>`;
+            await updateScoresAndCompetencies();
+            await loadCurriculum();
+          } else {
+            feedback.className =
+              "text-xs p-2 rounded bg-red-500/20 text-red-400 border border-red-500/30";
+            feedback.innerHTML = `❌ ${result.message}`;
+          }
+        } catch (err) {
+          feedback.classList.remove("hidden");
+          feedback.className = "text-xs text-red-400";
+          feedback.textContent = "Error submitting flag.";
+        }
+      }
+
+      async function unlockHint(challengeId, hintId) {
+        if (
+          !confirm(
+            "Unlock this hint? Points will be deducted upon final solve.",
+          )
+        )
+          return;
+        await fetch(`/api/challenges/${challengeId}/hints/${hintId}/unlock`, {
+          method: "POST",
+        });
+        selectChallenge(challengeId);
+      }
+
+      async function updateScoresAndCompetencies() {
+        try {
+          const res = await fetch("/api/scoreboard");
+          const scoreboard = await res.json();
+          const myEntry = scoreboard.find((s) => s.user_id === currentUser.id);
+          const score = myEntry ? myEntry.score : 0;
+          document.getElementById("user-score-display").textContent =
+            `Points: ${score} pts`;
+        } catch (err) {}
+      }
+
+      async function loadCompetencies() {
+        const container = document.getElementById("competency-cards-container");
+        container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500">Loading competencies...</div>`;
+        try {
+          const res = await fetch("/api/competencies/my");
+          const comps = await res.json();
+
+          container.innerHTML = "";
+          comps.forEach((c) => {
+            const card = document.createElement("div");
+            card.className =
+              "glass-panel p-5 rounded-xl border border-cyber-border space-y-4";
+            card.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-sm font-bold text-white">${c.name}</h3>
+                            <span class="text-xs px-2 py-0.5 rounded font-mono font-bold ${c.score_pct >= 80 ? "bg-emerald-500/20 text-emerald-400" : "bg-sky-500/20 text-sky-400"}">
+                                ${c.score_pct}%
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">${c.description}</p>
+                        <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden">
+                            <div class="bg-gradient-to-r from-sky-500 to-cyber-accent h-2 rounded-full transition-all duration-500" style="width: ${c.score_pct}%"></div>
+                        </div>
+                        <div class="text-[11px] text-slate-500 flex justify-between">
+                            <span>Completed: ${c.challenges_completed} Scenarios</span>
+                            <span>Status: ${c.score_pct >= 80 ? "Proficient" : c.score_pct > 0 ? "In Progress" : "Pending"}</span>
+                        </div>
+                    `;
+            container.appendChild(card);
+          });
+        } catch (err) {
+          container.innerHTML = `<div class="text-red-400">Failed to load competencies.</div>`;
+        }
+      }
+
+      async function loadScoreboard() {
+        const tbody = document.getElementById("scoreboard-table-body");
+        try {
+          const res = await fetch("/api/scoreboard");
+          const list = await res.json();
+
+          if (list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="3" class="px-6 py-4 text-center text-slate-500">No submissions yet</td></tr>`;
+            return;
+          }
+
+          tbody.innerHTML = list
+            .map(
+              (item) => `
+                    <tr>
+                        <td class="px-6 py-3 font-mono font-bold ${item.rank === 1 ? "text-amber-400" : "text-slate-300"}">#${item.rank}</td>
+                        <td class="px-6 py-3 text-white font-medium">${item.user_id === currentUser.id ? "You (" + currentUser.username + ")" : item.user_id.slice(0, 12)}</td>
+                        <td class="px-6 py-3 text-cyber-accent font-mono font-bold">${item.score} pts</td>
+                    </tr>
+                `,
+            )
+            .join("");
+        } catch (err) {}
+      }
+
+      async function fetchInstructorData() {
+        try {
+          const [overviewRes, instancesRes, auditRes] = await Promise.all([
+            fetch("/api/instructor/overview"),
+            fetch("/api/instructor/instances"),
+            fetch("/api/instructor/audit-logs"),
+          ]);
+
+          const overview = await overviewRes.json();
+          const instances = await instancesRes.json();
+          const auditLogs = await auditRes.json();
+
+          document.getElementById("inst-active-count").textContent =
+            overview.active_instances_count;
+          document.getElementById("inst-total-subs").textContent =
+            overview.total_submissions;
+          const rate =
+            overview.total_submissions > 0
+              ? Math.round(
+                  (overview.correct_submissions / overview.total_submissions) *
+                    100,
+                )
+              : 0;
+          document.getElementById("inst-solve-rate").textContent = `${rate}%`;
+
+          // Render Instances
+          const instTbody = document.getElementById("instances-table-body");
+          if (instances.length === 0) {
+            instTbody.innerHTML = `<tr><td colspan="5" class="px-4 py-6 text-center text-slate-500">No active student containers.</td></tr>`;
+          } else {
+            instTbody.innerHTML = instances
+              .map(
+                (inst) => `
+                        <tr>
+                            <td class="px-4 py-2 text-white font-medium">${inst.username}</td>
+                            <td class="px-4 py-2 text-slate-300">${inst.challenge_id}</td>
+                            <td class="px-4 py-2"><span class="px-2 py-0.5 rounded text-[11px] bg-emerald-500/20 text-emerald-400">${inst.status}</span></td>
+                            <td class="px-4 py-2 font-mono text-xs text-slate-300">${Math.floor(inst.time_remaining_seconds / 60)}m ${inst.time_remaining_seconds % 60}s</td>
+                            <td class="px-4 py-2 text-right">
+                                <button onclick="terminateInstance('${inst.session_id}')" class="text-xs px-2 py-1 rounded bg-red-500/20 text-red-300 border border-red-500/30 hover:bg-red-500/30">Terminate</button>
+                            </td>
+                        </tr>
+                    `,
+              )
+              .join("");
+          }
+
+          // Render Challenge Stats
+          const statsTbody = document.getElementById(
+            "challenge-stats-table-body",
+          );
+          statsTbody.innerHTML = (
+            overview.class_analytics.challenge_stats || []
+          )
+            .map(
+              (cs) => `
+                    <tr>
+                        <td class="px-4 py-2 text-white font-medium">${cs.title}</td>
+                        <td class="px-4 py-2 text-slate-400">${cs.category}</td>
+                        <td class="px-4 py-2 text-slate-400">${cs.difficulty}</td>
+                        <td class="px-4 py-2 text-slate-300">${cs.total_attempts}</td>
+                        <td class="px-4 py-2 text-emerald-400 font-semibold">${cs.successful_solves}</td>
+                        <td class="px-4 py-2 font-mono">${cs.success_rate_pct}%</td>
+                    </tr>
+                `,
+            )
+            .join("");
+
+          // Render Audit Logs
+          const auditTbody = document.getElementById("audit-logs-table-body");
+          auditTbody.innerHTML = auditLogs
+            .map(
+              (l) => `
+                    <tr>
+                        <td class="px-4 py-1.5 text-slate-400">${l.timestamp.split("T")[1].slice(0, 8)}</td>
+                        <td class="px-4 py-1.5 text-cyber-accent font-semibold">${l.event_type}</td>
+                        <td class="px-4 py-1.5"><span class="px-1.5 py-0.5 rounded text-[10px] ${l.severity === "WARN" ? "bg-amber-500/20 text-amber-300" : "bg-slate-800 text-slate-300"}">${l.severity}</span></td>
+                        <td class="px-4 py-1.5 text-slate-300">${JSON.stringify(l.details)}</td>
+                    </tr>
+                `,
+            )
+            .join("");
+        } catch (err) {
+          console.error("Failed fetching instructor data:", err);
+        }
+      }
+
+      async function terminateInstance(sessionId) {
+        if (!confirm(`Force terminate instance ${sessionId}?`)) return;
+        await fetch(`/api/instructor/instances/${sessionId}/terminate`, {
+          method: "POST",
+        });
+        fetchInstructorData();
+      }
+
+      async function syncChallenges() {
+        const res = await fetch("/api/instructor/sync-challenges", {
+          method: "POST",
+        });
+        const data = await res.json();
+        alert(data.message);
+        fetchInstructorData();
+        loadCurriculum();
+      }
+    </script>
+  </body>
+</html>

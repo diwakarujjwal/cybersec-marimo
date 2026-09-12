@@ -1,0 +1,28 @@
+id: "04-vulnerable-web-app"
+title: "INCIDENT 0404 — Corporate Directory & SQL Injection"
+category: "Web Application Security"
+difficulty: "Intermediate"
+points: 150
+duration_minutes: 45
+competency_id: "web_security"
+competency_weight: 1.2
+container:
+  type: "web_app"
+  image: "cyberlab/challenge-04:latest"
+  cpu_limit: "0.5"
+  memory_limit: "512M"
+  pids_limit: 100
+  read_only_root: true
+  network: "internal"
+flag: "FLAG{sqli_union_payroll_leak_pwned}"
+hints:
+  - id: 1
+    content: "The employee search input does not use parameterized queries. Test with single quotes: ' OR 1=1 --"
+    penalty: 20
+  - id: 2
+    content: "Use a UNION SELECT injection to read from the hidden 'payroll_audit' table: ' UNION SELECT id, employee_id, notes, flag FROM payroll_audit --"
+    penalty: 35
+objectives:
+  - "Discover the input field vulnerable to SQL injection."
+  - "Determine the database schema and query hidden internal tables."
+  - "Exfiltrate the flag from the payroll audit table."
