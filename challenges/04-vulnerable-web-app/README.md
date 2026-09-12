@@ -10,7 +10,7 @@ You have been tasked with conducting an educational security assessment of the w
 
 1. Interact with the application through your browser interface or the automated Marimo API tester.
 2. Identify the input handling flaw on the employee directory search.
-3. Construct a SQL injection payload to enumerate the database and extract confidential audit records from the `payroll_audit` table.
+3. Construct a SQL injection payload to enumerate the database schema and extract confidential audit records from internal restricted tables.
 4. Retrieve the flag and submit it to CTFd.
 
 **Flag Format**: `FLAG{...}`

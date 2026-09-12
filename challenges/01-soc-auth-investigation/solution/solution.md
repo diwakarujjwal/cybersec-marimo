@@ -59,15 +59,17 @@ Follow these sequential steps in the interactive Marimo notebook or in your inve
 
 ### Step 3: Reconstruct the Chronological Attack Timeline
 
-1. **Inspect Step 3 (Attack Timeline)**:
-   - The table automatically filters all events originating from `198.51.100.42` in chronological order.
+1. **Select the Anomalous IP in Step 3**:
+   - In **Step 3: Chronological Attack Timeline Analysis**, click the `Select Source IP to Trace Timeline:` dropdown and choose `198.51.100.42` (identified from the anomaly triage in Step 2).
 2. **Identify the Breach Point**:
-   - Notice the prominent red alert banner:
-     > 🚨 **CRITICAL FINDING**: Source IP `198.51.100.42` achieved **1 successful logon(s)** after brute forcing! Target user: **`admin_finance`** at `2026-09-10 03:14:22`.
-   - The adversary systematically rotated through credential lists until hitting valid credentials for `admin_finance`.
-   - **Event ID**: `4624` (Successful Logon)
+   - Notice the prominent red breach alert banner that appears:
+     > 🚨 **BREACH DETECTED**: Source IP `198.51.100.42` obtained **1 successful logon(s)** after repeated failures!
+     > - **Compromised Account**: `admin_finance`
+     > - **Breach Timestamp**: `2026-09-10 03:14:22 UTC`
+     > - **Logon Event ID**: `4624` (Logon Success)
+   - The adversary systematically rotated through user credential dictionaries until hitting valid credentials for `admin_finance`.
    - **Authentication Package**: `NTLM`
-   - **Workstation**: `PAYROLL-SRV01`
+   - **Target Host**: `PAYROLL-SRV01`
 
 ---
 
@@ -95,11 +97,13 @@ Follow these sequential steps in the interactive Marimo notebook or in your inve
 
 ### Step 5: Flag Verification & Submission
 
-1. **Verify the Flag**:
-   - In **Step 5: Verify Incident Flag & IOCs**, paste `FLAG{brute_force_pivot_admin_2026}` into the text box.
+1. **Verify the Flag in the Notebook**:
+   - In **Step 5: Verify Incident Flag & IOC Report**, paste `FLAG{brute_force_pivot_admin_2026}` into the text box.
+   - The workbench validates the candidate flag using one-way cryptographic SHA-256 verification (`3422238b011b622ac8dfe184eef91461c0dd7728771aa7e343915790c26e87a8`), ensuring no plaintext answers can be inspected in the notebook code.
    - Confirm the green verification card: `🎉 FLAG VERIFIED CORRECT!`.
+   - Upon correct verification, the confirmed **Threat Intelligence Indicators of Compromise (IOCs)** report unlocks below the input.
 2. **Submit to Portal**:
-   - Copy `FLAG{brute_force_pivot_admin_2026}` into the CyberLab challenge submission pane to earn 100 points.
+   - Copy `FLAG{brute_force_pivot_admin_2026}` into the CyberLab challenge submission pane in the left portal to claim your 100 points and register your SOC competency.
 
 ---
 

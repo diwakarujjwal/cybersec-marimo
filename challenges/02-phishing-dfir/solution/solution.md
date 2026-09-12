@@ -108,12 +108,14 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
 
 ### Step 5: Flag Verification & Submission
 
-1. **Verify the Flag**:
-   - In **Step 5: Verify Incident Flag & IOCs**, enter:
+1. **Verify the Flag in the Notebook**:
+   - In **Step 5: Verify Incident Flag & Threat Intel Report**, enter:
      `FLAG{dmarc_fail_invoice_c2_domain_detected}`
+   - The workbench validates the candidate flag using one-way cryptographic SHA-256 verification (`5f458b9db61a55c7839ede55b271e293e24fee62fe40cb384d55445b9b5666ae`), ensuring no plaintext answers can be inspected in the notebook code.
    - Confirm the green success banner: `🎉 FLAG VERIFIED CORRECT!`.
+   - Upon correct verification, the confirmed **Threat Intelligence Indicators (IOCs)** report unlocks below the input box.
 2. **Submit to Portal**:
-   - Copy `FLAG{dmarc_fail_invoice_c2_domain_detected}` into the CyberLab challenge submission box to claim 100 points.
+   - Copy `FLAG{dmarc_fail_invoice_c2_domain_detected}` into the CyberLab challenge submission box in the left portal pane to claim your 100 points and register your Phishing DFIR competency.
 
 ---
 

