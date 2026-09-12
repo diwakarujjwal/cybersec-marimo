@@ -648,13 +648,17 @@ def console_root(
     [data-testid="hide-code-button"],
     [data-testid="fullscreen-output-button"],
     [data-testid="expand-output-button"],
+    .hover-actions-parent,
     .hover-actions-parent > .hover-action,
     .shoulder-right,
+    .shoulder-left,
     .cell-actions,
     .cell-actions-button,
     .cell-bottom-menu,
     .add-cell-button {
         display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 
     /* 3. Eliminate Marimo Authoring Header & Footers */
@@ -671,15 +675,47 @@ def console_root(
         display: none !important;
     }
 
-    /* 5. Fullscreen / Maximized Console Layout */
-    .marimo-cell:has(.cyberlab-topbar) {
+    /* 5. Fullscreen / Maximized Console Layout BY DEFAULT */
+    html, body {
         width: 100% !important;
-        max-width: 100% !important;
+        height: 100% !important;
         margin: 0 !important;
-        padding: 0 4px !important;
+        padding: 0 !important;
+        background: #020617 !important;
+        overflow: hidden !important;
     }
 
     #App, main, #app-chrome-body, [data-testid="column-container"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #020617 !important;
+    }
+
+    .marimo-cell:has(.cyberlab-topbar) {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 10px 16px !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        background: #020617 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .marimo-cell:has(.cyberlab-topbar) > div,
+    .marimo-cell:has(.cyberlab-topbar) [data-testid="cell-output-container"],
+    .marimo-cell:has(.cyberlab-topbar) [data-testid="marimo-cell-output"] {
+        width: 100% !important;
         max-width: 100% !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -712,25 +748,6 @@ def console_root(
         border-radius: 4px;
         letter-spacing: 0.5px;
     }
-    .cyberlab-topbar .fullscreen-btn {
-        background: #1e293b;
-        color: #38bdf8;
-        border: 1px solid #334155;
-        padding: 6px 14px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 12px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        transition: all 0.2s;
-    }
-    .cyberlab-topbar .fullscreen-btn:hover {
-        background: #0284c7;
-        color: #ffffff;
-        border-color: #0284c7;
-    }
     </style>
     """)
 
@@ -741,9 +758,6 @@ def console_root(
             <span>SOC Incident 0101: Operation NightShift</span>
             <span style="color: #64748b; font-weight: 400;">| Target: PAYROLL-SRV01 | TLP:AMBER</span>
         </div>
-        <button class="fullscreen-btn" onclick="if (!document.fullscreenElement) { (document.documentElement || document.body).requestFullscreen(); } else { document.exitFullscreen(); }">
-            <span style="font-size: 15px;">⤢</span> Fullscreen Workspace
-        </button>
     </div>
     """)
 

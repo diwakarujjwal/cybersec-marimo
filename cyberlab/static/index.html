@@ -637,11 +637,12 @@
       }
 
       function renderChallengeStage(chal) {
-        const isSessionRunning = activeSession && activeSession.challenge_id === chal.id;
+        const isSessionRunning =
+          activeSession && activeSession.challenge_id === chal.id;
         const proxyUrl = isSessionRunning
-          ? (activeSession.proxy_path.includes("?")
-              ? activeSession.proxy_path + "&show-chrome=false"
-              : activeSession.proxy_path + "?show-chrome=false")
+          ? activeSession.proxy_path.includes("?")
+            ? activeSession.proxy_path + "&show-chrome=false"
+            : activeSession.proxy_path + "?show-chrome=false"
           : "#";
 
         const stage = document.getElementById("challenge-stage");
@@ -658,11 +659,12 @@
                         <h2 class="text-xl font-bold text-white mt-1">${chal.title}</h2>
                     </div>
                     <div class="flex items-center gap-2">
-                        ${isSessionRunning 
-                          ? `<button onclick="launchFullscreenConsole()" id="btn-start-env" class="px-4 py-2 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/40 text-sm font-medium transition shadow-lg flex items-center gap-2">
+                        ${
+                          isSessionRunning
+                            ? `<button onclick="launchFullscreenConsole()" id="btn-start-env" class="px-4 py-2 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/40 text-sm font-medium transition shadow-lg flex items-center gap-2">
                                <span>✓ Environment Active (Open Console)</span>
                              </button>`
-                          : `<button onclick="startChallengeEnvironment('${chal.id}')" id="btn-start-env" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                            : `<button onclick="startChallengeEnvironment('${chal.id}')" id="btn-start-env" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
                                <span>⚡ Launch Environment</span>
                              </button>`
                         }
@@ -685,7 +687,7 @@
                 </div>
 
                 <!-- Active Sandbox Session Container -->
-                <div id="sandbox-session-panel" class="${isSessionRunning ? '' : 'hidden'} space-y-4 pt-2 border-t border-slate-800">
+                <div id="sandbox-session-panel" class="${isSessionRunning ? "" : "hidden"} space-y-4 pt-2 border-t border-slate-800">
                     <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-sky-950/40 p-5 rounded-xl border border-sky-500/30 shadow-lg shadow-sky-950/20">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div class="space-y-1">
@@ -1104,7 +1106,11 @@
         }
 
         // Set iframe source if needed
-        if (!iframe.src || iframe.src === "about:blank" || !iframe.src.includes(activeSession.id)) {
+        if (
+          !iframe.src ||
+          iframe.src === "about:blank" ||
+          !iframe.src.includes(activeSession.id)
+        ) {
           iframe.src = proxyUrl;
         }
 
@@ -1113,11 +1119,15 @@
         // Request browser fullscreen on the workspace container
         try {
           if (ws.requestFullscreen) {
-            ws.requestFullscreen().catch((err) => console.warn("Fullscreen request note:", err));
+            ws.requestFullscreen().catch((err) =>
+              console.warn("Fullscreen request note:", err),
+            );
           } else if (ws.webkitRequestFullscreen) {
             ws.webkitRequestFullscreen();
           } else if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen().catch((err) => console.warn("Fullscreen request note:", err));
+            document.documentElement
+              .requestFullscreen()
+              .catch((err) => console.warn("Fullscreen request note:", err));
           }
         } catch (err) {
           console.warn("Fullscreen request note:", err);
