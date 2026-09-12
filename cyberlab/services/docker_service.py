@@ -293,7 +293,7 @@ class SandboxedProcessDriver(BaseContainerDriver):
         (scratch_dir / ".marimo").mkdir(parents=True, exist_ok=True)
         config_marimo_dir = scratch_dir / ".config" / "marimo"
         config_marimo_dir.mkdir(parents=True, exist_ok=True)
-        dark_theme_cfg = '[display]\ntheme = "dark"\ndataframes = "rich"\ndefault_width = "full"\n'
+        dark_theme_cfg = '[display]\ntheme = "dark"\ndataframes = "rich"\ndefault_width = "full"\n\n[runtime]\nauto_instantiate = true\n'
         (scratch_dir / ".marimo.toml").write_text(dark_theme_cfg)
         (config_marimo_dir / "marimo.toml").write_text(dark_theme_cfg)
 

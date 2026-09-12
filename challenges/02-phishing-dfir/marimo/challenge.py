@@ -1,10 +1,13 @@
 import marimo
 
 __generated_with = "0.24.1"
-app = marimo.App()
+app = marimo.App(
+    width="full",
+    app_title="DFIR Incident 0202: Executive Spearphish & Invoice Fraud",
+)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __():
     import base64
     import email
@@ -19,7 +22,7 @@ def __():
     return Path, base64, email, hashlib, json, mo, pd, policy, re
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(Path, email, hashlib, json, pd, policy):
     # Locate email and DNS telemetry artifacts
     possible_eml_paths = [
@@ -88,7 +91,7 @@ def __(Path, email, hashlib, json, pd, policy):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Analyst Sidebar: Incident Scope, MITRE ATT&CK & Checklist
     check_headers = mo.ui.checkbox(
@@ -159,7 +162,7 @@ def __(mo):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(attachments, df_dns, mo, msg, raw_eml_bytes):
     # Tab 1: Email Header & Sender Authentication Forensics
     dmarc_status = "FAIL"
@@ -271,7 +274,7 @@ def __(attachments, df_dns, mo, msg, raw_eml_bytes):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(attachments, mo):
     # Tab 2: Attachment Carving & Metadata
     if attachments:
@@ -317,7 +320,7 @@ def __(attachments, mo):
     return att, att_meta_table, dl_docm, macro_code_view, tab2_view
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Tab 3: Python Scratchpad & Manual Decoder Controls
     py_scratch = mo.ui.code_editor(
@@ -354,7 +357,7 @@ def __(mo):
     return decoder_input, encoding_mode, py_scratch
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(attachments, base64, decoder_input, encoding_mode, mo, py_scratch, re):
     # Tab 3: Deobfuscation Execution Engine (Python + Manual)
     py_code = py_scratch.value.strip()
@@ -425,7 +428,7 @@ def __(attachments, base64, decoder_input, encoding_mode, mo, py_scratch, re):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(df_dns, mo):
     # Tab 4: Correlated Host DNS Telemetry View
     if not df_dns.empty:
@@ -462,7 +465,7 @@ def __(df_dns, mo):
     return c2_alert, dns_table, tab4_view
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Tab 5: Flag Input Control
     candidate_flag = mo.ui.text(
@@ -472,7 +475,7 @@ def __(mo):
     return (candidate_flag,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(candidate_flag, hashlib, mo, re):
     # Tab 5: Anti-Cheat SHA-256 Flag Verification & IOC Report
     val = candidate_flag.value.strip()
@@ -501,7 +504,7 @@ def __(candidate_flag, hashlib, mo, re):
                 | :--- | :--- | :--- |
                 | **Sender Domain** | `quickbooks-invoicing-update.com` | Typosquatting / Spoofed domain |
                 | **Originating IP** | `203.0.113.88` | SPF unauthorized sending relay |
-                | **Malicious File** | `invoice_overdue_march2026.docm` | Weaponized Word Document with VBA |
+                | **Malicious File** | `Invoice_Sept2026_OVERDUE.docm` | Weaponized Word Document with VBA |
                 | **Attachment SHA-256** | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` | Static file IOC |
                 | **C2 Domain** | `c2-exfil-node.darknet-routing.org` | HTTP beacon callback endpoint |
                 """),

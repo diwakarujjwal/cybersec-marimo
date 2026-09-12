@@ -30,8 +30,8 @@ Follow these sequential steps in the interactive Marimo SIEM Console:
 1. **Review the Executive Alert**: In the first tab, inspect the incident context and target host profile (`PAYROLL-SRV01`, Windows Server 2022).
 2. **Review Top KPI Stat Cards**:
    - **Total Events Audited**: `1,073`
-   - **Authentication Failures (Event ID 4625)**: `204+`
-   - **Successful Logons (Event ID 4624)**: `800+`
+   - **Authentication Failures (Event ID 4625)**: `250`
+   - **Successful Logons (Event ID 4624)**: `803`
    - **Distinct Source IPs**: `18`
 
 ---
@@ -52,6 +52,7 @@ Follow these sequential steps in the interactive Marimo SIEM Console:
 ### Step 3: Live Python Security Analytics (Tab: `💻 Analyst Python Scratchpad`)
 
 Real SOC analysts routinely write Python and Pandas snippets to slice telemetry. In the **Analyst Python Scratchpad** tab:
+
 1. **Execute Pre-Loaded Aggregation**:
    - The embedded code editor runs live Pandas code against `df`. The default query aggregates failures by source IP:
      ```python
@@ -59,7 +60,7 @@ Real SOC analysts routinely write Python and Pandas snippets to slice telemetry.
      top_failures = failures.groupby('source_ip').size().reset_index(name='fail_count')
      top_failures.sort_values(by='fail_count', ascending=False).head(10)
      ```
-   - Notice that `198.51.100.42` immediately surfaces with 204 failures!
+   - Notice that `198.51.100.42` immediately surfaces with 250 failures!
 2. **Calculate the Compromise Time Delta**:
    - Enter the following snippet in the editor to calculate the exact duration between the last failed attempt and successful logon:
      ```python
@@ -67,7 +68,7 @@ Real SOC analysts routinely write Python and Pandas snippets to slice telemetry.
      fail = df[(df['source_ip']=='198.51.100.42') & (df['status']=='FAILURE')]['timestamp'].max()
      f"Transition Delay: {succ - fail}"
      ```
-   - Output shows the breach occurred within 24 seconds of brute-force completion.
+   - Output shows the breach occurred within 19 seconds (`0 days 00:00:19`) of brute-force completion.
 
 ---
 
@@ -79,6 +80,7 @@ Real SOC analysts routinely write Python and Pandas snippets to slice telemetry.
 2. **Identify the Breach Point**:
    - Observe the prominent red alert:
      > 🚨 **BREACH CONFIRMED**: Source IP `198.51.100.42` achieved **1 successful logon(s)** after repeated failures!
+     >
      > - **Compromised Account**: `admin_finance`
      > - **Breach Timestamp**: `2026-09-10 03:14:22 UTC`
      > - **Logon Event ID**: `4624` (Logon Success)

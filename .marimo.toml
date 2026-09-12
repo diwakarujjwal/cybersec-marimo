@@ -2,3 +2,6 @@
 theme = "dark"
 dataframes = "rich"
 default_width = "full"
+
+[runtime]
+auto_instantiate = true

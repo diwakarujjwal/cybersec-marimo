@@ -1,10 +1,10 @@
 import marimo
 
 __generated_with = "0.24.1"
-app = marimo.App()
+app = marimo.App(width="full", app_title="SOC Incident 0101: Operation NightShift")
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __():
     import hashlib
     import json
@@ -16,7 +16,7 @@ def __():
     return Path, hashlib, json, mo, pd, re
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(Path, json, pd):
     # Locate dataset across local sandbox, repository root, and container environments
     possible_paths = [
@@ -66,7 +66,7 @@ def __(Path, json, pd):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Analyst Sidebar: Incident Context, MITRE Mapping & Checklist
     check_ip = mo.ui.checkbox(
@@ -130,7 +130,7 @@ def __(mo):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(failed_events, mo, success_events, total_events, unique_ips):
     # Tab 1: Alert Triage & Scope View
     triage_view = mo.vstack(
@@ -193,7 +193,7 @@ def __(failed_events, mo, success_events, total_events, unique_ips):
     return (triage_view,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Tab 2: Raw Telemetry Explorer Controls
     status_filter = mo.ui.dropdown(
@@ -212,7 +212,7 @@ def __(mo):
     return ip_search, status_filter, user_search
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(df, ip_search, mo, status_filter, user_search):
     # Tab 2: Filtered Telemetry Explorer View & Export
     filtered = df.copy() if not df.empty else df
@@ -279,7 +279,7 @@ def __(df, ip_search, mo, status_filter, user_search):
     return download_btn, export_json, filtered, raw_table, telemetry_view
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Tab 3: Analyst Live Python Code Editor
     scratchpad = mo.ui.code_editor(
@@ -297,7 +297,7 @@ def __(mo):
     return (scratchpad,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(df, mo, pd, scratchpad):
     # Tab 3: Reactive Python Execution Engine
     code_text = scratchpad.value.strip()
@@ -371,20 +371,22 @@ def __(df, mo, pd, scratchpad):
     return code_text, eval_result, locs, scratchpad_view
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
-    # Tab 4: Anomaly Threshold Slider Control
+    # Tab 4: Anomaly Threshold Slider Control with Editable Input Box
     min_fail_slider = mo.ui.slider(
         start=1,
-        stop=220,
+        stop=260,
         step=5,
         value=20,
+        show_value=True,
+        include_input=True,
         label="Min Failed Logons Threshold:",
     )
     return (min_fail_slider,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(df, min_fail_slider, mo):
     # Tab 4: Anomaly Table & Source IP Selector
     if not df.empty and "status" in df.columns:
@@ -427,7 +429,7 @@ def __(df, min_fail_slider, mo):
     return anomaly_table, fail_summary, failures, ip_choices, timeline_ip_select
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(anomaly_table, df, min_fail_slider, mo, timeline_ip_select):
     # Tab 4: Chronological Attack Timeline & LOLBin Forensics View
     selected_ip = timeline_ip_select.value
@@ -533,7 +535,7 @@ def __(anomaly_table, df, min_fail_slider, mo, timeline_ip_select):
     )
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(mo):
     # Tab 5: Flag Input Control
     candidate_flag = mo.ui.text(
@@ -543,7 +545,7 @@ def __(mo):
     return (candidate_flag,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def __(candidate_flag, hashlib, mo, re):
     # Tab 5: Anti-Cheat SHA-256 Verification & IOC Report Unlock
     val = candidate_flag.value.strip()
