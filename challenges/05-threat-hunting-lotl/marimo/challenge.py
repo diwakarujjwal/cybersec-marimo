@@ -229,7 +229,13 @@ def __(df_proc, mo, proc_filter, rogue_proc):
         show_column_summaries=False,
     )
 
-    if search_term and any(term in search_term for term in ["svchost", "temp", "tunnel", "appdata"]) and not rogue_proc.empty:
+    if (
+        search_term
+        and any(
+            term in search_term for term in ["svchost", "temp", "tunnel", "appdata"]
+        )
+        and not rogue_proc.empty
+    ):
         r = rogue_proc.iloc[0]
         masquerade_callout = mo.callout(
             mo.md(
@@ -383,7 +389,9 @@ def __(candidate_flag, hashlib, mo, re):
         flag_feedback = mo.md(
             "Enter the flag recovered from the decoded DNS tunneling subdomain."
         )
-        ioc_view = mo.md("🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*"
+        )
     elif hashlib.sha256(val_flag.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
@@ -410,7 +418,9 @@ def __(candidate_flag, hashlib, mo, re):
             mo.md("❌ Incorrect flag. Verify the decoded Base64 payload in Step 3."),
             kind="danger",
         )
-        ioc_view = mo.md("🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*"
+        )
     else:
         flag_feedback = mo.callout(
             mo.md(
@@ -418,7 +428,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="warn",
         )
-        ioc_view = mo.md("🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*"
+        )
 
     step4_view = mo.vstack(
         [

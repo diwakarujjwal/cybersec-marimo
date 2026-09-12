@@ -347,7 +347,9 @@ def __(df, mo, timeline_ip_select):
             )
         else:
             breach_alert = mo.callout(
-                mo.md(f"No successful logons detected for `{selected_ip}` in this timeframe."),
+                mo.md(
+                    f"No successful logons detected for `{selected_ip}` in this timeframe."
+                ),
                 kind="info",
             )
 
@@ -369,7 +371,9 @@ def __(df, mo, timeline_ip_select):
         )
     else:
         breach_alert = mo.md("")
-        timeline_table = mo.md("Select an IP address above to display its chronological activity.")
+        timeline_table = mo.md(
+            "Select an IP address above to display its chronological activity."
+        )
 
     step3_view = mo.vstack(
         [
@@ -457,7 +461,9 @@ def __(candidate_flag, hashlib, mo, re):
         flag_feedback = mo.md(
             "Enter the flag discovered in the attacker's executed commands above."
         )
-        ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
+        )
     elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
@@ -468,7 +474,9 @@ def __(candidate_flag, hashlib, mo, re):
         )
         ioc_view = mo.vstack(
             [
-                mo.md("### 📋 Confirmed Threat Intelligence Indicators of Compromise (IOCs):"),
+                mo.md(
+                    "### 📋 Confirmed Threat Intelligence Indicators of Compromise (IOCs):"
+                ),
                 mo.md("""
                 | Indicator Type | Value | Threat Context |
                 | :--- | :--- | :--- |
@@ -486,7 +494,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="danger",
         )
-        ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
+        )
     else:
         flag_feedback = mo.callout(
             mo.md(
@@ -494,7 +504,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="warn",
         )
-        ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
+        )
 
     step5_view = mo.vstack(
         [

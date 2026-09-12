@@ -392,7 +392,9 @@ def __(candidate_flag, hashlib, mo, re):
         flag_feedback = mo.md(
             "Enter the flag discovered inside the backdoor script comment."
         )
-        remediation_view = mo.md("🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*")
+        remediation_view = mo.md(
+            "🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*"
+        )
     elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
@@ -422,7 +424,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="danger",
         )
-        remediation_view = mo.md("🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*")
+        remediation_view = mo.md(
+            "🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*"
+        )
     else:
         flag_feedback = mo.callout(
             mo.md(
@@ -430,7 +434,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="warn",
         )
-        remediation_view = mo.md("🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*")
+        remediation_view = mo.md(
+            "🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*"
+        )
 
     step5_view = mo.vstack(
         [

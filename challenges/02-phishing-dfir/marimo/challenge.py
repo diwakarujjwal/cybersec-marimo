@@ -425,7 +425,9 @@ def __(candidate_flag, hashlib, mo, re):
         flag_feedback = mo.md(
             "Enter the flag recovered from the macro payload or correlated DNS telemetry."
         )
-        ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
+        )
     elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
@@ -455,7 +457,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="danger",
         )
-        ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
+        )
     else:
         flag_feedback = mo.callout(
             mo.md(
@@ -463,7 +467,9 @@ def __(candidate_flag, hashlib, mo, re):
             ),
             kind="warn",
         )
-        ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
+        ioc_view = mo.md(
+            "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
+        )
 
     step5_view = mo.vstack(
         [
