@@ -667,19 +667,19 @@ def console_root(
     }
 
     /* 4. Hide all backend/setup cells above the Console */
-    .marimo-cell:not([data-cell-name="console_root"]) {
+    .marimo-cell:not(:has(.cyberlab-topbar)) {
         display: none !important;
     }
 
     /* 5. Fullscreen / Maximized Console Layout */
-    .marimo-cell[data-cell-name="console_root"] {
+    .marimo-cell:has(.cyberlab-topbar) {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
         padding: 0 4px !important;
     }
 
-    #App, main, #app-chrome-body {
+    #App, main, #app-chrome-body, [data-testid="column-container"] {
         max-width: 100% !important;
         padding: 0 !important;
         margin: 0 !important;

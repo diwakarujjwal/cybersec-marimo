@@ -688,9 +688,11 @@
                                 </p>
                             </div>
                             <div class="flex items-center gap-2.5 flex-wrap">
-                                <a id="session-newtab-btn" href="#" target="_blank" class="px-4 py-2.5 rounded-lg bg-cyber-accent hover:bg-sky-400 text-slate-950 font-bold text-sm transition flex items-center gap-2 shadow-md shadow-sky-500/20">
-                                    <span>⤢ Open Fullscreen Console</span>
-                                    <span>↗</span>
+                                <button onclick="launchFullscreenConsole()" class="px-5 py-2.5 rounded-lg bg-cyber-accent hover:bg-sky-400 text-slate-950 font-bold text-sm transition flex items-center gap-2 shadow-lg shadow-sky-500/25">
+                                    <span>⤢ Launch Fullscreen Console</span>
+                                </button>
+                                <a id="session-newtab-btn" href="#" target="_blank" class="text-xs px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5" title="Open in separate tab">
+                                    <span>↗ New Tab</span>
                                 </a>
                                 <button onclick="resetCurrentSession()" class="text-xs px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition">
                                     ↺ Reset
@@ -782,17 +784,21 @@
         if (sessionTimerInterval) clearInterval(sessionTimerInterval);
         let rem = secondsRemaining;
         const el = document.getElementById("session-countdown");
+        const fsEl = document.getElementById("fs-countdown");
 
         sessionTimerInterval = setInterval(() => {
           if (rem <= 0) {
             clearInterval(sessionTimerInterval);
-            el.textContent = "EXPIRED";
+            if (el) el.textContent = "EXPIRED";
+            if (fsEl) fsEl.textContent = "EXPIRED";
             return;
           }
           rem--;
           const mins = Math.floor(rem / 60);
           const secs = rem % 60;
-          el.textContent = `TTL: ${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+          const ttlText = `TTL: ${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+          if (el) el.textContent = ttlText;
+          if (fsEl) fsEl.textContent = ttlText;
         }, 1000);
       }
 
@@ -1055,6 +1061,125 @@
         fetchInstructorData();
         loadCurriculum();
       }
+
+      async function launchFullscreenConsole() {
+        if (!activeSession) return;
+        const ws = document.getElementById("fullscreen-workspace");
+        const iframe = document.getElementById("fullscreen-iframe");
+        const proxyUrl = activeSession.proxy_path.includes("?")
+          ? activeSession.proxy_path + "&show-chrome=false"
+          : activeSession.proxy_path + "?show-chrome=false";
+
+        const chal = challenges.find((c) => c.id === activeChallengeId);
+        if (chal) {
+          const titleEl = document.getElementById("fs-challenge-title");
+          if (titleEl) titleEl.textContent = chal.title;
+        }
+
+        iframe.src = proxyUrl;
+        ws.classList.remove("hidden");
+
+        // Request browser fullscreen on the workspace container
+        try {
+          if (ws.requestFullscreen) {
+            await ws.requestFullscreen();
+          } else if (ws.webkitRequestFullscreen) {
+            await ws.webkitRequestFullscreen();
+          } else if (document.documentElement.requestFullscreen) {
+            await document.documentElement.requestFullscreen();
+          }
+        } catch (err) {
+          console.warn("Fullscreen request note:", err);
+        }
+      }
+
+      function exitFullscreenConsole() {
+        const ws = document.getElementById("fullscreen-workspace");
+        if (document.fullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+        if (ws) ws.classList.add("hidden");
+        const iframe = document.getElementById("fullscreen-iframe");
+        if (iframe) iframe.src = "about:blank";
+      }
+
+      document.addEventListener("fullscreenchange", () => {
+        if (!document.fullscreenElement) {
+          const ws = document.getElementById("fullscreen-workspace");
+          if (ws && !ws.classList.contains("hidden")) {
+            ws.classList.add("hidden");
+            const iframe = document.getElementById("fullscreen-iframe");
+            if (iframe) iframe.src = "about:blank";
+          }
+        }
+      });
+
+      async function submitFlagFromFs() {
+        const input = document.getElementById("fs-flag-input");
+        const flag = input.value.trim();
+        const feedback = document.getElementById("fs-flag-feedback");
+        if (!flag || !activeChallengeId) return;
+
+        try {
+          const res = await fetch(`/api/challenges/${activeChallengeId}/submit`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ flag: flag }),
+          });
+          const data = await res.json();
+          feedback.classList.remove("hidden");
+          if (data.is_correct) {
+            feedback.className = "text-[11px] text-emerald-400 font-bold ml-1";
+            feedback.textContent = `✓ Correct (+${data.points} pts)`;
+            loadCurriculum();
+          } else {
+            feedback.className = "text-[11px] text-red-400 font-bold ml-1";
+            feedback.textContent = `✗ ${data.message || "Incorrect flag"}`;
+          }
+        } catch (err) {
+          feedback.className = "text-[11px] text-red-400 font-bold ml-1";
+          feedback.textContent = "Submission error";
+        }
+      }
     </script>
+
+    <!-- Fullscreen Dedicated Investigation Workspace Modal -->
+    <div id="fullscreen-workspace" class="fixed inset-0 z-50 bg-slate-950 flex flex-col hidden w-screen h-screen">
+      <!-- Top Operations HUD Bar -->
+      <div class="h-12 bg-slate-900 border-b border-slate-800 px-4 flex items-center justify-between shrink-0 shadow-md">
+        <div class="flex items-center gap-3">
+          <span class="flex h-2.5 w-2.5 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span class="text-xs font-bold text-cyber-accent tracking-wider uppercase">CyberLab Operations HUD</span>
+          <span class="text-slate-600">|</span>
+          <span id="fs-challenge-title" class="text-xs font-semibold text-white truncate max-w-xs sm:max-w-md">Investigation Console</span>
+          <span id="fs-countdown" class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/20">TTL: --:--</span>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <!-- Quick Flag Submission in HUD -->
+          <div class="hidden sm:flex items-center gap-1.5 mr-2">
+            <input type="text" id="fs-flag-input" placeholder="Submit flag..." class="w-44 px-2 py-1 text-xs rounded bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-cyber-accent">
+            <button onclick="submitFlagFromFs()" class="px-2.5 py-1 rounded bg-cyber-accent text-slate-950 font-bold text-xs hover:bg-sky-400 transition">Submit</button>
+            <span id="fs-flag-feedback" class="text-[11px] hidden font-semibold"></span>
+          </div>
+          
+          <button onclick="resetCurrentSession()" class="text-xs px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition" title="Reset workspace">
+            ↺ Reset
+          </button>
+          <button onclick="exitFullscreenConsole()" class="text-xs px-3 py-1 rounded bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800/60 font-semibold transition flex items-center gap-1.5">
+            <span>✕ Exit Fullscreen</span>
+            <kbd class="text-[10px] bg-slate-800 px-1 py-0.5 rounded text-slate-400">Esc</kbd>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Fullscreen Console Iframe -->
+      <div class="flex-1 w-full h-full relative overflow-hidden bg-slate-950">
+        <iframe id="fullscreen-iframe" src="about:blank" class="w-full h-full border-0" allow="fullscreen; clipboard-read; clipboard-write;" allowfullscreen></iframe>
+      </div>
+    </div>
   </body>
 </html>
