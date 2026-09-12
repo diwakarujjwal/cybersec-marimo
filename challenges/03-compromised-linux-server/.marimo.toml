@@ -1,0 +1,4 @@
+[display]
+theme = "dark"
+dataframes = "rich"
+default_width = "full"

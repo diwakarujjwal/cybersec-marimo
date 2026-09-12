@@ -291,7 +291,11 @@ class SandboxedProcessDriver(BaseContainerDriver):
         # Ensure scratch directory and local state subdirectories exist
         (scratch_dir / ".local" / "state" / "marimo").mkdir(parents=True, exist_ok=True)
         (scratch_dir / ".marimo").mkdir(parents=True, exist_ok=True)
-        (scratch_dir / ".config" / "marimo").mkdir(parents=True, exist_ok=True)
+        config_marimo_dir = scratch_dir / ".config" / "marimo"
+        config_marimo_dir.mkdir(parents=True, exist_ok=True)
+        dark_theme_cfg = '[display]\ntheme = "dark"\ndataframes = "rich"\ndefault_width = "full"\n'
+        (scratch_dir / ".marimo.toml").write_text(dark_theme_cfg)
+        (config_marimo_dir / "marimo.toml").write_text(dark_theme_cfg)
 
         # Strict environment scrubbing (NEVER leak LMS, CTFd, or DB secrets)
         venv_bin_dir = str(Path(sys.executable).parent)
