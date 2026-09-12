@@ -506,6 +506,7 @@
     <script>
       let currentUser = { id: null, username: "alice", role: "student" };
       let activeChallengeId = null;
+      let activeChallenge = null;
       let activeSession = null;
       let sessionTimerInterval = null;
 
@@ -627,6 +628,7 @@
         try {
           const res = await fetch(`/api/challenges/${challengeId}`);
           const chal = await res.json();
+          activeChallenge = chal;
 
           renderChallengeStage(chal);
         } catch (err) {
@@ -1062,31 +1064,42 @@
         loadCurriculum();
       }
 
-      async function launchFullscreenConsole() {
-        if (!activeSession) return;
+      function launchFullscreenConsole() {
+        if (!activeSession) {
+          alert("No active session. Please launch the environment first.");
+          return;
+        }
         const ws = document.getElementById("fullscreen-workspace");
         const iframe = document.getElementById("fullscreen-iframe");
+        if (!ws || !iframe) {
+          console.error("Fullscreen modal or iframe missing in DOM");
+          return;
+        }
+
         const proxyUrl = activeSession.proxy_path.includes("?")
           ? activeSession.proxy_path + "&show-chrome=false"
           : activeSession.proxy_path + "?show-chrome=false";
 
-        const chal = challenges.find((c) => c.id === activeChallengeId);
-        if (chal) {
+        if (activeChallenge) {
           const titleEl = document.getElementById("fs-challenge-title");
-          if (titleEl) titleEl.textContent = chal.title;
+          if (titleEl) titleEl.textContent = activeChallenge.title;
         }
 
-        iframe.src = proxyUrl;
+        // Set iframe source if needed
+        if (!iframe.src || iframe.src === "about:blank" || !iframe.src.includes(activeSession.id)) {
+          iframe.src = proxyUrl;
+        }
+
         ws.classList.remove("hidden");
 
         // Request browser fullscreen on the workspace container
         try {
           if (ws.requestFullscreen) {
-            await ws.requestFullscreen();
+            ws.requestFullscreen().catch((err) => console.warn("Fullscreen request note:", err));
           } else if (ws.webkitRequestFullscreen) {
-            await ws.webkitRequestFullscreen();
+            ws.webkitRequestFullscreen();
           } else if (document.documentElement.requestFullscreen) {
-            await document.documentElement.requestFullscreen();
+            document.documentElement.requestFullscreen().catch((err) => console.warn("Fullscreen request note:", err));
           }
         } catch (err) {
           console.warn("Fullscreen request note:", err);
@@ -1121,11 +1134,14 @@
         if (!flag || !activeChallengeId) return;
 
         try {
-          const res = await fetch(`/api/challenges/${activeChallengeId}/submit`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ flag: flag }),
-          });
+          const res = await fetch(
+            `/api/challenges/${activeChallengeId}/submit`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ flag: flag }),
+            },
+          );
           const data = await res.json();
           feedback.classList.remove("hidden");
           if (data.is_correct) {
@@ -1144,41 +1160,90 @@
     </script>
 
     <!-- Fullscreen Dedicated Investigation Workspace Modal -->
-    <div id="fullscreen-workspace" class="fixed inset-0 z-50 bg-slate-950 flex flex-col hidden w-screen h-screen">
+    <div
+      id="fullscreen-workspace"
+      class="fixed inset-0 z-50 bg-slate-950 flex flex-col hidden w-screen h-screen"
+    >
       <!-- Top Operations HUD Bar -->
-      <div class="h-12 bg-slate-900 border-b border-slate-800 px-4 flex items-center justify-between shrink-0 shadow-md">
+      <div
+        class="h-12 bg-slate-900 border-b border-slate-800 px-4 flex items-center justify-between shrink-0 shadow-md"
+      >
         <div class="flex items-center gap-3">
           <span class="flex h-2.5 w-2.5 relative">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"
+            ></span>
           </span>
-          <span class="text-xs font-bold text-cyber-accent tracking-wider uppercase">CyberLab Operations HUD</span>
+          <span
+            class="text-xs font-bold text-cyber-accent tracking-wider uppercase"
+            >CyberLab Operations HUD</span
+          >
           <span class="text-slate-600">|</span>
-          <span id="fs-challenge-title" class="text-xs font-semibold text-white truncate max-w-xs sm:max-w-md">Investigation Console</span>
-          <span id="fs-countdown" class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/20">TTL: --:--</span>
+          <span
+            id="fs-challenge-title"
+            class="text-xs font-semibold text-white truncate max-w-xs sm:max-w-md"
+            >Investigation Console</span
+          >
+          <span
+            id="fs-countdown"
+            class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-emerald-500/20"
+            >TTL: --:--</span
+          >
         </div>
-        
+
         <div class="flex items-center gap-2">
           <!-- Quick Flag Submission in HUD -->
           <div class="hidden sm:flex items-center gap-1.5 mr-2">
-            <input type="text" id="fs-flag-input" placeholder="Submit flag..." class="w-44 px-2 py-1 text-xs rounded bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-cyber-accent">
-            <button onclick="submitFlagFromFs()" class="px-2.5 py-1 rounded bg-cyber-accent text-slate-950 font-bold text-xs hover:bg-sky-400 transition">Submit</button>
-            <span id="fs-flag-feedback" class="text-[11px] hidden font-semibold"></span>
+            <input
+              type="text"
+              id="fs-flag-input"
+              placeholder="Submit flag..."
+              class="w-44 px-2 py-1 text-xs rounded bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-cyber-accent"
+            />
+            <button
+              onclick="submitFlagFromFs()"
+              class="px-2.5 py-1 rounded bg-cyber-accent text-slate-950 font-bold text-xs hover:bg-sky-400 transition"
+            >
+              Submit
+            </button>
+            <span
+              id="fs-flag-feedback"
+              class="text-[11px] hidden font-semibold"
+            ></span>
           </div>
-          
-          <button onclick="resetCurrentSession()" class="text-xs px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition" title="Reset workspace">
+
+          <button
+            onclick="resetCurrentSession()"
+            class="text-xs px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 transition"
+            title="Reset workspace"
+          >
             ↺ Reset
           </button>
-          <button onclick="exitFullscreenConsole()" class="text-xs px-3 py-1 rounded bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800/60 font-semibold transition flex items-center gap-1.5">
+          <button
+            onclick="exitFullscreenConsole()"
+            class="text-xs px-3 py-1 rounded bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800/60 font-semibold transition flex items-center gap-1.5"
+          >
             <span>✕ Exit Fullscreen</span>
-            <kbd class="text-[10px] bg-slate-800 px-1 py-0.5 rounded text-slate-400">Esc</kbd>
+            <kbd
+              class="text-[10px] bg-slate-800 px-1 py-0.5 rounded text-slate-400"
+              >Esc</kbd
+            >
           </button>
         </div>
       </div>
-      
+
       <!-- Fullscreen Console Iframe -->
       <div class="flex-1 w-full h-full relative overflow-hidden bg-slate-950">
-        <iframe id="fullscreen-iframe" src="about:blank" class="w-full h-full border-0" allow="fullscreen; clipboard-read; clipboard-write;" allowfullscreen></iframe>
+        <iframe
+          id="fullscreen-iframe"
+          src="about:blank"
+          class="w-full h-full border-0"
+          allow="fullscreen; clipboard-read; clipboard-write"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </body>
