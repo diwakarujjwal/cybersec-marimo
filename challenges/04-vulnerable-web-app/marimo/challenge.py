@@ -329,14 +329,14 @@ def __(mo):
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
     val = candidate_flag.value.strip()
-    
+    target_hash = "c59b621f2c5385234123519cca4e7cce0a51f1280fbdc9466d8a028dfb5371ba"
 
     if not val:
         flag_feedback = mo.md(
             "Enter the flag exfiltrated from the internal payroll audit records."
         )
         report_view = mo.md("🔒 *Audit Finding Verification Report locked until valid flag is provided.*")
-    elif val == "FLAG{sqli_union_payroll_leak_pwned}":
+    elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
                 "🎉 **FLAG VERIFIED CORRECT!**\n\n"

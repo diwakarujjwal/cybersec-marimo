@@ -377,14 +377,14 @@ def __(mo):
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
     val_flag = candidate_flag.value.strip()
-    
+    target_hash = "16e9a50ab214cbca3ad49f5c4b2e770122689fad6a26f71e9323afc27f4669d9"
 
     if not val_flag:
         flag_feedback = mo.md(
             "Enter the flag recovered from the decoded DNS tunneling subdomain."
         )
         ioc_view = mo.md("🔒 *Threat Hunting Findings & IOC Report locked until valid flag is verified.*")
-    elif val_flag == "FLAG{dns_tunneling_data_exfil_uncovered}":
+    elif hashlib.sha256(val_flag.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
                 "🎉 **FLAG VERIFIED CORRECT!**\n\n"

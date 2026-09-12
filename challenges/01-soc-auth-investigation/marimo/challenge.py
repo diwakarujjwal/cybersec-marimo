@@ -451,14 +451,14 @@ def __(mo):
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
     val = candidate_flag.value.strip()
-    
+    target_hash = "3422238b011b622ac8dfe184eef91461c0dd7728771aa7e343915790c26e87a8"
 
     if not val:
         flag_feedback = mo.md(
             "Enter the flag discovered in the attacker's executed commands above."
         )
         ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
-    elif val == "FLAG{brute_force_pivot_admin_2026}":
+    elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
                 "🎉 **FLAG VERIFIED CORRECT!**\n\n"

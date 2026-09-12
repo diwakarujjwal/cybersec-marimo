@@ -386,14 +386,14 @@ def __(mo):
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
     val = candidate_flag.value.strip()
-    
+    target_hash = "f6e91506b2ce6db278733011060f103779bd018ce35c6076e9f36c0b841331d2"
 
     if not val:
         flag_feedback = mo.md(
             "Enter the flag discovered inside the backdoor script comment."
         )
         remediation_view = mo.md("🔒 *Incident Response Remediation Plan locked until valid persistence flag is verified.*")
-    elif val == "FLAG{crontab_reverse_shell_persisted_victim}":
+    elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
                 "🎉 **FLAG VERIFIED CORRECT!**\n\n"

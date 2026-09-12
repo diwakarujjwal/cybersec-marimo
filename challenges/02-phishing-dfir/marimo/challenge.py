@@ -419,14 +419,14 @@ def __(mo):
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
     val = candidate_flag.value.strip()
-    
+    target_hash = "5f458b9db61a55c7839ede55b271e293e24fee62fe40cb384d55445b9b5666ae"
 
     if not val:
         flag_feedback = mo.md(
             "Enter the flag recovered from the macro payload or correlated DNS telemetry."
         )
         ioc_view = mo.md("🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*")
-    elif val == "FLAG{dmarc_fail_invoice_c2_domain_detected}":
+    elif hashlib.sha256(val.encode()).hexdigest() == target_hash:
         flag_feedback = mo.callout(
             mo.md(
                 "🎉 **FLAG VERIFIED CORRECT!**\n\n"
