@@ -1,11 +1,12 @@
 """API routes for procedural CTF challenge generation from lecture transcripts."""
+
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any, List
 from pathlib import Path
 
 from cyberlab.core.config import settings
-from cyberlab.core.security import get_current_user
+from cyberlab.api.deps import get_current_user
 from cyberlab.db.models import User
 from cyberlab.services.generator.llm_pipeline import transcript_generator
 from cyberlab.services.generator.templates import list_templates
@@ -14,9 +15,15 @@ router = APIRouter(prefix="/api/generator", tags=["Generator"])
 
 
 class TranscriptGenerateRequest(BaseModel):
-    transcript: str = Field(..., min_length=20, description="Video/lecture transcript text")
-    student_id: Optional[str] = Field(None, description="Optional student ID to seed unique randomization")
-    sync_to_ctfd: bool = Field(True, description="Whether to register challenge & hints in CTFd")
+    transcript: str = Field(
+        ..., min_length=20, description="Video/lecture transcript text"
+    )
+    student_id: Optional[str] = Field(
+        None, description="Optional student ID to seed unique randomization"
+    )
+    sync_to_ctfd: bool = Field(
+        True, description="Whether to register challenge & hints in CTFd"
+    )
 
 
 class TemplateInfoResponse(BaseModel):
