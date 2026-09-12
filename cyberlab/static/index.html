@@ -1268,8 +1268,12 @@
           class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-slate-400 text-sm gap-3 z-10 hidden"
         >
           <div class="animate-spin text-2xl">⏳</div>
-          <div class="font-medium text-slate-300">Loading Interactive Incident Console...</div>
-          <div class="text-xs text-slate-500">Connecting to isolated runtime kernel</div>
+          <div class="font-medium text-slate-300">
+            Loading Interactive Incident Console...
+          </div>
+          <div class="text-xs text-slate-500">
+            Connecting to isolated runtime kernel
+          </div>
         </div>
         <iframe
           id="fullscreen-iframe"
@@ -1277,7 +1281,9 @@
           class="absolute inset-0 w-full h-full border-0"
           allow="fullscreen; clipboard-read; clipboard-write"
           allowfullscreen
-          onload="document.getElementById('fs-iframe-loader')?.classList.add('hidden')"
+          onload="
+            document.getElementById('fs-iframe-loader')?.classList.add('hidden')
+          "
         ></iframe>
       </div>
     </div>

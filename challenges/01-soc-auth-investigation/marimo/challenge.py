@@ -68,7 +68,7 @@ def __(Path, json, pd):
 
 @app.cell(hide_code=True)
 def __(mo):
-    # Analyst Sidebar: Incident Context, MITRE Mapping & Checklist
+    # Analyst Checklist & Hints (Integrated directly into Triage Tab)
     check_ip = mo.ui.checkbox(
         label="1. Identify brute-forcing external IP", value=False
     )
@@ -95,30 +95,27 @@ def __(mo):
         }
     )
 
-    sidebar_content = mo.vstack(
+    triage_checklist = mo.vstack(
         [
-            mo.md("## 🛡️ CyberLab SOC Console"),
-            mo.md("**Incident ID**: `INC-0101-NIGHTSHIFT`"),
-            mo.md("**Target Host**: `PAYROLL-SRV01` (Windows Server 2022)"),
-            mo.md("**Classification**: `TLP:AMBER` | Severity: **HIGH**"),
-            mo.md("---"),
-            mo.md("### 🎯 Investigation Checklist"),
+            mo.md("### 🎯 Live Investigation Checklist"),
             check_ip,
             check_user,
             check_breach,
             check_proc,
             check_flag,
-            mo.md("---"),
-            mo.md("### 🗺️ MITRE ATT&CK Matrix"),
-            mo.md(
-                "- **T1110.001**: Password Guessing (Brute Force)\n- **T1078.002**: Domain Accounts\n- **T1105**: Ingress Tool Transfer (`certutil`)"
-            ),
-            mo.md("---"),
-            hints,
         ]
     )
 
-    mo.sidebar(sidebar_content)
+    mitre_box = mo.callout(
+        mo.md(
+            "**MITRE ATT&CK Matrix Mapping**:\n"
+            "- **T1110.001**: Password Guessing (Brute Force)\n"
+            "- **T1078.002**: Domain Accounts (`admin_finance`)\n"
+            "- **T1105**: Ingress Tool Transfer (`certutil.exe`)"
+        ),
+        kind="info",
+    )
+
     return (
         check_breach,
         check_flag,
@@ -126,12 +123,22 @@ def __(mo):
         check_proc,
         check_user,
         hints,
-        sidebar_content,
+        mitre_box,
+        triage_checklist,
     )
 
 
 @app.cell(hide_code=True)
-def __(failed_events, mo, success_events, total_events, unique_ips):
+def __(
+    failed_events,
+    hints,
+    mitre_box,
+    mo,
+    success_events,
+    total_events,
+    triage_checklist,
+    unique_ips,
+):
     # Tab 1: Alert Triage & Scope View
     triage_view = mo.vstack(
         [
@@ -176,18 +183,38 @@ def __(failed_events, mo, success_events, total_events, unique_ips):
                 justify="start",
                 gap=1,
             ),
-            mo.md("""
-            ### 🖥️ Target Host Profile:
-            | Asset Name | IP Address | Operating System | Criticality | Role |
-            | :--- | :--- | :--- | :--- | :--- |
-            | `PAYROLL-SRV01` | `10.0.4.50` | Windows Server 2022 Datacenter | **Tier 0 (Crown Jewel)** | Finance & Compensation Master |
+            mo.hstack(
+                [
+                    mo.vstack(
+                        [
+                            mo.md("""
+                            ### 🖥️ Target Host Profile:
+                            | Asset Name | IP Address | Operating System | Criticality | Role |
+                            | :--- | :--- | :--- | :--- | :--- |
+                            | `PAYROLL-SRV01` | `10.0.4.50` | Windows Server 2022 Datacenter | **Tier 0 (Crown Jewel)** | Finance & Compensation Master |
 
-            ### 🎯 Analyst Investigation Objectives:
-            1. **Reconnaissance & Brute Force**: Which external IP generated hundreds of failed authentication attempts?
-            2. **Account Breach**: Which internal domain account was breached?
-            3. **Timeline**: At what exact timestamp did the attacker transition from failed password guesses to an interactive logon?
-            4. **Post-Exploitation & Staging**: What Living-off-the-Land tool (`certutil.exe`) was executed, and what flag is embedded in the command parameters?
-            """),
+                            ### 🎯 Analyst Investigation Objectives:
+                            1. **Reconnaissance & Brute Force**: Which external IP generated hundreds of failed authentication attempts?
+                            2. **Account Breach**: Which internal domain account was breached?
+                            3. **Timeline**: At what exact timestamp did the attacker transition from failed password guesses to an interactive logon?
+                            4. **Post-Exploitation & Staging**: What Living-off-the-Land tool (`certutil.exe`) was executed, and what flag is embedded in the command parameters?
+                            """),
+                            mitre_box,
+                        ],
+                        gap=1,
+                    ),
+                    mo.vstack(
+                        [
+                            triage_checklist,
+                            mo.md("---"),
+                            hints,
+                        ],
+                        gap=1,
+                    ),
+                ],
+                widths=[6, 6],
+                gap=2,
+            ),
         ]
     )
     return (triage_view,)
@@ -632,15 +659,26 @@ def console_root(
     # Pure CyberLab Console Styles & Overrides
     styles = mo.Html("""
     <style>
-    /* 1. Eliminate Irrelevant Developer Tools (Image 2: Files, Variables, Packages, AI, Snippets, DAG, Help) */
+    /* 1. Eliminate Irrelevant Developer Tools & Sidebars */
     [data-testid="chrome-sidebar"],
     #app-chrome-sidebar,
     #app-chrome-panel,
-    .resize-handle {
+    .resize-handle,
+    [data-testid="sidebar-toggle"],
+    [data-testid="chrome-footer"],
+    [data-testid="footer-panel"],
+    [data-testid="filename-input"],
+    [data-testid="chrome-controls-top-right"],
+    [data-testid="chrome-controls-bottom-right"] {
         display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
     }
 
-    /* 2. Eliminate Cell Handles & Authoring Overlays (Image 1: ::: drag, ⤢ maximize, ⇅ move, delete, run) */
+    /* 2. Eliminate Cell Handles & Authoring Overlays (CRITICAL: Never target .hover-actions-parent!) */
+    .hover-action,
     [data-testid="drag-button"],
     [data-testid="cell-actions-button"],
     [data-testid="create-cell-button"],
@@ -648,8 +686,8 @@ def console_root(
     [data-testid="hide-code-button"],
     [data-testid="fullscreen-output-button"],
     [data-testid="expand-output-button"],
-    .hover-actions-parent,
-    .hover-actions-parent > .hover-action,
+    [data-testid="cell-actions"],
+    [data-testid="cell-menu"],
     .shoulder-right,
     .shoulder-left,
     .cell-actions,
@@ -661,21 +699,17 @@ def console_root(
         pointer-events: none !important;
     }
 
-    /* 3. Eliminate Marimo Authoring Header & Footers */
-    [data-testid="filename-input"],
-    [data-testid="chrome-controls-top-right"],
-    [data-testid="chrome-controls-bottom-right"],
-    [data-testid="chrome-footer"],
-    [data-testid="footer-panel"] {
+    /* 3. Hide all cells that do not contain the cyberlab console */
+    .marimo-cell:not(:has(.cyberlab-console-root)) {
         display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
     }
 
-    /* 4. Hide all backend/setup cells above the Console */
-    .marimo-cell:not(:has(.cyberlab-topbar)) {
-        display: none !important;
-    }
-
-    /* 5. Full-Width Edge-to-Edge Console Layout */
+    /* 4. Full-Width Edge-to-Edge Console Layout */
     html, body {
         width: 100% !important;
         min-height: 100% !important;
@@ -697,7 +731,7 @@ def console_root(
         background: #020617 !important;
     }
 
-    .marimo-cell:has(.cyberlab-topbar) {
+    .marimo-cell:has(.cyberlab-console-root) {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
@@ -707,12 +741,14 @@ def console_root(
         border: none !important;
         box-shadow: none !important;
         display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
-    .marimo-cell:has(.cyberlab-topbar) > div,
-    .marimo-cell:has(.cyberlab-topbar) [data-testid="cell-output-container"],
-    .marimo-cell:has(.cyberlab-topbar) [data-testid="marimo-cell-output"],
-    .marimo-cell:has(.cyberlab-topbar) .output-area {
+    .marimo-cell:has(.cyberlab-console-root) > div,
+    .marimo-cell:has(.cyberlab-console-root) [data-testid="cell-output-container"],
+    .marimo-cell:has(.cyberlab-console-root) [data-testid="marimo-cell-output"],
+    .marimo-cell:has(.cyberlab-console-root) .output-area {
         width: 100% !important;
         max-width: 100% !important;
         padding: 0 !important;
@@ -750,7 +786,7 @@ def console_root(
     """)
 
     header = mo.Html("""
-    <div class="cyberlab-topbar">
+    <div class="cyberlab-topbar cyberlab-console-root">
         <div class="title">
             <span class="live-badge">LIVE INCIDENT</span>
             <span>SOC Incident 0101: Operation NightShift</span>
