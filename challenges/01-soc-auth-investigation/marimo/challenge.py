@@ -621,7 +621,7 @@ def __(candidate_flag, hashlib, mo, re):
 
 
 @app.cell
-def __(
+def console_root(
     mo,
     scratchpad_view,
     telemetry_view,
@@ -629,6 +629,124 @@ def __(
     triage_view,
     verification_view,
 ):
+    # Pure CyberLab Console Styles & Overrides
+    styles = mo.Html("""
+    <style>
+    /* 1. Eliminate Irrelevant Developer Tools (Image 2: Files, Variables, Packages, AI, Snippets, DAG, Help) */
+    [data-testid="chrome-sidebar"],
+    #app-chrome-sidebar,
+    #app-chrome-panel,
+    .resize-handle {
+        display: none !important;
+    }
+
+    /* 2. Eliminate Cell Handles & Authoring Overlays (Image 1: ::: drag, ⤢ maximize, ⇅ move, delete, run) */
+    [data-testid="drag-button"],
+    [data-testid="cell-actions-button"],
+    [data-testid="create-cell-button"],
+    [data-testid="run-button"],
+    [data-testid="hide-code-button"],
+    [data-testid="fullscreen-output-button"],
+    [data-testid="expand-output-button"],
+    .hover-actions-parent > .hover-action,
+    .shoulder-right,
+    .cell-actions,
+    .cell-actions-button,
+    .cell-bottom-menu,
+    .add-cell-button {
+        display: none !important;
+    }
+
+    /* 3. Eliminate Marimo Authoring Header & Footers */
+    [data-testid="filename-input"],
+    [data-testid="chrome-controls-top-right"],
+    [data-testid="chrome-controls-bottom-right"],
+    [data-testid="chrome-footer"],
+    [data-testid="footer-panel"] {
+        display: none !important;
+    }
+
+    /* 4. Hide all backend/setup cells above the Console */
+    .marimo-cell:not([data-cell-name="console_root"]) {
+        display: none !important;
+    }
+
+    /* 5. Fullscreen / Maximized Console Layout */
+    .marimo-cell[data-cell-name="console_root"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 4px !important;
+    }
+
+    #App, main, #app-chrome-body {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .cyberlab-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 10px 16px;
+        margin-bottom: 10px;
+    }
+    .cyberlab-topbar .title {
+        font-size: 13px;
+        font-weight: 700;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .cyberlab-topbar .live-badge {
+        background: #dc2626;
+        color: white;
+        font-size: 10px;
+        font-weight: 800;
+        padding: 2px 7px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+    }
+    .cyberlab-topbar .fullscreen-btn {
+        background: #1e293b;
+        color: #38bdf8;
+        border: 1px solid #334155;
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+    }
+    .cyberlab-topbar .fullscreen-btn:hover {
+        background: #0284c7;
+        color: #ffffff;
+        border-color: #0284c7;
+    }
+    </style>
+    """)
+
+    header = mo.Html("""
+    <div class="cyberlab-topbar">
+        <div class="title">
+            <span class="live-badge">LIVE INCIDENT</span>
+            <span>SOC Incident 0101: Operation NightShift</span>
+            <span style="color: #64748b; font-weight: 400;">| Target: PAYROLL-SRV01 | TLP:AMBER</span>
+        </div>
+        <button class="fullscreen-btn" onclick="if (!document.fullscreenElement) { (document.documentElement || document.body).requestFullscreen(); } else { document.exitFullscreen(); }">
+            <span style="font-size: 15px;">⤢</span> Fullscreen Workspace
+        </button>
+    </div>
+    """)
+
     # Top-Level Analyst Operations Console
     console = mo.ui.tabs(
         {
@@ -639,8 +757,9 @@ def __(
             "🏁 Case Verification & IOCs": verification_view,
         }
     )
-    console
-    return (console,)
+    workspace = mo.vstack([styles, header, console])
+    workspace
+    return console, header, styles, workspace
 
 
 if __name__ == "__main__":
