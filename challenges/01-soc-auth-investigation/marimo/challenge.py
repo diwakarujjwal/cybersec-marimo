@@ -671,7 +671,17 @@ def console_root(
         display: none !important;
     }
 
-    /* 5. Fullscreen / Maximized Console Layout */
+    /* 5. Hide code editors in all cells (show only outputs) */
+    .marimo-cell .cm-editor,
+    .marimo-cell .cm-scroller,
+    .marimo-cell .cell-editor,
+    [data-testid="cell-editor"] {
+        display: none !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* 6. Fullscreen / Maximized Console Layout */
     .marimo-cell:has(.cyberlab-topbar) {
         width: 100% !important;
         max-width: 100% !important;
@@ -734,18 +744,11 @@ def console_root(
     </style>
     """)
 
-    header = mo.Html("""
-    <div class="cyberlab-topbar">
-        <div class="title">
-            <span class="live-badge">LIVE INCIDENT</span>
-            <span>SOC Incident 0101: Operation NightShift</span>
-            <span style="color: #64748b; font-weight: 400;">| Target: PAYROLL-SRV01 | TLP:AMBER</span>
-        </div>
-        <button class="fullscreen-btn" onclick="if (!document.fullscreenElement) { (document.documentElement || document.body).requestFullscreen(); } else { document.exitFullscreen(); }">
-            <span style="font-size: 15px;">⤢</span> Fullscreen Workspace
-        </button>
-    </div>
-    """)
+    # Invisible anchor div keeps the .cyberlab-topbar CSS selector working
+    # without showing any visible header bar
+    header = mo.Html(
+        '<div class="cyberlab-topbar" style="display:none !important; height:0; margin:0; padding:0; border:none;"></div>'
+    )
 
     # Top-Level Analyst Operations Console
     console = mo.ui.tabs(
