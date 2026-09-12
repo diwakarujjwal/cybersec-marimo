@@ -17,7 +17,7 @@ def __():
 
 
 @app.cell
-def __(Path, json, mo, pd):
+def __(Path, json, pd):
     # Locate dataset across local sandbox, repository root, and container environments
     possible_paths = [
         Path("data/auth_events.json"),
@@ -55,57 +55,10 @@ def __(Path, json, mo, pd):
         df["source_ip"].nunique() if not df.empty and "source_ip" in df.columns else 0
     )
 
-    header_view = mo.vstack(
-        [
-            mo.md("""
-            # 🛡️ SOC Incident 0101: Operation NightShift
-            ### Off-Hours Authentication Triage & Credential Stuffing Analysis
-            """),
-            mo.callout(
-                mo.md(
-                    "**SOC Alert Notice**: At 03:14 UTC, SIEM triggered a high-severity alert for abnormal authentication failures targeting `PAYROLL-SRV01`, followed by privileged logon activity. Your mission as Tier-1 SOC Analyst is to scope the campaign, identify the compromised account, trace attacker post-exploitation commands, and retrieve the containment flag."
-                ),
-                kind="warn",
-            ),
-            mo.hstack(
-                [
-                    mo.stat(
-                        value=f"{total_events:,}",
-                        label="Total Events Audited",
-                        caption="Window: 2026-09-10 01:00 - 04:00 UTC",
-                        bordered=True,
-                    ),
-                    mo.stat(
-                        value=f"{failed_events:,}",
-                        label="Authentication Failures",
-                        caption="Event ID 4625 (Logon Failure)",
-                        direction="increase",
-                        bordered=True,
-                    ),
-                    mo.stat(
-                        value=f"{success_events:,}",
-                        label="Successful Logons",
-                        caption="Event ID 4624 (Logon Success)",
-                        bordered=True,
-                    ),
-                    mo.stat(
-                        value=f"{unique_ips}",
-                        label="Distinct Source IPs",
-                        caption="Internal LAN & External WAN",
-                        bordered=True,
-                    ),
-                ],
-                justify="start",
-                gap=1,
-            ),
-        ]
-    )
-    header_view
     return (
         data_file,
         df,
         failed_events,
-        header_view,
         raw_data,
         success_events,
         total_events,
@@ -131,13 +84,13 @@ def __(mo):
     hints = mo.accordion(
         {
             "💡 Hint 1: Locating the Attacker": mo.md(
-                "Use the slider in **Step 2 (Anomaly Triage)** to isolate IP addresses generating an abnormal volume of failed logon attempts. Look for anomalous non-internal public IP addresses."
+                "Use the **Analyst Python Scratchpad** or the slider in **Attack Timeline & Pivot** to isolate IP addresses generating an abnormal volume of failed logon attempts. Look for anomalous public IP addresses."
             ),
             "💡 Hint 2: Confirming Compromise": mo.md(
-                "In **Step 3 (Attack Timeline)**, select the suspicious IP identified from the anomaly table. Observe when authentication failures cease and a successful interactive logon (`4624`) occurs."
+                "In **Attack Timeline & Pivot**, select the suspicious IP identified from the anomaly table. Observe when authentication failures cease and a successful interactive logon (`4624`) occurs."
             ),
             "💡 Hint 3: Analyzing Execution": mo.md(
-                "In **Step 4 (Process Forensics)**, review commands executed by the compromised account. Living-off-the-Land Binaries (LOLBins) like `certutil.exe` frequently contain staging parameters or flags."
+                "In **Attack Timeline & Pivot** (LOLBin Forensics), review commands executed by the compromised account. Built-in tools like `certutil.exe` frequently contain staging parameters or flags."
             ),
         }
     )
@@ -178,8 +131,71 @@ def __(mo):
 
 
 @app.cell
+def __(failed_events, mo, success_events, total_events, unique_ips):
+    # Tab 1: Alert Triage & Scope View
+    triage_view = mo.vstack(
+        [
+            mo.md("""
+            # 🛡️ SOC Incident 0101: Operation NightShift
+            ### Off-Hours Authentication Triage & Credential Stuffing Analysis
+            """),
+            mo.callout(
+                mo.md(
+                    "**SOC Alert Notice**: At 03:14 UTC, SIEM triggered a high-severity alert for abnormal authentication failures targeting `PAYROLL-SRV01`, followed by privileged logon activity. Your mission as Tier-1/2 SOC Analyst is to scope the campaign, identify the compromised account, trace attacker post-exploitation commands, and retrieve the containment flag."
+                ),
+                kind="warn",
+            ),
+            mo.hstack(
+                [
+                    mo.stat(
+                        value=f"{total_events:,}",
+                        label="Total Events Audited",
+                        caption="Window: 2026-09-10 01:00 - 04:00 UTC",
+                        bordered=True,
+                    ),
+                    mo.stat(
+                        value=f"{failed_events:,}",
+                        label="Authentication Failures",
+                        caption="Event ID 4625 (Logon Failure)",
+                        direction="increase",
+                        bordered=True,
+                    ),
+                    mo.stat(
+                        value=f"{success_events:,}",
+                        label="Successful Logons",
+                        caption="Event ID 4624 (Logon Success)",
+                        bordered=True,
+                    ),
+                    mo.stat(
+                        value=f"{unique_ips}",
+                        label="Distinct Source IPs",
+                        caption="Internal LAN & External WAN",
+                        bordered=True,
+                    ),
+                ],
+                justify="start",
+                gap=1,
+            ),
+            mo.md("""
+            ### 🖥️ Target Host Profile:
+            | Asset Name | IP Address | Operating System | Criticality | Role |
+            | :--- | :--- | :--- | :--- | :--- |
+            | `PAYROLL-SRV01` | `10.0.4.50` | Windows Server 2022 Datacenter | **Tier 0 (Crown Jewel)** | Finance & Compensation Master |
+
+            ### 🎯 Analyst Investigation Objectives:
+            1. **Reconnaissance & Brute Force**: Which external IP generated hundreds of failed authentication attempts?
+            2. **Account Breach**: Which internal domain account was breached?
+            3. **Timeline**: At what exact timestamp did the attacker transition from failed password guesses to an interactive logon?
+            4. **Post-Exploitation & Staging**: What Living-off-the-Land tool (`certutil.exe`) was executed, and what flag is embedded in the command parameters?
+            """),
+        ]
+    )
+    return (triage_view,)
+
+
+@app.cell
 def __(mo):
-    # Step 1: Raw Telemetry Explorer Controls
+    # Tab 2: Raw Telemetry Explorer Controls
     status_filter = mo.ui.dropdown(
         options=["ALL", "FAILURE", "SUCCESS"],
         value="ALL",
@@ -198,7 +214,7 @@ def __(mo):
 
 @app.cell
 def __(df, ip_search, mo, status_filter, user_search):
-    # Filter raw dataframe reactively based on UI inputs
+    # Tab 2: Filtered Telemetry Explorer View & Export
     filtered = df.copy() if not df.empty else df
     if not filtered.empty:
         if status_filter.value != "ALL":
@@ -235,40 +251,142 @@ def __(df, ip_search, mo, status_filter, user_search):
         ),
         selection=None,
         pagination=True,
-        page_size=15,
+        page_size=12,
         show_column_summaries=False,
     )
 
-    step1_view = mo.vstack(
+    export_json = (
+        filtered.to_json(orient="records", date_format="iso", indent=2).encode("utf-8")
+        if not filtered.empty
+        else b"[]"
+    )
+    download_btn = mo.download(
+        data=export_json,
+        filename="filtered_auth_telemetry.json",
+        label="📥 Export Filtered Telemetry (JSON)",
+    )
+
+    telemetry_view = mo.vstack(
         [
-            mo.md("## 🔍 Step 1: Raw Security Event Log Telemetry"),
+            mo.md("## 🔍 Security Event Log Telemetry"),
             mo.md(
-                "Explore the authentication stream across the 1,073 ingested events. Use the filter controls to search by status, username, or source IP:"
+                "Filter and inspect the authentication event stream across the ingested events. You can also export filtered subsets for offline analysis:"
             ),
-            mo.hstack([status_filter, user_search, ip_search], gap=1),
+            mo.hstack([status_filter, user_search, ip_search, download_btn], gap=1),
             raw_table,
         ]
     )
-    step1_view
-    return filtered, raw_table, step1_view
+    return download_btn, export_json, filtered, raw_table, telemetry_view
 
 
 @app.cell
 def __(mo):
-    # Step 2: Anomaly Threshold Slider Control
+    # Tab 3: Analyst Live Python Code Editor
+    scratchpad = mo.ui.code_editor(
+        value=(
+            "# 💻 Analyst Python Scratchpad\n"
+            "# Variables in scope: `df` (DataFrame), `pd` (pandas)\n"
+            "# Example 1: Group failures by source IP to spot brute-force attacker\n"
+            "failures = df[df['status'] == 'FAILURE']\n"
+            "top_failures = failures.groupby('source_ip').size().reset_index(name='fail_count')\n"
+            "top_failures.sort_values(by='fail_count', ascending=False).head(10)"
+        ),
+        language="python",
+        label="Python Security Analytics Console:",
+    )
+    return (scratchpad,)
+
+
+@app.cell
+def __(df, mo, pd, scratchpad):
+    # Tab 3: Reactive Python Execution Engine
+    code_text = scratchpad.value.strip()
+    eval_result = None
+
+    if code_text:
+        locs = {"df": df, "pd": pd}
+        try:
+            lines = [
+                l
+                for l in code_text.splitlines()
+                if l.strip() and not l.strip().startswith("#")
+            ]
+            if lines:
+                exec_chunk = "\n".join(lines[:-1])
+                last_line = lines[-1]
+                if exec_chunk:
+                    exec(exec_chunk, {"__builtins__": __builtins__}, locs)
+                try:
+                    res = eval(last_line, {"__builtins__": __builtins__}, locs)
+                except SyntaxError:
+                    exec(last_line, {"__builtins__": __builtins__}, locs)
+                    res = locs.get("output", locs.get("result", "Script executed."))
+
+                if isinstance(res, pd.DataFrame):
+                    eval_result = mo.ui.table(
+                        res,
+                        selection=None,
+                        pagination=True,
+                        page_size=8,
+                        show_column_summaries=False,
+                    )
+                elif isinstance(res, (pd.Series, dict, list)):
+                    eval_result = mo.json(res)
+                else:
+                    eval_result = mo.md(f"```text\n{res}\n```")
+        except Exception as err:
+            eval_result = mo.callout(
+                mo.md(f"**Console Execution Error**: `{err}`"), kind="danger"
+            )
+    else:
+        eval_result = mo.md("*Type code above to execute queries on `df`.*")
+
+    scratchpad_view = mo.vstack(
+        [
+            mo.md("## 💻 Analyst Python Scratchpad Console"),
+            mo.md(
+                "Real SOC and DFIR analysts write ad-hoc Python snippets to slice logs and compute statistics. Use the live scratchpad below to analyze `df`:"
+            ),
+            scratchpad,
+            mo.md("#### 📊 Reactive Execution Output:"),
+            eval_result,
+            mo.accordion(
+                {
+                    "📖 Helpful SOC Queries to Try": mo.md(
+                        "**1. Time Delta Between Last Failure & First Success**:\n"
+                        "```python\n"
+                        "succ = df[(df['source_ip']=='198.51.100.42') & (df['status']=='SUCCESS')]['timestamp'].min()\n"
+                        "fail = df[(df['source_ip']=='198.51.100.42') & (df['status']=='FAILURE')]['timestamp'].max()\n"
+                        "f'Transition delay: {succ - fail}'\n"
+                        "```\n\n"
+                        "**2. Attacker Executed Command Lines**:\n"
+                        "```python\n"
+                        "df[df['command_line'].notna()][['timestamp', 'target_user', 'command_line']]\n"
+                        "```"
+                    )
+                }
+            ),
+        ]
+    )
+    return code_text, eval_result, locs, scratchpad_view
+
+
+@app.cell
+def __(mo):
+    # Tab 4: Anomaly Threshold Slider Control
     min_fail_slider = mo.ui.slider(
         start=1,
         stop=220,
         step=5,
         value=20,
-        label="Min Failed Logons Threshold for Anomaly Detection:",
+        label="Min Failed Logons Threshold:",
     )
     return (min_fail_slider,)
 
 
 @app.cell
 def __(df, min_fail_slider, mo):
-    # Step 2: Anomaly Pivot Table Calculation
+    # Tab 4: Anomaly Table & Source IP Selector
     if not df.empty and "status" in df.columns:
         failures = df[df["status"] == "FAILURE"]
         fail_summary = (
@@ -289,30 +407,13 @@ def __(df, min_fail_slider, mo):
             fail_summary,
             selection=None,
             pagination=True,
-            page_size=8,
+            page_size=6,
             show_column_summaries=False,
         )
     else:
         fail_summary = df
         anomaly_table = mo.md("No failure records found.")
 
-    step2_view = mo.vstack(
-        [
-            mo.md("## 🚨 Step 2: High-Frequency Failure Anomaly Triage"),
-            mo.md(
-                "Brute-force and password spraying attacks generate abnormal volumes of failed logon events (`Event ID 4625`) from external IPs. Adjust the threshold slider to isolate the anomalous source IP:"
-            ),
-            min_fail_slider,
-            anomaly_table,
-        ]
-    )
-    step2_view
-    return anomaly_table, fail_summary, failures, step2_view
-
-
-@app.cell
-def __(fail_summary, mo):
-    # Step 3: Interactive Source IP Selector for Chronological Timeline
     ip_choices = (
         list(fail_summary["source_ip"].unique())
         if not fail_summary.empty and "source_ip" in fail_summary.columns
@@ -321,14 +422,14 @@ def __(fail_summary, mo):
     timeline_ip_select = mo.ui.dropdown(
         options=ip_choices,
         value=ip_choices[0] if ip_choices else None,
-        label="Select Source IP to Trace Timeline:",
+        label="Select Source IP to Trace Chronological Activity:",
     )
-    return ip_choices, timeline_ip_select
+    return anomaly_table, fail_summary, failures, ip_choices, timeline_ip_select
 
 
 @app.cell
-def __(df, mo, timeline_ip_select):
-    # Step 3: Chronological Attack Timeline for Selected IP
+def __(anomaly_table, df, min_fail_slider, mo, timeline_ip_select):
+    # Tab 4: Chronological Attack Timeline & LOLBin Forensics View
     selected_ip = timeline_ip_select.value
     if selected_ip and not df.empty:
         ip_events = df[df["source_ip"] == selected_ip].sort_values("timestamp")
@@ -338,7 +439,7 @@ def __(df, mo, timeline_ip_select):
             first_succ = successful_logins.iloc[0]
             breach_alert = mo.callout(
                 mo.md(
-                    f"🚨 **BREACH DETECTED**: Source IP `{selected_ip}` obtained **{len(successful_logins)} successful logon(s)** after repeated failures!\n\n"
+                    f"🚨 **BREACH CONFIRMED**: Source IP `{selected_ip}` achieved **{len(successful_logins)} successful logon(s)** after repeated failures!\n\n"
                     f"- **Compromised Account**: `{first_succ['target_user']}`\n"
                     f"- **Breach Timestamp**: `{first_succ['timestamp']}`\n"
                     f"- **Logon Event ID**: `{first_succ['event_id']}` (Logon Success)"
@@ -366,7 +467,7 @@ def __(df, mo, timeline_ip_select):
             ],
             selection=None,
             pagination=True,
-            page_size=10,
+            page_size=8,
             show_column_summaries=False,
         )
     else:
@@ -375,37 +476,12 @@ def __(df, mo, timeline_ip_select):
             "Select an IP address above to display its chronological activity."
         )
 
-    step3_view = mo.vstack(
-        [
-            mo.md("## ⚡ Step 3: Chronological Attack Timeline Analysis"),
-            mo.md(
-                "Select a suspicious IP address to trace its activity chronologically. Observe the transition from automated password guessing into an interactive session:"
-            ),
-            timeline_ip_select,
-            breach_alert,
-            timeline_table,
-        ]
-    )
-    step3_view
-    return (
-        breach_alert,
-        ip_events,
-        selected_ip,
-        step3_view,
-        successful_logins,
-        timeline_table,
-    )
-
-
-@app.cell
-def __(df, mo):
-    # Step 4: Process Execution & Post-Exploitation Forensics
+    # LOLBin tool execution
+    cmd_cards = []
     if not df.empty and "command_line" in df.columns:
         cmd_events = df[
             df["command_line"].notna() & (df["command_line"] != "")
         ].sort_values("timestamp")
-
-        cmd_cards = []
         for _, row in cmd_events.iterrows():
             is_suspicious = (
                 "certutil" in str(row["command_line"]).lower()
@@ -426,25 +502,40 @@ def __(df, mo):
             else mo.md("No command line telemetry recorded.")
         )
     else:
-        cmd_events = df
         cmd_display = mo.md("No command line events recorded.")
 
-    step4_view = mo.vstack(
+    timeline_view = mo.vstack(
         [
-            mo.md("## 🕵️ Step 4: Living-off-the-Land (LOLBin) Tool Retrieval"),
-            mo.md(
-                "Adversaries frequently use built-in Windows utilities like `certutil.exe` to bypass perimeter firewalls and download second-stage malware directly onto compromised hosts (`MITRE T1105`). Inspect the commands executed by the compromised user below:"
-            ),
+            mo.md("## ⚡ High-Frequency Failure Triage & Attack Timeline"),
+            mo.md("Filter by failure threshold to isolate the attack source:"),
+            min_fail_slider,
+            anomaly_table,
+            mo.md("---"),
+            mo.md("### 🕵️ Chronological Session Activity:"),
+            timeline_ip_select,
+            breach_alert,
+            timeline_table,
+            mo.md("---"),
+            mo.md("### 📦 Living-off-the-Land (LOLBin) Tool Retrieval Forensics:"),
             cmd_display,
         ]
     )
-    step4_view
-    return cmd_cards, cmd_display, cmd_events, step4_view
+    return (
+        breach_alert,
+        cmd_cards,
+        cmd_display,
+        cmd_events,
+        ip_events,
+        selected_ip,
+        successful_logins,
+        timeline_table,
+        timeline_view,
+    )
 
 
 @app.cell
 def __(mo):
-    # Step 5: Flag Input Control
+    # Tab 5: Flag Input Control
     candidate_flag = mo.ui.text(
         placeholder="FLAG{...}",
         label="Enter Extracted Flag to Verify:",
@@ -454,12 +545,13 @@ def __(mo):
 
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
+    # Tab 5: Anti-Cheat SHA-256 Verification & IOC Report Unlock
     val = candidate_flag.value.strip()
     target_hash = "3422238b011b622ac8dfe184eef91461c0dd7728771aa7e343915790c26e87a8"
 
     if not val:
         flag_feedback = mo.md(
-            "Enter the flag discovered in the attacker's executed commands above."
+            "Enter the flag discovered in the attacker's executed commands."
         )
         ioc_view = mo.md(
             "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
@@ -490,7 +582,7 @@ def __(candidate_flag, hashlib, mo, re):
     elif re.match(r"^FLAG\{.*\}$", val):
         flag_feedback = mo.callout(
             mo.md(
-                "❌ Incorrect flag. Inspect the arguments passed to `certutil.exe` in Step 4 (Process Forensics)."
+                "❌ Incorrect flag. Inspect the arguments passed to `certutil.exe` in the Attack Timeline tab."
             ),
             kind="danger",
         )
@@ -508,12 +600,12 @@ def __(candidate_flag, hashlib, mo, re):
             "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
         )
 
-    step5_view = mo.vstack(
+    verification_view = mo.vstack(
         [
-            mo.md("## 🏁 Step 5: Verify Incident Flag & IOC Report"),
+            mo.md("## 🏁 Incident Verification & Threat Intelligence Report"),
             mo.callout(
                 mo.md(
-                    "Once you have identified the attacker's staging command line in Step 4, extract the embedded flag and verify it below:"
+                    "Once you have identified the attacker's staging command line, extract the embedded flag and verify it below to unlock the verified IOC documentation:"
                 ),
                 kind="info",
             ),
@@ -523,8 +615,30 @@ def __(candidate_flag, hashlib, mo, re):
             ioc_view,
         ]
     )
-    step5_view
-    return flag_feedback, ioc_view, step5_view, target_hash, val
+    return flag_feedback, ioc_view, target_hash, val, verification_view
+
+
+@app.cell
+def __(
+    mo,
+    scratchpad_view,
+    telemetry_view,
+    timeline_view,
+    triage_view,
+    verification_view,
+):
+    # Top-Level Analyst Operations Console
+    console = mo.ui.tabs(
+        {
+            "📋 Alert Triage & Scope": triage_view,
+            "🔍 Telemetry Explorer": telemetry_view,
+            "💻 Analyst Python Scratchpad": scratchpad_view,
+            "⚡ Attack Timeline & Pivot": timeline_view,
+            "🏁 Case Verification & IOCs": verification_view,
+        }
+    )
+    console
+    return (console,)
 
 
 if __name__ == "__main__":

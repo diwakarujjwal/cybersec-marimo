@@ -43,27 +43,30 @@ def __(Path, email, hashlib, json, pd, policy):
     dns_path = next((p for p in possible_dns_paths if p.exists()), None)
 
     msg = None
+    raw_eml_bytes = b""
     attachments = []
     if eml_path:
         with open(eml_path, "rb") as f:
-            msg = email.message_from_binary_file(f, policy=policy.default)
-            if msg.is_multipart():
-                for part in msg.iter_attachments():
-                    fn = part.get_filename() or "unnamed_attachment"
-                    content_bytes = part.get_payload(decode=True) or b""
-                    sha256_hash = hashlib.sha256(content_bytes).hexdigest()
-                    md5_hash = hashlib.md5(content_bytes).hexdigest()
-                    attachments.append(
-                        {
-                            "filename": fn,
-                            "size_bytes": len(content_bytes),
-                            "md5": md5_hash,
-                            "sha256": sha256_hash,
-                            "content_text": content_bytes.decode(
-                                "utf-8", errors="ignore"
-                            ),
-                        }
-                    )
+            raw_eml_bytes = f.read()
+        msg = email.message_from_bytes(raw_eml_bytes, policy=policy.default)
+        if msg.is_multipart():
+            for part in msg.iter_attachments():
+                fn = part.get_filename() or "unnamed_attachment"
+                content_bytes = part.get_payload(decode=True) or b""
+                sha256_hash = hashlib.sha256(content_bytes).hexdigest()
+                md5_hash = hashlib.md5(content_bytes).hexdigest()
+                attachments.append(
+                    {
+                        "filename": fn,
+                        "size_bytes": len(content_bytes),
+                        "md5": md5_hash,
+                        "sha256": sha256_hash,
+                        "bytes": content_bytes,
+                        "content_text": content_bytes.decode(
+                            "utf-8", errors="ignore"
+                        ),
+                    }
+                )
 
     dns_records = []
     if dns_path:
@@ -81,6 +84,7 @@ def __(Path, email, hashlib, json, pd, policy):
         msg,
         possible_dns_paths,
         possible_eml_paths,
+        raw_eml_bytes,
     )
 
 
@@ -106,13 +110,13 @@ def __(mo):
     hints = mo.accordion(
         {
             "💡 Hint 1: Email Authentication": mo.md(
-                "Inspect **Step 1 (Email Headers)**. Notice `dmarc=fail` and `spf=softfail`. The domain `quickbooks-invoicing-update.com` is typosquatting Intuit QuickBooks."
+                "Inspect the **Mail Headers & Auth** tab. Notice `dmarc=fail` and `spf=softfail`. The sender domain `quickbooks-invoicing-update.com` is typosquatting Intuit QuickBooks."
             ),
             "💡 Hint 2: Macro Analysis": mo.md(
-                "Look at **Step 2 (Attachment Forensics)**. The Word document contains an `AutoOpen()` macro executing `powershell -enc <base64>`. Copy that Base64 string into the Decoder Workbench in Step 3."
+                "Look at the **Attachment Carving** tab. The Word document contains an `AutoOpen()` macro executing `powershell -enc <base64>`."
             ),
             "💡 Hint 3: Decoding & Correlating": mo.md(
-                "Decode the Base64 payload in **Step 3** to discover the C2 web request URL and header. Cross-reference the domain in **Step 4 (DNS Telemetry)** to confirm the full beaconing trail."
+                "In the **Deobfuscator & Scratchpad** tab, decode the Base64 payload using the Python scratchpad or the decoder widget (PowerShell `-enc` uses UTF-16LE!). Then inspect the **DNS Telemetry & C2** tab."
             ),
         }
     )
@@ -156,51 +160,73 @@ def __(mo):
 
 
 @app.cell
-def __(attachments, df_dns, mo, msg):
-    # Header Banner & Stat KPIs
-    spf_status = "UNKNOWN"
-    dkim_status = "UNKNOWN"
-    dmarc_status = "UNKNOWN"
-    if msg and msg.get("Authentication-Results"):
-        ar = str(msg["Authentication-Results"])
-        if "spf=softfail" in ar:
-            spf_status = "SOFTFAIL"
-        elif "spf=pass" in ar:
-            spf_status = "PASS"
-        if "dkim=fail" in ar:
-            dkim_status = "FAIL"
-        elif "dkim=pass" in ar:
-            dkim_status = "PASS"
-        if "dmarc=fail" in ar:
-            dmarc_status = "FAIL (Spoofed)"
-        elif "dmarc=pass" in ar:
-            dmarc_status = "PASS"
+def __(attachments, df_dns, mo, msg, raw_eml_bytes):
+    # Tab 1: Email Header & Sender Authentication Forensics
+    dmarc_status = "FAIL"
+    spf_status = "SOFTFAIL"
+    dkim_status = "FAIL (None)"
+    ar = msg.get("Authentication-Results", "") if msg else ""
+    if "dmarc=pass" in ar.lower():
+        dmarc_status = "PASS"
+    if "spf=pass" in ar.lower():
+        spf_status = "PASS"
+    if "dkim=pass" in ar.lower():
+        dkim_status = "PASS"
 
-    header_view = mo.vstack(
+    dl_eml = mo.download(
+        data=raw_eml_bytes,
+        filename="urgent_invoice.eml",
+        label="📥 Download Raw RFC 822 Email (.eml)",
+    )
+
+    if msg:
+        headers_table = mo.md(f"""
+        | Header Field | Evaluated Header Value |
+        | :--- | :--- |
+        | **From** | `{msg.get('From', '')}` |
+        | **To** | `{msg.get('To', '')}` |
+        | **Subject** | `{msg.get('Subject', '')}` |
+        | **Date** | `{msg.get('Date', '')}` |
+        | **Message-ID** | `{msg.get('Message-ID', '')}` |
+        | **X-Originating-IP** | `{msg.get('X-Originating-IP', '')}` |
+        | **Authentication-Results** | `{msg.get('Authentication-Results', '')}` |
+        """)
+
+        spoof_alert = mo.callout(
+            mo.md(
+                "🚨 **DOMAIN SPOOFING DETECTED**: The sender header claims to be `Intuit Billing Alert` but uses lookalike domain `quickbooks-invoicing-update.com`. SPF returned `softfail` for IP `203.0.113.88` and DMARC evaluated to `fail`."
+            ),
+            kind="danger",
+        )
+
+        body_preview = mo.md(
+            f"### ✉️ Raw Email Body Preview\n"
+            f"```text\n{msg.get_body(preferencelist=('plain',)).get_content()}\n```"
+        )
+    else:
+        headers_table = mo.md("No email file found.")
+        spoof_alert = mo.md("")
+        body_preview = mo.md("")
+
+    tab1_view = mo.vstack(
         [
             mo.md("""
-            # 🎣 Incident 0202: Executive Spearphishing & Malicious Macro Triage
-            ### Digital Forensics & Incident Response (DFIR) Workbench
+            # 🎣 DFIR Incident 0202: Executive Spearphish & Invoice Fraud
+            ### Digital Forensics: Email Spoofing, Weaponized Macros & C2 Telemetry
             """),
-            mo.callout(
-                mo.md(
-                    "**SOC Escalation Alert**: An employee in Accounts Payable reported an urgent invoice email from an external vendor. Threat Intel feeds flagged an anomalous outbound HTTP beacon from workstation `10.0.2.19` seconds after email receipt. Perform email header inspection, extract the weaponized attachment, reverse the embedded VBA downloader, and reconstruct the C2 callback."
-                ),
-                kind="warn",
-            ),
             mo.hstack(
                 [
                     mo.stat(
                         value=dmarc_status,
-                        label="DMARC Verdict",
-                        caption="Header From Alignment Check",
+                        label="DMARC Policy Alignment",
+                        caption="p=reject; disposition=none",
                         direction="decrease",
                         bordered=True,
                     ),
                     mo.stat(
                         value=dkim_status,
                         label="DKIM Signature",
-                        caption="Cryptographic Header Verification",
+                        caption="Cryptographic Verification",
                         direction="decrease",
                         bordered=True,
                     ),
@@ -213,211 +239,242 @@ def __(attachments, df_dns, mo, msg):
                     ),
                     mo.stat(
                         value=f"{len(attachments)} File(s)",
-                        label="Macro Attachments",
-                        caption="Extracted from MIME Payload",
-                        bordered=True,
-                    ),
-                    mo.stat(
-                        value=f"{len(df_dns)} Lookups",
-                        label="Correlated DNS Queries",
-                        caption="Endpoint: 10.0.2.19",
+                        label="Extracted Attachments",
+                        caption="MIME Payload",
                         bordered=True,
                     ),
                 ],
                 justify="start",
                 gap=1,
             ),
-        ]
-    )
-    header_view
-    return (
-        ar,
-        dkim_status,
-        dmarc_status,
-        header_view,
-        spf_status,
-    )
-
-
-@app.cell
-def __(mo, msg):
-    # Step 1: Email Header Forensics
-    if msg:
-        headers_table = mo.md(f"""
-            | Header Field | Evaluated Header Value |
-            | :--- | :--- |
-            | **From** | `{msg.get('From', '')}` |
-            | **To** | `{msg.get('To', '')}` |
-            | **Subject** | `{msg.get('Subject', '')}` |
-            | **Date** | `{msg.get('Date', '')}` |
-            | **Message-ID** | `{msg.get('Message-ID', '')}` |
-            | **X-Originating-IP** | `{msg.get('X-Originating-IP', '')}` |
-            | **Authentication-Results** | `{msg.get('Authentication-Results', '')}` |
-            """)
-
-        spoof_alert = mo.callout(
-            mo.md(
-                "🚨 **DOMAIN SPOOFING DETECTED**: The sender header claims to be `Intuit Billing Alert` but uses lookalike domain `quickbooks-invoicing-update.com`. SPF returned `softfail` for IP `203.0.113.88` and DMARC evaluated to `fail`."
-            ),
-            kind="danger",
-        )
-
-        body_preview = mo.md(
-            f"### ✉️ Email Body Preview\n"
-            f"```text\n{msg.get_body(preferencelist=('plain',)).get_content()}\n```"
-        )
-    else:
-        headers_table = mo.md("No email file found.")
-        spoof_alert = mo.md("")
-        body_preview = mo.md("")
-
-    step1_view = mo.vstack(
-        [
-            mo.md("## 📨 Step 1: Email Header & Sender Authentication Forensics"),
+            mo.md("---"),
             spoof_alert,
-            mo.md("### 🔍 Raw RFC 822 Email Headers:"),
+            mo.hstack(
+                [mo.md("### 🔍 Evaluated RFC 822 Email Headers:"), dl_eml],
+                justify="space-between",
+            ),
             headers_table,
             mo.md("---"),
             body_preview,
         ]
     )
-    step1_view
-    return body_preview, headers_table, spoof_alert, step1_view
+    return (
+        ar,
+        body_preview,
+        dkim_status,
+        dl_eml,
+        dmarc_status,
+        headers_table,
+        spf_status,
+        spoof_alert,
+        tab1_view,
+    )
 
 
 @app.cell
 def __(attachments, mo):
-    # Step 2: Attachment Forensics & Macro Viewer
+    # Tab 2: Attachment Carving & Metadata
     if attachments:
         att = attachments[0]
         att_meta_table = mo.md(f"""
-            | Document Property | Artifact Detail |
-            | :--- | :--- |
-            | **Filename** | `{att['filename']}` |
-            | **File Size** | `{att['size_bytes']} bytes` |
-            | **MD5 Hash** | `{att['md5']}` |
-            | **SHA-256 Hash** | `{att['sha256']}` |
-            | **MIME Format** | Microsoft Word Macro-Enabled Document (`.docm`) |
-            """)
+        | Document Property | Artifact Forensic Detail |
+        | :--- | :--- |
+        | **Filename** | `{att['filename']}` |
+        | **File Size** | `{att['size_bytes']} bytes` |
+        | **MD5 Hash** | `{att['md5']}` |
+        | **SHA-256 Hash** | `{att['sha256']}` |
+        | **MIME Format** | Microsoft Word Macro-Enabled Document (`.docm`) |
+        """)
 
         macro_code_view = mo.md(
             f"### 📜 Decompiled VBA Macro (`{att['filename']}`)\n"
             f"```vb\n{att['content_text']}\n```"
         )
+
+        dl_docm = mo.download(
+            data=att.get("bytes", b""),
+            filename=att["filename"],
+            label=f"📥 Download Carved Document ({att['filename']})",
+        )
     else:
+        att = {}
         att_meta_table = mo.md("No attachments found.")
         macro_code_view = mo.md("")
+        dl_docm = mo.md("")
 
-    step2_view = mo.vstack(
+    tab2_view = mo.vstack(
         [
-            mo.md("## 📎 Step 2: Extracted Attachment & Decompiled Macro Dissection"),
-            mo.md("### 📦 Extracted Document Metadata & Cryptographic Hashes:"),
+            mo.md("## 📎 Extracted Attachment & Decompiled Macro Dissection"),
+            mo.hstack(
+                [mo.md("### 📦 Carved Document Metadata & Hashes:"), dl_docm],
+                justify="space-between",
+            ),
             att_meta_table,
             mo.md("---"),
             macro_code_view,
         ]
     )
-    step2_view
-    return att, att_meta_table, macro_code_view, step2_view
+    return att, att_meta_table, dl_docm, macro_code_view, tab2_view
 
 
 @app.cell
-def __(attachments, mo, re):
-    # Step 3: Decoder UI Controls
-    default_b64 = ""
-    if attachments:
-        vba = attachments[0]["content_text"]
-        match = re.search(r"-enc\s+([A-Za-z0-9+/=]+)", vba)
-        if match:
-            default_b64 = match.group(1)
+def __(mo):
+    # Tab 3: Python Scratchpad & Manual Decoder Controls
+    py_scratch = mo.ui.code_editor(
+        value=(
+            "# 💻 Analyst Python Deobfuscator\n"
+            "# Variables in scope: `attachments`, `base64`, `re`\n"
+            "import base64, re\n\n"
+            "vba_code = attachments[0]['content_text']\n"
+            "match = re.search(r'-enc\\s+([A-Za-z0-9+/=]+)', vba_code)\n"
+            "if match:\n"
+            "    b64_payload = match.group(1)\n"
+            "    # PowerShell -EncodedCommand uses UTF-16LE encoding\n"
+            "    decoded_cmd = base64.b64decode(b64_payload).decode('utf-16le')\n"
+            "    output = decoded_cmd\n"
+            "output"
+        ),
+        language="python",
+        label="Analyst Python Deobfuscation Console:",
+    )
 
     decoder_input = mo.ui.text_area(
-        value=default_b64,
+        value="",
         placeholder="Paste Base64 payload here...",
-        label="Base64 Encoded Payload:",
+        label="Manual Base64 Decoder Input:",
         full_width=True,
     )
 
     encoding_mode = mo.ui.dropdown(
         options=["UTF-8 / ASCII", "UTF-16LE (PowerShell -EncodedCommand)"],
-        value="UTF-8 / ASCII",
+        value="UTF-16LE (PowerShell -EncodedCommand)",
         label="Encoding Format:",
     )
 
-    return decoder_input, default_b64, encoding_mode
+    return decoder_input, encoding_mode, py_scratch
 
 
 @app.cell
-def __(base64, decoder_input, encoding_mode, mo):
-    # Step 3: Decoder Reactive Computation & View
-    decoded_result = ""
+def __(attachments, base64, decoder_input, encoding_mode, mo, py_scratch, re):
+    # Tab 3: Deobfuscation Execution Engine (Python + Manual)
+    py_code = py_scratch.value.strip()
+    scratch_output = None
+    if py_code:
+        locs = {"attachments": attachments, "base64": base64, "re": re}
+        try:
+            lines = [
+                l
+                for l in py_code.splitlines()
+                if l.strip() and not l.strip().startswith("#")
+            ]
+            if lines:
+                exec_chunk = "\n".join(lines[:-1])
+                last_line = lines[-1]
+                if exec_chunk:
+                    exec(exec_chunk, {"__builtins__": __builtins__}, locs)
+                try:
+                    res = eval(last_line, {"__builtins__": __builtins__}, locs)
+                except SyntaxError:
+                    exec(last_line, {"__builtins__": __builtins__}, locs)
+                    res = locs.get("output", "Execution completed.")
+                scratch_output = mo.md(f"```powershell\n{res}\n```")
+        except Exception as err:
+            scratch_output = mo.callout(
+                mo.md(f"**Deobfuscation Error**: `{err}`"), kind="danger"
+            )
+    else:
+        scratch_output = mo.md("*Type deobfuscation code above.*")
+
+    manual_decoded = ""
     raw_val = decoder_input.value.strip()
     if raw_val:
         try:
             raw_bytes = base64.b64decode(raw_val)
-            if encoding_mode.value == "UTF-8 / ASCII":
-                decoded_result = raw_bytes.decode("utf-8", errors="replace")
+            if "UTF-16LE" in encoding_mode.value:
+                manual_decoded = raw_bytes.decode("utf-16le", errors="replace")
             else:
-                decoded_result = raw_bytes.decode("utf-16le", errors="replace")
+                manual_decoded = raw_bytes.decode("utf-8", errors="replace")
         except Exception as err:
-            decoded_result = f"Decoding error: {err}"
+            manual_decoded = f"Decoding error: {err}"
 
-    step3_view = mo.vstack(
+    tab3_view = mo.vstack(
         [
-            mo.md("## 🔬 Step 3: Interactive DFIR Decoder Tool"),
+            mo.md("## 🔓 Malware Payload Deobfuscation Workbench"),
             mo.md(
-                "Decode PowerShell `-enc` / `-EncodedCommand` parameters or suspicious Base64 strings:"
+                "Adversaries commonly encode PowerShell commands in UTF-16LE Base64 (`-enc`). Use either the live Python deobfuscation console or the manual decoder widget:"
             ),
-            decoder_input,
-            encoding_mode,
+            mo.md("### Option A: Live Python Deobfuscator"),
+            py_scratch,
+            mo.md("#### 🔓 Python Deobfuscation Output:"),
+            scratch_output,
+            mo.md("---"),
+            mo.md("### Option B: Manual Base64 Decoder Widget"),
+            mo.hstack([decoder_input, encoding_mode], gap=1),
             mo.md(
-                f"#### 🔓 Decoded Command Output:\n```powershell\n{decoded_result}\n```"
+                f"#### 🔓 Manual Decoded Output:\n```powershell\n{manual_decoded}\n```"
             ),
         ]
     )
-    step3_view
-    return decoded_result, raw_bytes, raw_val, step3_view
+    return (
+        locs,
+        manual_decoded,
+        py_code,
+        raw_val,
+        scratch_output,
+        tab3_view,
+    )
 
 
 @app.cell
 def __(df_dns, mo):
-    # Step 4: Correlated DNS Telemetry & C2 Analysis
+    # Tab 4: Correlated Host DNS Telemetry View
     if not df_dns.empty:
         dns_table = mo.ui.table(
             df_dns,
             selection=None,
             pagination=True,
-            page_size=10,
+            page_size=8,
             show_column_summaries=False,
         )
     else:
-        dns_table = mo.md("No DNS telemetry recorded.")
+        dns_table = mo.md("No DNS records found.")
 
-    step4_view = mo.vstack(
+    c2_alert = mo.callout(
+        mo.md(
+            "🚨 **CORRELATED C2 BEACON DETECTED**:\n\n"
+            "- **Query Name**: `c2-exfil-node.darknet-routing.org`\n"
+            "- **Query Time**: `2026-09-10 08:46:15 UTC` (matches macro execution timestamp)\n"
+            "- **Threat Context**: Correlates with the `Invoke-WebRequest` URL uncovered in the decoded PowerShell payload!"
+        ),
+        kind="danger",
+    )
+
+    tab4_view = mo.vstack(
         [
-            mo.md("## 📡 Step 4: Correlated Host DNS Telemetry & C2 Analysis"),
+            mo.md("## 📡 Host DNS Telemetry & C2 Correlation"),
             mo.md(
-                "Cross-reference the victim workstation's (`FIN-WS-1002` / `10.0.2.19`) network traffic against the C2 domain identified in the decoded macro payload:"
+                "Correlating host network telemetry confirms whether the weaponized macro successfully reached out to adversary command-and-control infrastructure:"
             ),
+            c2_alert,
             dns_table,
         ]
     )
-    step4_view
-    return dns_table, step4_view
+    return c2_alert, dns_table, tab4_view
 
 
 @app.cell
 def __(mo):
-    # Step 5: Flag Verification Input Control
+    # Tab 5: Flag Input Control
     candidate_flag = mo.ui.text(
         placeholder="FLAG{...}",
-        label="Enter Extracted DFIR Flag to Verify:",
+        label="Enter Extracted Phishing Investigation Flag to Verify:",
     )
     return (candidate_flag,)
 
 
 @app.cell
 def __(candidate_flag, hashlib, mo, re):
+    # Tab 5: Anti-Cheat SHA-256 Flag Verification & IOC Report
     val = candidate_flag.value.strip()
     target_hash = "5f458b9db61a55c7839ede55b271e293e24fee62fe40cb384d55445b9b5666ae"
 
@@ -432,28 +489,28 @@ def __(candidate_flag, hashlib, mo, re):
         flag_feedback = mo.callout(
             mo.md(
                 "🎉 **FLAG VERIFIED CORRECT!**\n\n"
-                "Your recovered Phishing DFIR flag is confirmed! Now submit this flag in the **Submit Flag** box in the left CyberLab portal pane to register your 100 points and DFIR competency!"
+                "Your recovered Phishing DFIR flag is verified! Now submit this flag in the **Submit Flag** box in the left CyberLab portal pane to register your 100 points and Phishing DFIR competency!"
             ),
             kind="success",
         )
         ioc_view = mo.vstack(
             [
-                mo.md("### 📋 Confirmed Threat Intelligence Indicators (IOCs):"),
+                mo.md("### 📋 Confirmed DFIR Threat Indicators (IOCs):"),
                 mo.md("""
-                | IOC Type | Value | Threat Context |
+                | Indicator Type | Value | Threat Context |
                 | :--- | :--- | :--- |
-                | **Spoofed Sender Domain** | `quickbooks-invoicing-update.com` | Typosquatting Intuit QuickBooks |
-                | **Originating Mail Server IP** | `203.0.113.88` | Untrusted external SMTP relay |
-                | **Malicious Word Document** | `Invoice_Sept2026_OVERDUE.docm` | Weaponized VBA macro downloader |
-                | **Command and Control Domain** | `c2-exfil-node.darknet-routing.org` | Resolved by victim host `10.0.2.19` |
-                | **C2 Server IPv4** | `198.51.100.99` | External listener receiving beacon |
+                | **Sender Domain** | `quickbooks-invoicing-update.com` | Typosquatting / Spoofed domain |
+                | **Originating IP** | `203.0.113.88` | SPF unauthorized sending relay |
+                | **Malicious File** | `invoice_overdue_march2026.docm` | Weaponized Word Document with VBA |
+                | **Attachment SHA-256** | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` | Static file IOC |
+                | **C2 Domain** | `c2-exfil-node.darknet-routing.org` | HTTP beacon callback endpoint |
                 """),
             ]
         )
     elif re.match(r"^FLAG\{.*\}$", val):
         flag_feedback = mo.callout(
             mo.md(
-                "❌ Incorrect flag. Verify the decoded PowerShell payload in Step 3 or the C2 notes in Step 4."
+                "❌ Incorrect flag. Verify the decoded PowerShell payload in the Deobfuscator tab or the C2 notes in the DNS Telemetry tab."
             ),
             kind="danger",
         )
@@ -471,17 +528,38 @@ def __(candidate_flag, hashlib, mo, re):
             "🔒 *Threat Intelligence & IOC Report locked until valid incident flag is verified.*"
         )
 
-    step5_view = mo.vstack(
+    tab5_view = mo.vstack(
         [
-            mo.md("## 🏁 Step 5: Verify Incident Flag & Threat Intel Report"),
+            mo.md("## 🏁 Incident Verification & DFIR Case Closure"),
+            mo.callout(
+                mo.md(
+                    "Submit the recovered flag below to authenticate the investigation and unlock the verified threat indicators:"
+                ),
+                kind="info",
+            ),
             candidate_flag,
             flag_feedback,
             mo.md("---"),
             ioc_view,
         ]
     )
-    step5_view
-    return flag_feedback, ioc_view, step5_view, target_hash, val
+    return flag_feedback, ioc_view, tab5_view, target_hash, val
+
+
+@app.cell
+def __(mo, tab1_view, tab2_view, tab3_view, tab4_view, tab5_view):
+    # Top-Level DFIR Analyst Operations Console
+    console = mo.ui.tabs(
+        {
+            "📨 Mail Headers & Auth": tab1_view,
+            "📎 Attachment Carving": tab2_view,
+            "💻 Deobfuscator & Scratchpad": tab3_view,
+            "📡 DNS C2 Correlation": tab4_view,
+            "🏁 Case Verification & IOCs": tab5_view,
+        }
+    )
+    console
+    return (console,)
 
 
 if __name__ == "__main__":
